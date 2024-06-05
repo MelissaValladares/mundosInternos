@@ -1,13 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvfhsgee4k736"]
+[gd_scene load_steps=18 format=3 uid="uid://bvfhsgee4k736"]
 
 [ext_resource type="ArrayMesh" uid="uid://uhps4d321yci" path="res://piso.obj" id="1_dy6dw"]
 [ext_resource type="ArrayMesh" uid="uid://c2qil4ng8svxt" path="res://libro.obj" id="2_030im"]
 [ext_resource type="ArrayMesh" uid="uid://dcmia061byvyq" path="res://Mesa Biblioteca.obj" id="3_f07vo"]
 [ext_resource type="ArrayMesh" uid="uid://70f8g38ysal5" path="res://BancaBiblioteca.obj" id="4_j2cvh"]
 [ext_resource type="PackedScene" uid="uid://b21ohe3hl0sej" path="res://world.glb" id="5_rekow"]
+[ext_resource type="PackedScene" uid="uid://cn85bkidp0c1u" path="res://starirs.glb" id="6_itdik"]
+[ext_resource type="PackedScene" uid="uid://c2p2wvngpkshh" path="res://columna.glb" id="7_fgs1t"]
+[ext_resource type="PackedScene" uid="uid://bbceacvm4hw5u" path="res://fronton.glb" id="8_bf4dn"]
+[ext_resource type="PackedScene" uid="uid://lhph78c5oab6" path="res://arch.glb" id="9_b5rd0"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_arbda"]
-emission_enabled = true
 emission = Color(0.580392, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
@@ -37,6 +40,7 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 9.09
 
 [node name="Biblioteca" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121464, 7.51519, -0.469627)
 
 [node name="Piso" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.76415, 0, 0, 0, 0.133111, 0, 0, 0, 3.61378, -0.248926, 0, 0)
@@ -87,6 +91,7 @@ shape = SubResource("ConcavePolygonShape3D_n86au")
 
 [node name="Librero21" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.49754e-08, 0, -1.25581, 0, 1.25581, 0, 1.25581, 0, 1.49754e-08, -1.9205, 0.003, 10.92)
+gi_lightmap_scale = 3
 mesh = ExtResource("2_030im")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Librero21"]
@@ -157,7 +162,7 @@ mesh = ExtResource("2_030im")
 shape = SubResource("ConcavePolygonShape3D_n86au")
 
 [node name="Librero4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.25581, 0, -1.09787e-07, 0, 1.25581, 0, 1.09787e-07, 0, -1.25581, -26.2374, 0.00286627, -19.9861)
+transform = Transform3D(-1.25581, 0, -1.09787e-07, 0, 1.25581, 0, 1.09787e-07, 0, -1.25581, -22.1726, 0.00286531, -19.9735)
 mesh = ExtResource("2_030im")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Librero4"]
@@ -176,7 +181,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_7q3mc")
 
 [node name="Librero6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1.25581, 0, -1.09787e-07, 0, 1.25581, 0, 1.09787e-07, 0, -1.25581, -26.2374, 0.00286627, -29.9068)
+transform = Transform3D(-1.25581, 0, -1.09787e-07, 0, 1.25581, 0, 1.09787e-07, 0, -1.25581, -22.1726, 0.00286531, -29.8942)
 mesh = ExtResource("2_030im")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Librero6"]
@@ -185,7 +190,7 @@ mesh = ExtResource("2_030im")
 shape = SubResource("ConcavePolygonShape3D_n86au")
 
 [node name="mesa" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.483913, 0.00630943, 0, -0.00630943, 0.483913, 0, 0, 0, 0.483954, -16, 0, -21.77)
+transform = Transform3D(0.483913, 0.00630943, 0, -0.00630943, 0.483913, 0, 0, 0, 0.483954, -14.8727, -9.53674e-07, -21.7574)
 mesh = ExtResource("3_f07vo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mesa"]
@@ -194,7 +199,7 @@ mesh = ExtResource("3_f07vo")
 shape = SubResource("ConcavePolygonShape3D_7q3mc")
 
 [node name="mesa2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.483954, 0, 0, 0, 0.483954, 0, 0, 0, 0.483954, -16, 0, -31.055)
+transform = Transform3D(0.483954, 0, 0, 0, 0.483954, 0, 0, 0, 0.483954, -14.8727, -9.53674e-07, -31.0424)
 mesh = ExtResource("3_f07vo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mesa2"]
@@ -203,7 +208,7 @@ mesh = ExtResource("3_f07vo")
 shape = SubResource("ConcavePolygonShape3D_7q3mc")
 
 [node name="mesa3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.483954, 0, 0, 0, 0.483954, 0, 0, 0, 0.483954, -22.5, 0, -31.055)
+transform = Transform3D(0.483954, 0, 0, 0, 0.483954, 0, 0, 0, 0.483954, -18.4352, -9.53674e-07, -31.0424)
 mesh = ExtResource("3_f07vo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="mesa3"]
@@ -212,7 +217,7 @@ mesh = ExtResource("3_f07vo")
 shape = SubResource("ConcavePolygonShape3D_7q3mc")
 
 [node name="banca" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.141837, 0, 0.16207, 0, 0.212749, 0, -0.141837, 0, 0.16207, 6.50951, -0.0148839, 8.0224)
+transform = Transform3D(0.141837, 0, 0.16207, 0, 0.212749, 0, -0.141837, 0, 0.16207, 7.47327, -0.014884, 5.78499)
 mesh = ExtResource("4_j2cvh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="banca"]
@@ -222,7 +227,7 @@ transform = Transform3D(1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_ff56b")
 
 [node name="banca2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-8.76796e-09, 0, 0.229201, 0, 0.212749, 0, -0.200588, 0, -1.00187e-08, 6.61496, 0.0363147, 5.46052)
+transform = Transform3D(-8.76796e-09, 0, 0.229201, 0, 0.212749, 0, -0.200588, 0, -1.00187e-08, 7.56195, 0.0363164, 2.38577)
 material_override = SubResource("StandardMaterial3D_rnv26")
 mesh = ExtResource("4_j2cvh")
 
@@ -233,7 +238,7 @@ transform = Transform3D(1, -1.06581e-14, -1.49012e-08, -7.10543e-15, 1, -1.11022
 shape = SubResource("ConcavePolygonShape3D_ff56b")
 
 [node name="banca3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.200588, 0, 0, 0, 0.212749, 0, 0, 0, 0.229201, 10.1917, 0.0363147, 6.0946)
+transform = Transform3D(0.200588, 0, 0, 0, 0.212749, 0, 0, 0, 0.229201, 12.0245, 0.0363145, 3.85719)
 mesh = ExtResource("4_j2cvh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="banca3"]
@@ -251,8 +256,30 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95161, -5.07778e-07, 9.98326)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.866025, 0.482963, -0.12941, 0.433013, -0.853854, -0.288849, -0.25, 0.194114, -0.948588, 11, 16, 0)
-light_energy = 15.069
+transform = Transform3D(0.866025, 0.482963, -0.12941, 0, 0.258819, 0.965926, 0.5, -0.836516, 0.224144, -20, 24, 0)
+light_energy = 0.289
 light_volumetric_fog_energy = 2.081
+light_angular_distance = 90.0
 shadow_enabled = true
 sky_mode = 1
+
+[node name="starirs" parent="." instance=ExtResource("6_itdik")]
+transform = Transform3D(-2.88283e-07, 0, -0.676309, 0, 1, 0, 6.59514, 0, -2.95624e-08, -28.532, -0.952984, 0.446462)
+
+[node name="columna" parent="." instance=ExtResource("7_fgs1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1615, 0.0431378, 12.0024)
+
+[node name="columna2" parent="." instance=ExtResource("7_fgs1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.0631, -5.07778e-07, 8.06507)
+
+[node name="columna3" parent="." instance=ExtResource("7_fgs1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9906, 0, -7.60728)
+
+[node name="columna4" parent="." instance=ExtResource("7_fgs1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1381, 0, -11.7381)
+
+[node name="fronton" parent="." instance=ExtResource("8_bf4dn")]
+transform = Transform3D(-3.15013e-08, 0, -1, 0, 1, 0, 0.720666, 0, -4.37114e-08, -27.3596, 8.90307, 0.363399)
+
+[node name="arch" parent="." instance=ExtResource("9_b5rd0")]
+transform = Transform3D(1, 0, 0, 0, 0.949261, 0, 0, 0, 1, -24.6929, 0, 3.32908)
