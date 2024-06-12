@@ -15,6 +15,14 @@ run/main_scene="res://biblioteca.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+
 [dotnet]
 
 project/assembly_name="MundosInternos"
@@ -58,4 +66,3 @@ quit={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
-anti_aliasing/quality/msaa_3d=2

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0jgbyab14l6u"]
+
+[ext_resource type="PackedScene" uid="uid://cjpnd1lbup2bl" path="res://libreroRosa.glb" id="1_rddec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71r14"]
+size = Vector3(0.744141, 2.61084, 3.41939)
+
+[node name="libreroRosa" instance=ExtResource("1_rddec")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12793, 0.80542, -1.16041)
+shape = SubResource("BoxShape3D_71r14")
