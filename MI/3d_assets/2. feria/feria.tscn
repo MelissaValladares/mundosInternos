@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://irno1oxqh46l"]
+
+[ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
+[ext_resource type="PackedScene" uid="uid://rbv1otcd68e1" path="res://3d_assets/2. feria/tienda_2_(amarillo).tscn" id="2_cnyrq"]
+[ext_resource type="PackedScene" uid="uid://onwumytsq47i" path="res://3d_assets/2. feria/tienda_2.tscn" id="3_0bbif"]
+[ext_resource type="PackedScene" uid="uid://8xchv586g36n" path="res://3d_assets/2. feria/tienda.tscn" id="4_yl2d2"]
+[ext_resource type="PackedScene" uid="uid://b0ukqm3hwk7ic" path="res://3d_assets/2. feria/tienda_3.tscn" id="5_efbeh"]
+[ext_resource type="PackedScene" uid="uid://cuo7tn1on1fy3" path="res://3d_assets/2. feria/tienda_3_(morado).tscn" id="6_xofo4"]
+[ext_resource type="PackedScene" uid="uid://c4blthgmts6pq" path="res://3d_assets/2. feria/tienda_(amarillo).tscn" id="7_t2eh8"]
+[ext_resource type="PackedScene" uid="uid://drmfld38xv6j1" path="res://3d_assets/2. feria/carro_algodones.tscn" id="8_v1bmw"]
+[ext_resource type="PackedScene" uid="uid://5btnubdut6xm" path="res://3d_assets/2. feria/arbusto.tscn" id="9_1yi1c"]
+[ext_resource type="PackedScene" uid="uid://dgb0uiba5mv4k" path="res://3d_assets/2. feria/tienda2 (amarillo).glb" id="10_cpxl7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ybw3e"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2te36"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="feria" type="Node3D"]
+
+[node name="piso" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="piso"]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ybw3e")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="piso/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="piso/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2te36")
+
+[node name="main" parent="." instance=ExtResource("1_e43ne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.0254, 2.41646, -14.5561)
+
+[node name="tienda2 (amarillo)" parent="." instance=ExtResource("2_cnyrq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -45.4972, 1.73447, -38.1348)
+
+[node name="tienda2" parent="." instance=ExtResource("3_0bbif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8978, 1.73447, 8.3278)
+
+[node name="tienda" parent="." instance=ExtResource("4_yl2d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.0758, 1.13976, -37.5234)
+
+[node name="tienda3" parent="." instance=ExtResource("5_efbeh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60.0495, 0.585701, 65.2938)
+
+[node name="tienda3 (morado)" parent="." instance=ExtResource("6_xofo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8277, 0.585701, 9.13379)
+
+[node name="tienda (amarillo)" parent="." instance=ExtResource("7_t2eh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3969, 0, 67.3728)
+
+[node name="CarroAlgodones" parent="." instance=ExtResource("8_v1bmw")]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, -52.1497, 0, -0.87149)
+
+[node name="tienda4" parent="." instance=ExtResource("4_yl2d2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1502, 0, -15.9976)
+
+[node name="arbusto" parent="." instance=ExtResource("9_1yi1c")]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -50, 0, -6)
+
+[node name="arbusto2" parent="." instance=ExtResource("9_1yi1c")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -49, 0, -26)
+
+[node name="arbusto3" parent="." instance=ExtResource("9_1yi1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0, -38)
+
+[node name="tienda2 (amarillo)2" parent="." instance=ExtResource("10_cpxl7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -79.8831, 0, 51.52)
