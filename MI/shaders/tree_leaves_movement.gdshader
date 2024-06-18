@@ -10,11 +10,11 @@ void vertex() {
 
     // Use the inverse of the distance to scale the oscillation
     // Add a small value to avoid division by zero
-    float scale = 2.0 / (distance + 0.1);
+    float scale = 0.525 / (distance + 0.1);
 
     float oscillation_x = sin(TIME * speed) * skew_factors.x * scale;
-    float oscillation_y = cos(TIME * speed) * skew_factors.y * scale * 1.05;
-    float oscillation_z = sin(TIME * speed) * skew_factors.z * scale * 1.1;
+    float oscillation_y = cos(TIME * speed) * skew_factors.y * scale * 0.7;
+    float oscillation_z = sin(TIME * speed) * skew_factors.z * scale * 0.5;
 
     VERTEX.x += VERTEX.y * oscillation_x;
     VERTEX.y += VERTEX.z * oscillation_y;
@@ -25,7 +25,7 @@ void fragment() {
     // Calculate the interpolation factor based on the vertical position
 
     // Define the colors
-    vec4 color = vec4(0.165, 0.604, 0.014, 1.0); 
+    vec4 color = vec4(0.065, 0.404, 0.214, 1.0); 
 
     // Set the fragment color
     ALBEDO = color.rgb;

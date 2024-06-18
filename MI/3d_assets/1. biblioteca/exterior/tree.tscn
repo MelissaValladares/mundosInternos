@@ -13,6 +13,7 @@ shader_parameter/skew_factors = Vector3(0.1, 0.1, 0)
 shader_parameter/speed = 1.0
 
 [node name="tree" instance=ExtResource("1_gkvvs")]
+transform = Transform3D(0.999878, -0.0156375, 0, 0.0156375, 0.999878, 0, 0, 0, 1, 0, -0.0684853, 0)
 
 [node name="Cube_003" parent="." index="0"]
 transform = Transform3D(-0.0832892, -4.34275e-10, 0.159002, 0.00530623, 0.184779, 0.00277714, -0.158982, 0.00616725, -0.083207, 0.163051, 0.962085, -0.73587)
@@ -23,157 +24,209 @@ transform = Transform3D(-0.0832892, -4.34275e-10, 0.159002, 0.00530623, 0.184779
 shape = SubResource("ConcavePolygonShape3D_1hdi7")
 
 [node name="Icosphere_001" parent="." index="1"]
+transform = Transform3D(0.531541, 0.352726, -1.55107, 0.0925911, -1.63947, -0.341098, -1.58797, 0.0224743, -0.539077, -0.534803, 9.43213, -1.6159)
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_002" parent="." index="2"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_003" parent="." index="3"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_004" parent="." index="4"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_005" parent="." index="5"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_006" parent="." index="6"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_007" parent="." index="7"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_008" parent="." index="8"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_009" parent="." index="9"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_010" parent="." index="10"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_011" parent="." index="11"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_012" parent="." index="12"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_013" parent="." index="13"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_014" parent="." index="14"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_015" parent="." index="15"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_016" parent="." index="16"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_017" parent="." index="17"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_018" parent="." index="18"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_019" parent="." index="19"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_020" parent="." index="20"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_021" parent="." index="21"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_022" parent="." index="22"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_023" parent="." index="23"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_024" parent="." index="24"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_025" parent="." index="25"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_026" parent="." index="26"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_027" parent="." index="27"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_028" parent="." index="28"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_029" parent="." index="29"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_030" parent="." index="30"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_031" parent="." index="31"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_032" parent="." index="32"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_033" parent="." index="33"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_034" parent="." index="34"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_035" parent="." index="35"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_036" parent="." index="36"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_037" parent="." index="37"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_038" parent="." index="38"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_039" parent="." index="39"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_040" parent="." index="40"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_041" parent="." index="41"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_042" parent="." index="42"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_043" parent="." index="43"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_044" parent="." index="44"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_045" parent="." index="45"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_046" parent="." index="46"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_047" parent="." index="47"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_048" parent="." index="48"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_049" parent="." index="49"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_050" parent="." index="50"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_051" parent="." index="51"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")
 
 [node name="Icosphere_052" parent="." index="52"]
+visible = false
 material_override = SubResource("ShaderMaterial_tohfk")

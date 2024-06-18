@@ -11,3 +11,12 @@ data = PackedVector3Array(-0.3213, 2.6376, -0.7758, 0, 2.6376, -0.8397, -0.1638,
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Circle/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_w0vub")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.216, 0)
+light_energy = 16.0
+light_indirect_energy = 3.156
+light_volumetric_fog_energy = 2.778
+light_size = 0.172
+light_specular = 2.439
+omni_range = 32.0

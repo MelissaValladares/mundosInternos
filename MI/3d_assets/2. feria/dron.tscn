@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4dccqpdqoe0n"]
+
+[ext_resource type="PackedScene" uid="uid://c4n6d7suebfx4" path="res://3d_assets/2. feria/dron.glb" id="1_6nn2i"]
+[ext_resource type="Script" path="res://3d_assets/2. feria/elice.gd" id="2_c6qpe"]
+
+[node name="dron" instance=ExtResource("1_6nn2i")]
+
+[node name="elice" parent="." index="1"]
+script = ExtResource("2_c6qpe")
