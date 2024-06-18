@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvuq72tcg5w2y"]
+[gd_scene load_steps=7 format=3 uid="uid://cvuq72tcg5w2y"]
 
 [ext_resource type="Script" path="res://steve.gd" id="1_obsyy"]
+[ext_resource type="Shader" path="res://shaders/post_processing.gdshader" id="2_qmsm8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cfdbf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_abd3y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kiudn"]
+render_priority = 0
+shader = ExtResource("2_qmsm8")
+shader_parameter/edge_threshold = 0.2
+shader_parameter/line_color = Color(0.043, 0.282, 0.467, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ooeuk"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="main" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.935, 0, 0, 0, 1, 0, 0, 0)
@@ -28,3 +39,8 @@ margin = 0.5
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CamOrigin/SpringArm3D/Camera3D"]
+material_override = SubResource("ShaderMaterial_kiudn")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_ooeuk")

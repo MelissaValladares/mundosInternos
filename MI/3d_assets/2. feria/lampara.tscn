@@ -14,6 +14,7 @@ shape = SubResource("ConcavePolygonShape3D_w0vub")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.216, 0)
+light_color = Color(0.819608, 0.760784, 0.427451, 1)
 light_energy = 16.0
 light_indirect_energy = 3.156
 light_volumetric_fog_energy = 2.778
