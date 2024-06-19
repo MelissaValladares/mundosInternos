@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=29 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -7,15 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://8xchv586g36n" path="res://3d_assets/2. feria/tienda.tscn" id="4_yl2d2"]
 [ext_resource type="PackedScene" uid="uid://b0ukqm3hwk7ic" path="res://3d_assets/2. feria/tienda_3.tscn" id="5_efbeh"]
 [ext_resource type="PackedScene" uid="uid://cuo7tn1on1fy3" path="res://3d_assets/2. feria/tienda_3_(morado).tscn" id="6_xofo4"]
-[ext_resource type="PackedScene" uid="uid://c4blthgmts6pq" path="res://3d_assets/2. feria/tienda_(amarillo).tscn" id="7_t2eh8"]
 [ext_resource type="PackedScene" uid="uid://drmfld38xv6j1" path="res://3d_assets/2. feria/carro_algodones.tscn" id="8_v1bmw"]
 [ext_resource type="PackedScene" uid="uid://5btnubdut6xm" path="res://3d_assets/2. feria/arbusto.tscn" id="9_1yi1c"]
-[ext_resource type="PackedScene" uid="uid://dgb0uiba5mv4k" path="res://3d_assets/2. feria/tienda2 (amarillo).glb" id="10_cpxl7"]
 [ext_resource type="PackedScene" uid="uid://po34yotruboj" path="res://3d_assets/2. feria/carrusel.tscn" id="11_7nx4t"]
 [ext_resource type="PackedScene" uid="uid://c8f5j0mjguyyl" path="res://3d_assets/2. feria/rueda.tscn" id="12_vxweg"]
 [ext_resource type="PackedScene" uid="uid://dnj7ev3s2bd0m" path="res://3d_assets/2. feria/arbol_1.tscn" id="13_5id2f"]
 [ext_resource type="PackedScene" uid="uid://dlkr53608gd38" path="res://3d_assets/2. feria/lampara.tscn" id="14_l5k3v"]
+[ext_resource type="PackedScene" uid="uid://t8tsn52trhrb" path="res://3d_assets/2. feria/sub_baja.tscn" id="16_qqhs5"]
 [ext_resource type="Shader" path="res://shaders/arbol_hojas_movimiento.gdshader" id="16_s3nw4"]
+[ext_resource type="PackedScene" uid="uid://bhwompmw5v23w" path="res://3d_assets/2. feria/tienda_comal (blanca).tscn" id="17_djqkc"]
+[ext_resource type="PackedScene" uid="uid://b71xy2lygw1dq" path="res://3d_assets/2. feria/tienda_(blanca).tscn" id="17_o0v5e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_edx0r"]
 sky_top_color = Color(0.0510149, 0.0703329, 0.0971964, 1)
@@ -110,31 +111,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8542, 0, -4.47267)
 transform = Transform3D(-0.487189, 0, 0.873296, 0, 1, 0, -0.873296, 0, -0.487189, -35.9949, 1.73447, -36.0663)
 
 [node name="tienda2 (amarillo)3" parent="Puestos" instance=ExtResource("2_cnyrq")]
-transform = Transform3D(-0.611734, 0, 0.791063, 0, 1, 0, -0.791063, 0, -0.611734, 4.98459, 1.73447, 3.68085)
+transform = Transform3D(-0.750145, 0, 0.661272, 0, 1, 0, -0.661272, 0, -0.750145, -52.0425, 1.94496, 52.7844)
 
 [node name="tienda2" parent="Puestos" instance=ExtResource("3_0bbif")]
-transform = Transform3D(0.747265, 0, -0.664526, 0, 1, 0, 0.664526, 0, 0.747265, -43.3685, 1.73447, 9.01093)
+transform = Transform3D(0.747265, 0, -0.664526, 0, 1, 0, 0.664526, 0, 0.747265, -43.3685, 1.75459, 9.01093)
 
 [node name="tienda" parent="Puestos" instance=ExtResource("4_yl2d2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.698, 0.016661, -37.5234)
 
 [node name="tienda3" parent="Puestos" instance=ExtResource("5_efbeh")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -28.8604, 0.585701, 64.1029)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.6419, 0.585701, 62.2494)
 
 [node name="tienda3 (morado)" parent="Puestos" instance=ExtResource("6_xofo4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0256, 0.585701, 9.13379)
-
-[node name="tienda (amarillo)" parent="Puestos" instance=ExtResource("7_t2eh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99646, 0, 62.1614)
-
-[node name="tienda4" parent="Puestos" instance=ExtResource("4_yl2d2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.3481, 0, -15.9976)
-
-[node name="tienda2 (amarillo)2" parent="Puestos" instance=ExtResource("10_cpxl7")]
-transform = Transform3D(0.709411, 0, -0.704795, 0, 1, 0, 0.704795, 0, 0.709411, -54.0993, 1.73447, 57.1674)
-
-[node name="tienda5" parent="Puestos" instance=ExtResource("4_yl2d2")]
-transform = Transform3D(0.679249, 0, -0.733908, 0, 1, 0, 0.733908, 0, 0.679249, 15.6256, 0.00674546, 26.6728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0256, -0.0052278, 9.13379)
 
 [node name="tienda6" parent="Puestos" instance=ExtResource("5_efbeh")]
 transform = Transform3D(-0.735932, 0, -0.677056, 0, 1, 0, 0.677056, 0, -0.735932, 51.3237, 0.585701, 59.9293)
@@ -208,5 +197,35 @@ multimesh = SubResource("MultiMesh_h0vg1")
 transform = Transform3D(0.312638, 0, 0.0289966, 0, 0.148644, 0, -0.0481196, 0, 0.188394, -37.0238, 0, 34.7428)
 material_override = SubResource("ShaderMaterial_q8tiy")
 multimesh = SubResource("MultiMesh_h0vg1")
+
+[node name="lampara3" parent="." instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -38.7925, -0.79128, -25.0159)
+
+[node name="lampara4" parent="." instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -39.1904, -0.79128, -3.73295)
+
+[node name="lampara5" parent="." instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -56.9241, -0.79128, 24.4169)
+
+[node name="lampara6" parent="." instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -13.0047, -0.79128, 52.4345)
+
+[node name="lampara7" parent="." instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, -1.94343, -0.79128, 28.5114)
+
+[node name="lampara8" parent="." instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, 33.7598, -0.79128, 49.7822)
+
+[node name="sub_baja" parent="." instance=ExtResource("16_qqhs5")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 20, 1.49633, -47)
+
+[node name="tienda (blanca)" parent="." instance=ExtResource("17_o0v5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8806, -8.34465e-06, 20.5714)
+
+[node name="tienda (blanca)2" parent="." instance=ExtResource("17_o0v5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2729, -8.34465e-06, 34.4083)
+
+[node name="tienda (blanca)3" parent="." instance=ExtResource("17_djqkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.0831463, 54)
 
 [editable path="piso/grass2"]
