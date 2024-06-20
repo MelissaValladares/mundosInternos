@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bppih02pilpwh"]
+
+[ext_resource type="PackedScene" uid="uid://igoch7d6vjdl" path="res://3d_assets/2. feria/taza.glb" id="1_e21f1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2g78c"]
+radius = 1.23104
+
+[node name="taza" instance=ExtResource("1_e21f1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06358, 0.145408)
+shape = SubResource("CylinderShape3D_2g78c")

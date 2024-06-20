@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://onwumytsq47i"]
+[gd_scene load_steps=13 format=3 uid="uid://onwumytsq47i"]
 
 [ext_resource type="PackedScene" uid="uid://b4xh5crcvksud" path="res://3d_assets/2. feria/tienda2.glb" id="1_t1tld"]
 [ext_resource type="PackedScene" uid="uid://5yvhgcsl6mrw" path="res://3d_assets/2. feria/juego_aros.tscn" id="2_i85vd"]
 [ext_resource type="PackedScene" uid="uid://bx1m5dngrecif" path="res://3d_assets/2. feria/poste.tscn" id="3_0e4ho"]
+[ext_resource type="PackedScene" uid="uid://bvibj4gburqmb" path="res://3d_assets/2. feria/aro.tscn" id="4_nr6yb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxuck"]
 
@@ -78,3 +79,27 @@ transform = Transform3D(1, 0, 0, 0, 1.3681, 0, 0, 0, 1, -1, -1.6266, 1.46272)
 
 [node name="poste4" parent="." index="10" instance=ExtResource("3_0e4ho")]
 transform = Transform3D(1, 0, 0, 0, 1.3681, 0, 0, 0, 1, -11.8022, -1.6266, 1.34731)
+
+[node name="aro" parent="." index="11" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2, 0.144844, 4.38002)
+
+[node name="aro2" parent="." index="12" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.290705, 0.0740997, 0, -0.0740997, 0.290705, 0, 0, 0, 0.3, -1.44818, 0.229145, 4.38002)
+
+[node name="aro3" parent="." index="13" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -3.98772, 0.144844, 4.38002)
+
+[node name="aro4" parent="." index="14" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.290705, 0.0740997, 0, -0.0740997, 0.290705, 0, 0, 0, 0.3, -3.4359, 0.229145, 4.38002)
+
+[node name="aro5" parent="." index="15" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.07496, 0.144844, -4.37648)
+
+[node name="aro6" parent="." index="16" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.290705, 0.0740997, 0, -0.0740997, 0.290705, 0, 0, 0, 0.3, 3.62678, 0.229145, -4.37648)
+
+[node name="aro7" parent="." index="17" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.08723, 0.144844, -4.37648)
+
+[node name="aro8" parent="." index="18" instance=ExtResource("4_nr6yb")]
+transform = Transform3D(0.290705, 0.0740997, 0, -0.0740997, 0.290705, 0, 0, 0, 0.3, 1.63905, 0.229145, -4.37648)

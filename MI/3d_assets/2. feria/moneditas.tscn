@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://wyfnwpoyxtvf"]
+
+[ext_resource type="PackedScene" uid="uid://cd8nmwvlxvcun" path="res://3d_assets/2. feria/moneditas.glb" id="1_gasp1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mmlyk"]
+height = 2.0935
+radius = 2.64954
+
+[node name="moneditas" instance=ExtResource("1_gasp1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.904885, 0.00923347, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244014, 1.06151, 0.534747)
+shape = SubResource("CylinderShape3D_mmlyk")

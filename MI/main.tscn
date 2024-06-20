@@ -1,7 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvuq72tcg5w2y"]
+[gd_scene load_steps=9 format=3 uid="uid://cvuq72tcg5w2y"]
 
 [ext_resource type="Script" path="res://steve.gd" id="1_obsyy"]
-[ext_resource type="Shader" path="res://shaders/post_processing.gdshader" id="2_qmsm8"]
+[ext_resource type="Shader" path="res://shaders/wobble.gdshader" id="2_hb18y"]
+[ext_resource type="Shader" path="res://shaders/post_processing_point.gdshader" id="3_6o73w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_highv"]
+render_priority = 0
+shader = ExtResource("2_hb18y")
+shader_parameter/albedo = Color(0.65098, 0.796078, 0.65098, 1)
+shader_parameter/normal_offset = 0.05
+shader_parameter/time_influence = 0.338
+shader_parameter/y_div = 2.87
 
 [sub_resource type="BoxMesh" id="BoxMesh_cfdbf"]
 
@@ -9,9 +18,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kiudn"]
 render_priority = 0
-shader = ExtResource("2_qmsm8")
-shader_parameter/edge_threshold = 0.2
-shader_parameter/line_color = Color(0.043, 0.282, 0.467, 1)
+shader = ExtResource("3_6o73w")
+shader_parameter/StrokeSize = 3.5
+shader_parameter/DepthMaskBase = 0.05
+shader_parameter/DepthMaskIntensity = 0.3
 
 [sub_resource type="QuadMesh" id="QuadMesh_ooeuk"]
 flip_faces = true
@@ -23,6 +33,7 @@ script = ExtResource("1_obsyy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0.264281, 0)
+material_override = SubResource("ShaderMaterial_highv")
 mesh = SubResource("BoxMesh_cfdbf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

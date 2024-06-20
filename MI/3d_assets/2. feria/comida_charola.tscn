@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx0ysunljjcir"]
+
+[ext_resource type="PackedScene" uid="uid://b64iy1v0uicbv" path="res://3d_assets/2. feria/comida_charola.glb" id="1_qjmmg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rgvqh"]
+size = Vector3(5.54443, 1.68567, 5.99182)
+
+[node name="comida_charola" instance=ExtResource("1_qjmmg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="47"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06363, -0.00799561)
+shape = SubResource("BoxShape3D_rgvqh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.596197, -0.802838, 0, 0.802838, 0.596197, -0.015625, 3.34229, -5.49537)
+shape = SubResource("BoxShape3D_rgvqh")
