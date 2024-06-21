@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=30 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dlkuvndrqp3lt" path="res://3d_assets/2. feria/rueda.tscn" id="12_vxweg"]
 [ext_resource type="PackedScene" uid="uid://dnj7ev3s2bd0m" path="res://3d_assets/2. feria/arbol_1.tscn" id="13_5id2f"]
 [ext_resource type="PackedScene" uid="uid://dlkr53608gd38" path="res://3d_assets/2. feria/lampara.tscn" id="14_l5k3v"]
+[ext_resource type="PackedScene" uid="uid://bg4lbtnbuvrf" path="res://3d_assets/2. feria/tienda_comal_2 (blanca).tscn" id="16_1a0gu"]
 [ext_resource type="PackedScene" uid="uid://t8tsn52trhrb" path="res://3d_assets/2. feria/sub_baja.tscn" id="16_qqhs5"]
 [ext_resource type="Shader" path="res://shaders/arbol_hojas_movimiento.gdshader" id="16_s3nw4"]
 [ext_resource type="PackedScene" uid="uid://bhwompmw5v23w" path="res://3d_assets/2. feria/tienda_comal (blanca).tscn" id="17_djqkc"]
@@ -176,7 +177,7 @@ transform = Transform3D(-22.572, 0, 1.97331e-06, 0, 22.572, 0, -1.97331e-06, 0, 
 transform = Transform3D(0.579556, 0, -0.155291, 0, 0.6, 0, 0.155291, 0, 0.579556, -33.1549, 0, -8.91241)
 
 [node name="arbusto2" parent="Relleno/vegetacion" instance=ExtResource("9_1yi1c")]
-transform = Transform3D(-0.424264, 0, -0.424264, 0, 0.6, 0, 0.424264, 0, -0.424264, -35.5473, 0, -28.2158)
+transform = Transform3D(-0.424264, 0, -0.424264, 0, 0.6, 0, 0.424264, 0, -0.424264, -53.4881, 0, -31.4119)
 
 [node name="arbusto3" parent="Relleno/vegetacion" instance=ExtResource("9_1yi1c")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -67.1828, 0, -31.5334)
@@ -226,13 +227,16 @@ transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -1
 transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, -1.94343, -0.79128, 28.5114)
 
 [node name="lampara8" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, 33.7598, -0.79128, 49.7822)
+transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, 27.8123, -0.79128, 49.7822)
 
 [node name="lampara9" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0323372, -0.79128, -29.9077)
 
 [node name="comida" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8806, -8.34465e-06, 20.5714)
+
+[node name="corrida" parent="comida" instance=ExtResource("16_1a0gu")]
+transform = Transform3D(-0.779097, 0, -0.626903, 0, 1, 0, 0.626903, 0, -0.779097, 20.7967, 8.34465e-06, 28.8917)
 
 [node name="chalupas" parent="comida" instance=ExtResource("17_djqkc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.8806, 0.0831546, 33.4286)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://daj8m46477ain"]
+
+[ext_resource type="PackedScene" uid="uid://d0kxmy0msxuen" path="res://3d_assets/2. feria/comal_2.glb" id="1_15dur"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tk2pv"]
+size = Vector3(5.34216, 0.740479, 2.69897)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vvysn"]
+radius = 1.10642
+
+[node name="comal_2" instance=ExtResource("1_15dur")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09877, 0, -0.161777)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0330392, 2.84433, 0.0628662)
+shape = SubResource("BoxShape3D_tk2pv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09605, 1.383, 0.161815)
+shape = SubResource("CylinderShape3D_vvysn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13737, 1.383, 0.161815)
+shape = SubResource("CylinderShape3D_vvysn")
