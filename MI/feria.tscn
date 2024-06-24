@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
 [ext_resource type="PackedScene" uid="uid://rbv1otcd68e1" path="res://3d_assets/2. feria/tienda_2_(amarillo).tscn" id="2_cnyrq"]
 [ext_resource type="PackedScene" uid="uid://onwumytsq47i" path="res://3d_assets/2. feria/tienda_2.tscn" id="3_0bbif"]
-[ext_resource type="PackedScene" uid="uid://8xchv586g36n" path="res://3d_assets/2. feria/tienda.tscn" id="4_yl2d2"]
 [ext_resource type="PackedScene" uid="uid://b0ukqm3hwk7ic" path="res://3d_assets/2. feria/tienda_3.tscn" id="5_efbeh"]
 [ext_resource type="PackedScene" uid="uid://cuo7tn1on1fy3" path="res://3d_assets/2. feria/tienda_3_(morado).tscn" id="6_xofo4"]
 [ext_resource type="PackedScene" uid="uid://drmfld38xv6j1" path="res://3d_assets/2. feria/carro_algodones.tscn" id="8_v1bmw"]
@@ -17,6 +16,7 @@
 [ext_resource type="Shader" path="res://shaders/arbol_hojas_movimiento.gdshader" id="16_s3nw4"]
 [ext_resource type="PackedScene" uid="uid://bhwompmw5v23w" path="res://3d_assets/2. feria/tienda_comal (blanca).tscn" id="17_djqkc"]
 [ext_resource type="PackedScene" uid="uid://b71xy2lygw1dq" path="res://3d_assets/2. feria/tienda_(blanca).tscn" id="17_o0v5e"]
+[ext_resource type="PackedScene" uid="uid://dt0gahlv5erhb" path="res://3d_assets/2. feria/circo.tscn" id="18_e1yco"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_edx0r"]
 sky_top_color = Color(0.0510149, 0.0703329, 0.0971964, 1)
@@ -148,9 +148,6 @@ transform = Transform3D(-0.750145, 0, 0.661272, 0, 1, 0, -0.661272, 0, -0.750145
 [node name="aros" parent="Puestos" instance=ExtResource("3_0bbif")]
 transform = Transform3D(0.747265, 0, -0.664526, 0, 1, 0, 0.664526, 0, 0.747265, -43.3685, 1.75459, 9.01093)
 
-[node name="circo" parent="Puestos" instance=ExtResource("4_yl2d2")]
-transform = Transform3D(3.35946, 0, 0, 0, 3.35946, 0, 0, 0, 3.35946, -28.4966, 0.016661, -56.3614)
-
 [node name="tiro_blanco" parent="Puestos" instance=ExtResource("5_efbeh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26.6419, -0.57172, 62.2494)
 
@@ -241,5 +238,8 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.880
 
 [node name="comedor2" parent="comida" instance=ExtResource("17_o0v5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3923, 0, 13.8369)
+
+[node name="circo" parent="." instance=ExtResource("18_e1yco")]
+transform = Transform3D(2.05951, 0, 0.737331, 0, 2.18752, 0, -0.737331, 0, 2.05951, -33, -0.831137, -58.2816)
 
 [editable path="piso/grass2"]
