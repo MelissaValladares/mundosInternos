@@ -3,6 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
+
 uid="uid://d0kxmy0msxuen"
 path="res://.godot/imported/comal_2.glb-39cc3d30bb269539a492a24c21491e4b.scn"
 
@@ -10,6 +11,8 @@ path="res://.godot/imported/comal_2.glb-39cc3d30bb269539a492a24c21491e4b.scn"
 
 source_file="res://3d_assets/2. feria/comal_2.glb"
 dest_files=["res://.godot/imported/comal_2.glb-39cc3d30bb269539a492a24c21491e4b.scn"]
+
+
 
 [params]
 

@@ -246,6 +246,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.880
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3923, 0, 13.8369)
 
 [node name="circo" parent="." instance=ExtResource("18_e1yco")]
-transform = Transform3D(2.05951, 0, 0.737331, 0, 2.18752, 0, -0.737331, 0, 2.05951, -33, -0.162617, -58.2816)
+transform = Transform3D(2.05951, 0, 0.737331, 0, 2.18752, 0, -0.737331, 0, 2.05951, -33, -0.831137, -58.2816)
 
 [editable path="piso/grass2"]
