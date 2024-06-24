@@ -29,7 +29,7 @@ project/assembly_name="MundosInternos"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg")
+enabled=PackedStringArray()
 
 [filesystem]
 
