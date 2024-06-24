@@ -3,7 +3,6 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-
 uid="uid://cxg1sk8j4a5u2"
 path="res://.godot/imported/computadora.glb-ef3179896a042456d0a81f363127ac51.scn"
 
@@ -11,7 +10,6 @@ path="res://.godot/imported/computadora.glb-ef3179896a042456d0a81f363127ac51.scn
 
 source_file="res://3d_assets/1. biblioteca/interior/computadora.glb"
 dest_files=["res://.godot/imported/computadora.glb-ef3179896a042456d0a81f363127ac51.scn"]
-
 
 [params]
 
