@@ -1,50 +1,86 @@
+// BoTW Toon Shader by NekotoArts
+// wrote this at 2AM
+//
+//
+//
+// England is my city
+// Smoke trees
+// Two to the One from the One to the Three
 shader_type spatial;
-render_mode unshaded;
-uniform sampler2D depth_texture : source_color, hint_depth_texture;
-uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
-varying mat4 CAMERA;
-// focal point of camera in world space
-// change this in code to follow where camera is looking at, or follow player position
-uniform vec3 focal_point = vec3(0.0);
-// depth of field / width of focal plane in meters
-uniform float DoF = 5.0;
-// maximum amount of blur based off of distance from focal plane
-uniform float blur_cap: hint_range(0.0,8.0) = 2.0;
-// how quickly blur occurs away from focal plane
-// bigger number is slower, smaller number is faster
-uniform float blur_rate = 2.0;
-// multiples y vector of focal plane to make it less or more vertical
-// value of 1.0 is no change, 0.0 will make focal plane vertical regardless of camera angle
-// focal plane is typically perpendicular to camera view, 
-// but a more vertical focal plane may sometimes look better
-// if we want background to blur consistently regardless of distance to plane
-// ex: tall buildings show up focused in background because they are technically equally close
-uniform float vertical_bias = 1.0;
+render_mode diffuse_toon, specular_toon;
 
-void vertex() {
-	POSITION = vec4(VERTEX, 1.0);
-	CAMERA = INV_VIEW_MATRIX;
+uniform vec4 tint : hint_color;
+uniform sampler2D albedo_texture : hint_albedo;
+uniform float metallic : hint_range(0.0, 1.0) = 0.0;
+uniform sampler2D normal_map : hint_albedo;
+uniform float shadow_size = 0.045;
+uniform float shadow_blend = 0.001;
+uniform float shadow_extra_intensity = 0.0;
+uniform vec4 shadow_color : hint_color;
+uniform vec4 light_tint : hint_color;
+uniform float rimlight_size = 0.921;
+uniform float rimlight_blend = 0.01;
+uniform vec4 rimlight_color : hint_color;
+uniform bool use_normalmap = true;
+uniform bool animated = true;
+uniform float time_scale = 0.02;
+uniform vec3 normal_bias = vec3(0.0);
+uniform vec3 light_bias = vec3(0.0);
+uniform bool use_view = true;
+uniform vec4 view_bias : hint_color = vec4(1.0, 0.0, 1.0, 1.0);
+uniform float view_multiplier : hint_range(-1.0, 1.0) = -1.0;
+
+float fresnel(float amount, vec3 normal, vec3 view)
+{
+	return pow((1.0 - clamp(dot(normalize(normal), normalize(view)), 0.0, 1.0 )), amount);
 }
 
-float PlanePointDist(vec3 pn, vec3 pp, vec3 p){
-	float d = -(pn.x * pp.x + pn.y * pp.y + pn.z * pp.z);
-	float a = abs((pn.x * p.x + pn.y * p.y + pn.z * p.z + d));
-    float b = sqrt(pn.x * pn.x + pn.y * pn.y + pn.z * pn.z);
-	return a/b;
+varying vec3 vertex_normal;
+varying vec3 vertex_tangent;
+
+void vertex(){
+	vertex_normal = NORMAL;
+	vertex_normal = TANGENT;
 }
 
-void fragment() {
-	float depth = texture(depth_texture, SCREEN_UV).x;
-	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
-	vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
-	view.xyz /= view.w;
-	float linear_depth = -view.z;
-	vec4 world = CAMERA * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
-	vec3 world_position = world.xyz / world.w;
-	vec3 focal_plane_normal = focal_point - CAMERA_POSITION_WORLD;
-	focal_plane_normal.y *= vertical_bias;
-	float dist_to_plane = PlanePointDist(focal_plane_normal, focal_point, world_position);
-	float blur_amount = clamp((dist_to_plane-DoF)/blur_rate, 0.0, blur_cap);
-	vec4 color = textureLod(screen_texture, SCREEN_UV, blur_amount);
-	ALBEDO = color.xyz;
+void fragment(){
+	ALBEDO = texture(albedo_texture, UV).rgb * tint.rgb;
+	METALLIC = metallic;
+}
+
+void light(){
+	vec3 normal;
+	if (use_normalmap){
+		vec3 normal_from_texture;
+		if (animated){
+			normal_from_texture = texture(normal_map, UV + TIME * time_scale).rgb;
+		}else{
+			normal_from_texture = texture(normal_map, UV).rgb;
+		}
+		normal = vec3(normal_from_texture.x * NORMAL.x,
+		normal_from_texture.y * NORMAL.y, normal_from_texture.z);
+		
+		normal = NORMAL - normal_from_texture;
+	}else{
+		normal = NORMAL;
+	}
+	
+	if (use_view){
+		normal -= VIEW * view_bias.rgb * view_multiplier;
+	}
+	
+	float NdotL = dot(normal + normal_bias, LIGHT + light_bias);
+	
+	float rounded = smoothstep(shadow_size, shadow_blend + shadow_size, NdotL);
+	float one_minus = 1.0 - rounded;
+	vec3 mult1 = LIGHT_COLOR * rounded * light_tint.rgb * ATTENUATION;
+	vec3 mult2 = (one_minus * 1.4 * shadow_color.rgb) - shadow_extra_intensity;
+	vec3 add1 = mult1 + mult2;
+	
+	float add3  = rimlight_blend + rimlight_size;
+	float basic_fresnel = fresnel(1.0, NORMAL, VIEW);
+	float smoothed = smoothstep(rimlight_size, add3, basic_fresnel);
+	
+	vec3 add2 = add1 + smoothed * rimlight_color.rgb;
+	DIFFUSE_LIGHT += ALBEDO * add2;
 }

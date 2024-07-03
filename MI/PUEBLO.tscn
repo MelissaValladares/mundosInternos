@@ -1,0 +1,133 @@
+[gd_scene load_steps=18 format=3 uid="uid://bvfhsgee4k736"]
+
+[ext_resource type="Texture2D" uid="uid://cyq73xcqghllw" path="res://2d_assets/Screenshot_20240630_000517.png" id="3_1gva7"]
+[ext_resource type="ArrayMesh" uid="uid://cwxvf7yoe4714" path="res://3d_assets/1. biblioteca/exterior/building_low.obj" id="7_4ghru"]
+[ext_resource type="PackedScene" uid="uid://bfb56x7qt35s5" path="res://3d_assets/1. biblioteca/exterior/iglesia.tscn" id="8_l2v7t"]
+[ext_resource type="PackedScene" uid="uid://dligt4pw87igf" path="res://3d_assets/1. biblioteca/exterior/building.tscn" id="9_1ond3"]
+[ext_resource type="PackedScene" uid="uid://brnsnbi3oyfxu" path="res://3d_assets/1. biblioteca/exterior/casa.glb" id="9_rqbg4"]
+[ext_resource type="PackedScene" uid="uid://c8xqu3x3cfo57" path="res://3d_assets/1. biblioteca/exterior/building_2.tscn" id="9_w5tme"]
+[ext_resource type="ArrayOccluder3D" uid="uid://paui1e4yqu8l" path="res://occluders/PUEBLO.occ" id="10_3bhp3"]
+[ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="13_xuntp"]
+[ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="30_1cd4o"]
+[ext_resource type="PackedScene" uid="uid://oq31tin4j047" path="res://android_gui.tscn" id="36_bydiw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ev4p"]
+sky_top_color = Color(0.137255, 0.592157, 0.988235, 1)
+sky_horizon_color = Color(1, 0.886275, 0.666667, 1)
+sky_curve = 0.100856
+sky_energy_multiplier = 0.5
+ground_bottom_color = Color(0.239216, 0.231373, 0.235294, 1)
+ground_horizon_color = Color(0.239216, 0.231373, 0.235294, 1)
+
+[sub_resource type="Sky" id="Sky_g8huu"]
+sky_material = SubResource("ProceduralSkyMaterial_1ev4p")
+
+[sub_resource type="Environment" id="Environment_hre1e"]
+background_mode = 2
+sky = SubResource("Sky_g8huu")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.65
+tonemap_mode = 2
+ssao_intensity = 5.78
+ssao_detail = 0.99
+ssao_horizon = 0.12
+glow_intensity = 1.58
+fog_enabled = true
+fog_light_color = Color(0.247059, 0.270588, 0.25098, 1)
+fog_light_energy = 0.5
+fog_sky_affect = 0.5
+volumetric_fog_density = 0.0
+volumetric_fog_emission = Color(0.4, 0.478431, 0.443137, 1)
+volumetric_fog_length = 419.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iruam"]
+albedo_color = Color(0.247059, 0.270588, 0.25098, 1)
+subsurf_scatter_strength = 1.0
+subsurf_scatter_skin_mode = true
+subsurf_scatter_texture = ExtResource("3_1gva7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stnx4"]
+size = Vector3(1.4573, 31.2031, 73.8066)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_co8ai"]
+size = Vector3(33.9289, 28.4078, 2.15674)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lngre"]
+size = Vector3(34.1487, 28.8902, 2.52686)
+
+[node name="pueblo" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
+
+[node name="android_gui" parent="." instance=ExtResource("36_bydiw")]
+
+[node name="main" parent="." instance=ExtResource("30_1cd4o")]
+transform = Transform3D(0.547885, 0, -0.836554, 0, 1, 0, 0.836554, 0, 0.547885, -61.242, 1.56534, 19.1845)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
+light_color = Color(1, 0.876151, 0.615317, 1)
+light_energy = 1.485
+shadow_enabled = true
+shadow_opacity = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hre1e")
+
+[node name="suelo" type="CSGBox3D" parent="."]
+transform = Transform3D(-3.41991e-06, 0, -3.30097, 0, 1.05786, 0, 78.2384, 0, -1.4429e-07, -33.5193, -1.0693, 8.85994)
+material_override = SubResource("StandardMaterial3D_iruam")
+use_collision = true
+size = Vector3(2.54004, 0.001, 33.7935)
+
+[node name="edificios" type="Node3D" parent="."]
+transform = Transform3D(-0.329203, 0, 0.313113, 0, 0.454329, 0, -0.313113, 0, -0.329203, -67.2578, -0.108222, 17.1696)
+
+[node name="casa" parent="edificios" instance=ExtResource("9_rqbg4")]
+transform = Transform3D(1.88962, -0.00286445, -2.41743, -0.00654573, 3.0683, -0.00875231, 2.41742, 0.0105472, 1.8896, -198.161, -1.5277, 47.1603)
+
+[node name="BuildingLow" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(0.976364, 0, 0.216133, 0, 0.999999, 0, -0.216133, 0, 0.976364, -251.567, -2.09445, -38.4951)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="BuildingLow2" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(1.19888, 0, -0.101854, 0, 1.2032, 0, 0.101854, 0, 1.19888, -166.13, -2.09445, -141.652)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="BuildingLow4" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(-0.0671449, 0, -0.997743, 0, 0.999998, 0, 0.997743, 0, -0.0671449, 177.558, -2.09445, 42.2493)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="iglesia" parent="edificios" instance=ExtResource("8_l2v7t")]
+transform = Transform3D(-2.18218, 0, 2.00993, 0, 2.96676, 0, -2.00993, 0, -2.18218, -57.5505, 2.31239, 81.9518)
+
+[node name="biblio" parent="edificios" instance=ExtResource("13_xuntp")]
+transform = Transform3D(-0.477505, 0, 0.502043, 0, 0.692861, 0, -0.502043, 0, -0.477505, 10.8759, 0.0775433, 5.1862)
+
+[node name="building" parent="edificios" instance=ExtResource("9_1ond3")]
+transform = Transform3D(-0.84121, 0, -0.708415, 0, 1.09977, 0, 0.708415, 0, -0.84121, -121.539, 0.919357, -25.2769)
+
+[node name="building2" parent="edificios" instance=ExtResource("9_w5tme")]
+transform = Transform3D(0.683567, 0, -0.729888, 0, 1, 0, 0.729888, 0, 0.683567, 44.4077, -1.09661, 94.476)
+
+[node name="BORDE_TEMP" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -51.0642, -0.108222, 12.031)
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BORDE_TEMP"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.454, 12.9351, -11.4437)
+shape = SubResource("BoxShape3D_stnx4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BORDE_TEMP"]
+transform = Transform3D(0.920842, 0, 0.389945, 0, 1, 0, -0.389945, 0, 0.920842, 27.2305, 13.7803, -42.3221)
+shape = SubResource("BoxShape3D_co8ai")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BORDE_TEMP"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.397, 11.3824, 21.9516)
+shape = SubResource("BoxShape3D_lngre")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("10_3bhp3")

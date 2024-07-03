@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2xexexsup5yn"]
+
+[ext_resource type="PackedScene" uid="uid://csrcmaivk6b7s" path="res://3d_assets/2. feria/bote.glb" id="1_0gcf5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j4h2c"]
+height = 0.665549
+radius = 0.381385
+
+[node name="bote" instance=ExtResource("1_0gcf5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.330946, 0)
+shape = SubResource("CylinderShape3D_j4h2c")

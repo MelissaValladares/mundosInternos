@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://hm2ii1u3e1ra"]
+
+[ext_resource type="PackedScene" uid="uid://beodhb5ohn0a7" path="res://3d_assets/1. biblioteca/interior/escritoriomesa.tscn" id="1_cw7ux"]
+[ext_resource type="PackedScene" uid="uid://cty6fgfh4x6tx" path="res://3d_assets/1. biblioteca/interior/computadora.tscn" id="2_oidc2"]
+[ext_resource type="PackedScene" uid="uid://bvbft0oemeaxw" path="res://3d_assets/1. biblioteca/interior/silla.tscn" id="3_i38pp"]
+[ext_resource type="PackedScene" uid="uid://cuvt55gppxxi" path="res://3d_assets/1. biblioteca/interior/planta.tscn" id="4_e6uji"]
+[ext_resource type="PackedScene" uid="uid://dtrj84587ybk1" path="res://3d_assets/1. biblioteca/interior/libro_a.tscn" id="5_ddyoe"]
+[ext_resource type="PackedScene" uid="uid://bfydjrqpfrktc" path="res://3d_assets/1. biblioteca/interior/lapicero.glb" id="6_8l001"]
+[ext_resource type="PackedScene" uid="uid://cgywrvojw5eg7" path="res://3d_assets/1. biblioteca/interior/mueble.tscn" id="7_doxj8"]
+[ext_resource type="PackedScene" uid="uid://c1pmn1ald5wk0" path="res://3d_assets/1. biblioteca/interior/maceta.tscn" id="8_g8cnd"]
+[ext_resource type="PackedScene" uid="uid://csjsjs3ba627b" path="res://3d_assets/1. biblioteca/interior/planta.glb" id="9_hexdq"]
+[ext_resource type="PackedScene" uid="uid://diurh8syp6k4v" path="res://3d_assets/1. biblioteca/interior/lapicero.tscn" id="10_mkbli"]
+
+[node name="escritorio" type="Node3D"]
+
+[node name="escritoriomesa" parent="." instance=ExtResource("1_cw7ux")]
+transform = Transform3D(0.00067402, 0, -0.502806, 0, 0.55328, 0, 0.394078, 0, 0.000859986, -9.15306, 0.0830142, -7.48971)
+
+[node name="computadora" parent="." instance=ExtResource("2_oidc2")]
+transform = Transform3D(-0.337104, 0, -0.382773, 0, 0.510053, 0, 0.382773, 0, -0.337104, -9.95517, 0.976386, -4.62383)
+
+[node name="silla" parent="." instance=ExtResource("3_i38pp")]
+transform = Transform3D(-0.380848, 0, -0.391047, 0, 0.54586, 0, 0.391047, 0, -0.380848, -11.9672, 0.359074, -5.14989)
+
+[node name="planta" parent="." instance=ExtResource("4_e6uji")]
+transform = Transform3D(0.286453, 0, 0, 0, 0.286453, 0, 0, 0, 0.286453, -8.4068, 1.27258, -6.59954)
+
+[node name="libroA" parent="." instance=ExtResource("5_ddyoe")]
+transform = Transform3D(0.00731763, 0, -0.646554, 0, 0.629123, 0, 0.636191, 0, 0.0074368, -10.9221, 0.919945, -3.95425)
+
+[node name="lapicero" parent="." instance=ExtResource("6_8l001")]
+transform = Transform3D(0.602477, 0, 0, 0, 0.602477, 0, 0, 0, 0.602477, -11.0215, 0.999379, -3.33174)
+
+[node name="mueble" parent="." instance=ExtResource("7_doxj8")]
+transform = Transform3D(-0.685302, 0, -0.30234, 0, 0.749031, 0, 0.30234, 0, -0.685302, -12.4752, 0.930837, -2.917)
+
+[node name="maceta" parent="." instance=ExtResource("8_g8cnd")]
+transform = Transform3D(0.246905, 0, 0, 0, 0.246905, 0, 0, 0, 0.211057, -1.53908, -0.879984, 0.582545)
+
+[node name="mueble2" parent="." instance=ExtResource("7_doxj8")]
+transform = Transform3D(0.728741, 0, -0.324121, 0, 0.79757, 0, 0.324121, 0, 0.728741, -11.906, 1.24057, -11.9731)
+
+[node name="computadora2" parent="." instance=ExtResource("2_oidc2")]
+transform = Transform3D(0.356207, -0.0153755, -0.604471, 0.0151262, 0.701567, -0.00893165, 0.604477, -0.00849518, 0.356427, -9.49507, 1.33441, -9.93729)
+
+[node name="silla2" parent="." instance=ExtResource("3_i38pp")]
+transform = Transform3D(0.275922, 0, -0.44777, 0, 0.525957, 0, 0.44777, 0, 0.275922, -11.3928, 0.313895, -8.76863)
+
+[node name="planta2" parent="." instance=ExtResource("9_hexdq")]
+transform = Transform3D(0.493349, 0, 0, 0, 0.493349, 0, 0, 0, 0.493349, -10.3454, 1.27679, -11.1815)
+
+[node name="planta3" parent="." instance=ExtResource("4_e6uji")]
+transform = Transform3D(0.311511, 0, 0, 0, 0.311511, 0, 0, 0, 0.311511, -8.65183, 1.0898, -5.6061)
+
+[node name="lapicero2" parent="." instance=ExtResource("10_mkbli")]
+transform = Transform3D(0.748436, 0, 0, 0, 0.748436, 0, 0, 0, 0.748436, -8.09298, 1.29966, -8.16391)
+
+[node name="libroA2" parent="." instance=ExtResource("5_ddyoe")]
+transform = Transform3D(0.730906, 0, -0.413628, 0, 0.839828, 0, 0.413628, 0, 0.730906, -9.13047, 1.23128, -7.73116)
+
+[editable path="escritoriomesa"]
+[editable path="computadora"]
+[editable path="silla"]
+[editable path="planta"]
+[editable path="libroA"]
+[editable path="lapicero"]
+[editable path="mueble"]
+[editable path="maceta"]
+[editable path="mueble2"]
+[editable path="computadora2"]
+[editable path="silla2"]
+[editable path="planta2"]
+[editable path="planta3"]
+[editable path="lapicero2"]
+[editable path="libroA2"]

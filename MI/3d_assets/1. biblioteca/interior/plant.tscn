@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xmvyq2jjli1"]
+
+[ext_resource type="PackedScene" uid="uid://dxoov2s763k1h" path="res://3d_assets/1. biblioteca/interior/plant.glb" id="1_c2j1p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6euc0"]
+radius = 4.08868
+height = 13.5245
+
+[node name="plant" instance=ExtResource("1_c2j1p")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="379"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.05784, 0)
+shape = SubResource("CapsuleShape3D_6euc0")

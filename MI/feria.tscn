@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=32 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bhwompmw5v23w" path="res://3d_assets/2. feria/tienda_comal (blanca).tscn" id="17_djqkc"]
 [ext_resource type="PackedScene" uid="uid://b71xy2lygw1dq" path="res://3d_assets/2. feria/tienda_(blanca).tscn" id="17_o0v5e"]
 [ext_resource type="PackedScene" uid="uid://dt0gahlv5erhb" path="res://3d_assets/2. feria/circo.tscn" id="18_e1yco"]
+[ext_resource type="PackedScene" uid="uid://beci6i1dqghox" path="res://3d_assets/2. feria/tara_madera.tscn" id="20_is1iy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_edx0r"]
 sky_top_color = Color(0.0510149, 0.0703329, 0.0971964, 1)
@@ -230,6 +231,99 @@ transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886
 
 [node name="lampara9" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0323372, -0.79128, -29.9077)
+
+[node name="taras" type="Node3D" parent="Relleno"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7623, 0.0256429, -1.9953)
+
+[node name="tara_madera" parent="Relleno/taras" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, 0, 0.0425218, 0)
+
+[node name="tara_madera2" parent="Relleno/taras" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, -0.969502, 1.07751, 0)
+
+[node name="tara_madera3" parent="Relleno/taras" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.49418, 0, 1.40416, 0, 3.76576, 0, -1.40416, 0, 3.49418, -1.23049, 0.0425218, -1.41524)
+
+[node name="tara_madera4" parent="Relleno/taras" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.42234, 0.0425218, -3.51286)
+
+[node name="tara_madera5" parent="Relleno/taras" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.93688, 1.07751, -2.69116)
+
+[node name="tara_madera6" parent="Relleno/taras" instance=ExtResource("20_is1iy")]
+transform = Transform3D(0.664401, 0, 3.70669, 0, 3.76576, 0, -3.70669, 0, 0.664401, -3.27487, 0.0425218, -3.22108)
+
+[node name="taras2" type="Node3D" parent="Relleno"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.59682, 0.0256429, -55.4892)
+
+[node name="tara_madera" parent="Relleno/taras2" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, 0, 0.0425218, 0)
+
+[node name="tara_madera2" parent="Relleno/taras2" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, -0.969502, 1.07751, 0)
+
+[node name="tara_madera3" parent="Relleno/taras2" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.49418, 0, 1.40416, 0, 3.76576, 0, -1.40416, 0, 3.49418, -1.23049, 0.0425218, -1.41524)
+
+[node name="tara_madera4" parent="Relleno/taras2" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.42234, 0.0425218, -3.51286)
+
+[node name="tara_madera5" parent="Relleno/taras2" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.93688, 1.07751, -2.69116)
+
+[node name="tara_madera6" parent="Relleno/taras2" instance=ExtResource("20_is1iy")]
+transform = Transform3D(0.664401, 0, 3.70669, 0, 3.76576, 0, -3.70669, 0, 0.664401, -3.27487, 0.0425218, -3.22108)
+
+[node name="taras3" type="Node3D" parent="Relleno"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.8358, 0.0256429, 52.7226)
+
+[node name="tara_madera" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, 0, 0.0425218, 0)
+
+[node name="tara_madera2" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, -0.969502, 1.07751, 0)
+
+[node name="tara_madera3" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.49418, 0, 1.40416, 0, 3.76576, 0, -1.40416, 0, 3.49418, -1.23049, 0.0425218, -1.41524)
+
+[node name="tara_madera4" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.42234, 0.0425218, -3.51286)
+
+[node name="tara_madera5" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.93688, 1.07751, -2.69116)
+
+[node name="tara_madera6" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(0.664401, 0, 3.70669, 0, 3.76576, 0, -3.70669, 0, 0.664401, -3.27487, 0.0425218, -3.22108)
+
+[node name="tara_madera7" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
+transform = Transform3D(2.53693, 0, 2.78298, 0, 3.76576, 0, -2.78298, 0, 2.53693, -2.3706, 0.0425218, 1.35817)
+
+[node name="taras4" type="Node3D" parent="Relleno"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4623, 0.0256429, 59.5929)
+
+[node name="tara_madera" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, 0, 0.0425218, 0)
+
+[node name="tara_madera2" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, -0.969502, 1.07751, 0)
+
+[node name="tara_madera3" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.49418, 0, 1.40416, 0, 3.76576, 0, -1.40416, 0, 3.49418, -1.23049, 0.0425218, -1.41524)
+
+[node name="tara_madera4" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.42234, 0.0425218, -3.51286)
+
+[node name="tara_madera5" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862, -1.93688, 1.07751, -2.69116)
+
+[node name="tara_madera6" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(0.664401, 0, 3.70669, 0, 3.76576, 0, -3.70669, 0, 0.664401, -3.27487, 0.0425218, -3.22108)
+
+[node name="tara_madera7" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, -2.91678, 0.0425218, 0)
+
+[node name="tara_madera8" parent="Relleno/taras4" instance=ExtResource("20_is1iy")]
+transform = Transform3D(3.45547, 0, -1.49689, 0, 3.76576, 0, 1.49689, 0, 3.45547, 2.23672, 0.0425218, -2.66236)
 
 [node name="comida" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8806, -8.34465e-06, 20.5714)

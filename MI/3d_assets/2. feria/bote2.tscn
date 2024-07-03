@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://8f7h54krs0h6"]
+
+[ext_resource type="PackedScene" uid="uid://csrcmaivk6b7s" path="res://3d_assets/2. feria/bote.glb" id="1_ilyfc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjn1w"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddvid"]
+albedo_color = Color(0.0509804, 0.113725, 0.027451, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_j4h2c"]
+height = 0.665549
+radius = 0.381385
+
+[node name="bote" instance=ExtResource("1_ilyfc")]
+
+[node name="bote" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_vjn1w")
+
+[node name="salsa" parent="." index="1"]
+transform = Transform3D(0.407772, 0, 0, 0, 0.407772, 0, 0, 0, 0.407772, 0, 0.357529, -0.011437)
+material_override = SubResource("StandardMaterial3D_ddvid")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.330946, 0)
+shape = SubResource("CylinderShape3D_j4h2c")

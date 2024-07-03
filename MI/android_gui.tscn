@@ -1,23 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://oq31tin4j047"]
+[gd_scene load_steps=3 format=3 uid="uid://oq31tin4j047"]
 
+[ext_resource type="PackedScene" uid="uid://cn3kc3icp86ai" path="res://2d_assets/jump_button.tscn" id="1_6yv11"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_14s3j"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kiyq1"]
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_u06vu"]
 
 [node name="android_gui" type="Node2D"]
 
-[node name="jump" type="TouchScreenButton" parent="."]
-material = SubResource("CanvasItemMaterial_kiyq1")
-position = Vector2(1776, 398)
-scale = Vector2(9.12774, 9.11689)
-shape = SubResource("CircleShape2D_u06vu")
-action = "ui_accept"
+[node name="jump_button" parent="." instance=ExtResource("1_6yv11")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("1_14s3j")]
 offset_left = 5.0

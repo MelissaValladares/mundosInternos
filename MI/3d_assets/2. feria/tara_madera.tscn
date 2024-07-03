@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://beci6i1dqghox"]
+
+[ext_resource type="PackedScene" uid="uid://bq7dvu6gpnu8e" path="res://3d_assets/2. feria/tara_madera.glb" id="1_dgxkb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iab7r"]
+size = Vector3(0.614502, 0.274841, 0.371643)
+
+[node name="tara_madera" instance=ExtResource("1_dgxkb")]
+
+[node name="madera" parent="." index="0"]
+transform = Transform3D(0, 4.58075e-10, 0.00922603, 0.00105877, 0.122846, -3.43696e-11, -0.0241635, 0.00538268, 0, -0.26685, 0.132443, -0.00824643)
+
+[node name="clavos" parent="." index="1"]
+transform = Transform3D(-0.00040259, 0.00428353, 0.000319737, -0.00282118, -0.000505845, 0.0032246, 0.00323911, 9.18244e-05, 0.00284828, 0.308004, 0.246091, -0.138154)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00378418, 0.126129, -0.000152588)
+shape = SubResource("BoxShape3D_iab7r")

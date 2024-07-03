@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmv044d6o5wqd"]
+
+[ext_resource type="PackedScene" uid="uid://brs8o8ixm6yue" path="res://3d_assets/1. biblioteca/exterior/maceta.glb" id="1_o40tb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ngusm"]
+size = Vector3(0.2901, 0.0475464, 0.19989)
+
+[node name="maceta" instance=ExtResource("1_o40tb")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="macetas" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="macetas/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00137329, -0.00222787, -3.05194e-05)
+shape = SubResource("BoxShape3D_ngusm")
