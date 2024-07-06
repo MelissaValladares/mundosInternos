@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://hm2ii1u3e1ra"]
+[gd_scene load_steps=10 format=3 uid="uid://hm2ii1u3e1ra"]
 
 [ext_resource type="PackedScene" uid="uid://beodhb5ohn0a7" path="res://3d_assets/1. biblioteca/interior/escritoriomesa.tscn" id="1_cw7ux"]
 [ext_resource type="PackedScene" uid="uid://cty6fgfh4x6tx" path="res://3d_assets/1. biblioteca/interior/computadora.tscn" id="2_oidc2"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dtrj84587ybk1" path="res://3d_assets/1. biblioteca/interior/libro_a.tscn" id="5_ddyoe"]
 [ext_resource type="PackedScene" uid="uid://bfydjrqpfrktc" path="res://3d_assets/1. biblioteca/interior/lapicero.glb" id="6_8l001"]
 [ext_resource type="PackedScene" uid="uid://cgywrvojw5eg7" path="res://3d_assets/1. biblioteca/interior/mueble.tscn" id="7_doxj8"]
-[ext_resource type="PackedScene" uid="uid://c1pmn1ald5wk0" path="res://3d_assets/1. biblioteca/interior/maceta.tscn" id="8_g8cnd"]
 [ext_resource type="PackedScene" uid="uid://csjsjs3ba627b" path="res://3d_assets/1. biblioteca/interior/planta.glb" id="9_hexdq"]
 [ext_resource type="PackedScene" uid="uid://diurh8syp6k4v" path="res://3d_assets/1. biblioteca/interior/lapicero.tscn" id="10_mkbli"]
 
@@ -33,9 +32,6 @@ transform = Transform3D(0.602477, 0, 0, 0, 0.602477, 0, 0, 0, 0.602477, -11.0215
 
 [node name="mueble" parent="." instance=ExtResource("7_doxj8")]
 transform = Transform3D(-0.685302, 0, -0.30234, 0, 0.749031, 0, 0.30234, 0, -0.685302, -12.4752, 0.930837, -2.917)
-
-[node name="maceta" parent="." instance=ExtResource("8_g8cnd")]
-transform = Transform3D(0.246905, 0, 0, 0, 0.246905, 0, 0, 0, 0.211057, -1.53908, -0.879984, 0.582545)
 
 [node name="mueble2" parent="." instance=ExtResource("7_doxj8")]
 transform = Transform3D(0.728741, 0, -0.324121, 0, 0.79757, 0, 0.324121, 0, 0.728741, -11.906, 1.24057, -11.9731)
@@ -65,7 +61,6 @@ transform = Transform3D(0.730906, 0, -0.413628, 0, 0.839828, 0, 0.413628, 0, 0.7
 [editable path="libroA"]
 [editable path="lapicero"]
 [editable path="mueble"]
-[editable path="maceta"]
 [editable path="mueble2"]
 [editable path="computadora2"]
 [editable path="silla2"]

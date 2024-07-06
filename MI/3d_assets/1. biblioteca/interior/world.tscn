@@ -1,27 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://clupfqee7tlbt"]
+[gd_scene load_steps=3 format=3 uid="uid://clupfqee7tlbt"]
 
 [ext_resource type="PackedScene" uid="uid://b21ohe3hl0sej" path="res://3d_assets/1. biblioteca/interior/world.glb" id="1_tvedt"]
-[ext_resource type="Script" path="res://3d_assets/1. biblioteca/interior/world.gd" id="2_5n0cr"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35re6"]
-albedo_color = Color(0.404511, 0.404511, 0.404511, 1)
-metallic = 1.0
-roughness = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1ghwy"]
-radius = 1.37105
+radius = 1.67683
 
 [node name="world" instance=ExtResource("1_tvedt")]
 
-[node name="Cylinder_002" parent="." index="3"]
-material_override = SubResource("StandardMaterial3D_35re6")
-
-[node name="Sphere_001" parent="." index="5"]
-transform = Transform3D(1.18161, -0.0381039, 0, 0.0381039, 1.18161, 0, 0, 0, 1.18223, 0, 1.5, 0)
-script = ExtResource("2_5n0cr")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53846, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25482, 0)
 shape = SubResource("SphereShape3D_1ghwy")

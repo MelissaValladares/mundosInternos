@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqau3ocblin6c"]
+
+[ext_resource type="PackedScene" uid="uid://dwp8hyi050wgf" path="res://3d_assets/1. biblioteca/exterior/contenedorBasura.glb" id="1_i4we5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pt8r"]
+size = Vector3(2.14062, 2.68481, 2.87476)
+
+[node name="contenedorBasura" instance=ExtResource("1_i4we5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0605469, 1.39849, -0.405884)
+shape = SubResource("BoxShape3D_0pt8r")

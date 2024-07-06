@@ -47,7 +47,7 @@ margin = 0.5
 [node name="Camera3D" type="Camera3D" parent="CamOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 current = true
-far = 400.0
+far = 150.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CamOrigin/SpringArm3D/Camera3D"]
 material_override = SubResource("ShaderMaterial_kiudn")
