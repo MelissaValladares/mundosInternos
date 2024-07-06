@@ -1,0 +1,536 @@
+[gd_scene load_steps=44 format=3 uid="uid://sjjrpvu3guff"]
+
+[ext_resource type="StyleBox" uid="uid://dww7bpq7cxks6" path="res://font/estiloBoton.tres" id="1_5rxkv"]
+[ext_resource type="Script" path="res://MenuControl.gd" id="1_ciu1g"]
+[ext_resource type="PackedScene" uid="uid://fs010npmq75u" path="res://background.tscn" id="1_nnfq6"]
+[ext_resource type="StyleBox" uid="uid://c8au3hv2f2nry" path="res://font/hoverBoton.tres" id="2_rcb0n"]
+[ext_resource type="StyleBox" uid="uid://d0eslds5p0407" path="res://font/pressBoton.tres" id="3_rb5o8"]
+[ext_resource type="Texture2D" uid="uid://blndqoqql8po0" path="res://2d_assets/engranaje.svg" id="3_vy3k7"]
+[ext_resource type="Texture2D" uid="uid://d1c5kh6mvm67y" path="res://2d_assets/Parlante.svg" id="7_7kb0a"]
+[ext_resource type="StyleBox" uid="uid://cwk8m8hp03ifk" path="res://font/popupEstilo.tres" id="7_268mu"]
+[ext_resource type="Texture2D" uid="uid://c3r7lr5gaugss" path="res://2d_assets/Nota.svg" id="8_u1cdu"]
+[ext_resource type="Texture2D" uid="uid://digc4d0td5wwq" path="res://2d_assets/Velocimetro.svg" id="9_ynwvc"]
+[ext_resource type="Texture2D" uid="uid://xnj3q5fxyrkq" path="res://2d_assets/SlideActive.png" id="10_erf78"]
+[ext_resource type="Texture2D" uid="uid://ckqe8l0xxmwxi" path="res://2d_assets/SlideNoActive.png" id="10_ps437"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y535s"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_top = 10.0
+expand_margin_right = 25.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwnte"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_top = 10.0
+expand_margin_right = 25.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tntj"]
+bg_color = Color(0.572549, 0.611765, 0.631373, 0.752941)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 25.0
+expand_margin_top = 10.0
+expand_margin_right = 25.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48rlv"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+border_blend = true
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 1
+shadow_offset = Vector2(2, 0)
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kngfr"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0acit"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6dw1y"]
+draw_center = false
+border_color = Color(0.8, 0.8, 0.8, 0)
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbcc2"]
+bg_color = Color(0.9603, 0.968545, 0.97, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+expand_margin_left = 20.0
+expand_margin_top = 120.0
+expand_margin_right = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnpja"]
+draw_center = false
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ieku"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqptu"]
+bg_color = Color(0.733333, 0.733333, 0.733333, 0.678431)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1gik"]
+bg_color = Color(0.843137, 0.843137, 0.843137, 0.780392)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gu6r"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dpso"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7li80"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54nwe"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mmsx"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp04i"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ailsw"]
+bg_color = Color(0.882353, 0.956863, 1, 1)
+draw_center = false
+expand_margin_left = 8.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kon4x"]
+bg_color = Color(0.882353, 0.956863, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 8.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anvs1"]
+bg_color = Color(0.882684, 0.956956, 0.998369, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0288837, 0.464383, 0.638354, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 8.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ew2i"]
+bg_color = Color(0.027451, 0.462745, 0.639216, 1)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ve0a8"]
+bg_color = Color(0.202815, 0.642052, 0.88051, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gog6r"]
+bg_color = Color(0.882353, 0.956863, 1, 1)
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kksmy"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+
+[sub_resource type="Theme" id="Theme_cujvt"]
+OptionButton/colors/font_color = Color(0.140448, 0.140447, 0.140447, 1)
+OptionButton/colors/font_focus_color = Color(0.141176, 0.141176, 0.141176, 1)
+OptionButton/colors/font_hover_color = Color(0.141176, 0.141176, 0.141176, 1)
+OptionButton/constants/arrow_margin = 15
+OptionButton/constants/modulate_arrow = 1
+OptionButton/styles/focus = SubResource("StyleBoxFlat_ailsw")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_kon4x")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_anvs1")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_6ew2i")
+PopupMenu/colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+PopupMenu/colors/font_hover_color = Color(0.141176, 0.141176, 0.141176, 1)
+PopupMenu/font_sizes/font_size = 40
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_ve0a8")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_gog6r")
+PopupMenu/styles/separator = SubResource("StyleBoxFlat_kksmy")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1ooao"]
+content_margin_right = 479.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llitl"]
+bg_color = Color(0.760324, 0.894611, 0.994228, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 95.0
+expand_margin_top = 10.0
+expand_margin_right = 95.0
+expand_margin_bottom = 10.0
+shadow_size = 1
+shadow_offset = Vector2(2, 0)
+anti_aliasing_size = 0.01
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j50cq"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.027451, 0.462745, 0.639216, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 95.0
+expand_margin_top = 10.0
+expand_margin_right = 95.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81vwt"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6laao"]
+draw_center = false
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("PopUpSalida", "PopUpConfiguracion", "botonConfig")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ciu1g")
+PopUpSalida = NodePath("PopUpSalida")
+PopUpConfiguracion = NodePath("PopUpConfiguracion")
+botonConfig = NodePath("Configuracion/botonConfig")
+
+[node name="BotonesCentro" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -322.0
+offset_top = -168.0
+offset_right = 269.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 123
+alignment = 1
+
+[node name="Iniciar" type="Button" parent="BotonesCentro"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("1_5rxkv")
+theme_override_styles/hover = ExtResource("2_rcb0n")
+theme_override_styles/pressed = ExtResource("3_rb5o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_y535s")
+text = "Iniciar"
+language = "es"
+
+[node name="Salir" type="Button" parent="BotonesCentro"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("1_5rxkv")
+theme_override_styles/hover = ExtResource("2_rcb0n")
+theme_override_styles/pressed = ExtResource("3_rb5o8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_uwnte")
+text = "Salir"
+language = "es"
+
+[node name="Configuracion" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.953
+anchor_top = 0.072
+anchor_right = 0.953
+anchor_bottom = 0.072
+offset_left = -57.7601
+offset_top = -52.76
+offset_right = 59.2399
+offset_bottom = 53.24
+grow_horizontal = 0
+alignment = 1
+
+[node name="botonConfig" type="Button" parent="Configuracion"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_7tntj")
+icon = ExtResource("3_vy3k7")
+flat = true
+icon_alignment = 1
+
+[node name="PopUpSalida" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -532.0
+offset_top = -187.0
+offset_right = 529.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("7_268mu")
+
+[node name="Texto" type="VBoxContainer" parent="PopUpSalida"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Salir" type="Label" parent="PopUpSalida/Texto"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "¿SALIR DEL JUEGO?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botones" type="HBoxContainer" parent="PopUpSalida"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="confirmarSalida" type="Button" parent="PopUpSalida/Botones"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_48rlv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kngfr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0acit")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6dw1y")
+text = "SI"
+
+[node name="denegarSalida" type="Button" parent="PopUpSalida/Botones"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 47
+theme_override_styles/normal = SubResource("StyleBoxFlat_48rlv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kngfr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0acit")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6dw1y")
+text = "NO"
+
+[node name="PopUpConfiguracion" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 134.0
+offset_right = 2463.0
+offset_bottom = 2072.0
+scale = Vector2(0.46172, 0.443362)
+theme_override_styles/panel = SubResource("StyleBoxFlat_bbcc2")
+
+[node name="GridContainer" type="GridContainer" parent="PopUpConfiguracion"]
+layout_mode = 2
+columns = 2
+
+[node name="ItemList" type="ItemList" parent="PopUpConfiguracion/GridContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hovered_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_constants/v_separation = 220
+theme_override_constants/icon_margin = -90
+theme_override_font_sizes/font_size = 70
+theme_override_styles/panel = SubResource("StyleBoxFlat_xnpja")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8ieku")
+theme_override_styles/hovered = SubResource("StyleBoxFlat_vqptu")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_n1gik")
+auto_height = true
+item_count = 3
+same_column_width = true
+fixed_column_width = 5
+icon_scale = 3.5
+fixed_icon_size = Vector2i(200, 20)
+item_0/text = "Sonidos"
+item_0/icon = ExtResource("7_7kb0a")
+item_1/text = "Música"
+item_1/icon = ExtResource("8_u1cdu")
+item_2/text = "Calidad"
+item_2/icon = ExtResource("9_ynwvc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpConfiguracion/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = -65
+alignment = 1
+
+[node name="SonidosCheck" type="CheckButton" parent="PopUpConfiguracion/GridContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/check_v_offset = -90
+theme_override_icons/checked = ExtResource("10_erf78")
+theme_override_icons/unchecked = ExtResource("10_ps437")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gu6r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8dpso")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7li80")
+alignment = 1
+language = "es"
+
+[node name="MusicaCheck" type="CheckButton" parent="PopUpConfiguracion/GridContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_icons/checked = ExtResource("10_erf78")
+theme_override_icons/unchecked = ExtResource("10_ps437")
+theme_override_styles/normal = SubResource("StyleBoxFlat_54nwe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6mmsx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pp04i")
+alignment = 1
+language = "es"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopUpConfiguracion/GridContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PopUpConfiguracion/GridContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 211
+
+[node name="OptionButton" type="OptionButton" parent="PopUpConfiguracion/GridContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_cujvt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/arrow_margin = 20
+theme_override_constants/modulate_arrow = 55
+theme_override_font_sizes/font_size = 68
+text_overrun_behavior = 3
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Baja"
+popup/item_0/id = 0
+popup/item_1/text = "Media"
+popup/item_1/id = 1
+popup/item_2/text = "Alta"
+popup/item_2/id = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopUpConfiguracion/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="PopUpConfiguracion/GridContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 116
+theme_override_styles/normal = SubResource("StyleBoxLine_1ooao")
+
+[node name="Okey" type="Button" parent="PopUpConfiguracion/GridContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_colors/font_pressed_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.141176, 0.141176, 1)
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_llitl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j50cq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81vwt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6laao")
+text = "Aceptar"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_nnfq6")]
+
+[connection signal="pressed" from="BotonesCentro/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="BotonesCentro/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Configuracion/botonConfig" to="." method="_on_boton_config_pressed"]
+[connection signal="ready" from="PopUpSalida" to="." method="_on_pop_up_ready"]
+[connection signal="pressed" from="PopUpSalida/Botones/confirmarSalida" to="." method="_on_confirmar_salida_pressed"]
+[connection signal="pressed" from="PopUpSalida/Botones/denegarSalida" to="." method="_on_denegar_salida_pressed"]
+[connection signal="toggled" from="PopUpConfiguracion/GridContainer/VBoxContainer/SonidosCheck" to="." method="_on_sonidos_check_toggled"]
+[connection signal="toggled" from="PopUpConfiguracion/GridContainer/VBoxContainer/MusicaCheck" to="." method="_on_musica_check_toggled"]
+[connection signal="item_selected" from="PopUpConfiguracion/GridContainer/VBoxContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="PopUpConfiguracion/GridContainer/HBoxContainer/Okey" to="." method="_on_okey_pressed"]

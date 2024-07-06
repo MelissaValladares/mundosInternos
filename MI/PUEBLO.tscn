@@ -1,6 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvfhsgee4k736"]
+[gd_scene load_steps=20 format=3 uid="uid://bvfhsgee4k736"]
 
+[ext_resource type="Script" path="res://pueblo.gd" id="1_07ugy"]
 [ext_resource type="Texture2D" uid="uid://cyq73xcqghllw" path="res://2d_assets/Screenshot_20240630_000517.png" id="3_1gva7"]
+[ext_resource type="Script" path="res://DirectionalLight3D.gd" id="3_hw16s"]
 [ext_resource type="ArrayMesh" uid="uid://cwxvf7yoe4714" path="res://3d_assets/1. biblioteca/exterior/building_low.obj" id="7_4ghru"]
 [ext_resource type="PackedScene" uid="uid://bfb56x7qt35s5" path="res://3d_assets/1. biblioteca/exterior/iglesia.tscn" id="8_l2v7t"]
 [ext_resource type="PackedScene" uid="uid://dligt4pw87igf" path="res://3d_assets/1. biblioteca/exterior/building.tscn" id="9_1ond3"]
@@ -57,6 +59,7 @@ size = Vector3(34.1487, 28.8902, 2.52686)
 
 [node name="pueblo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
+script = ExtResource("1_07ugy")
 
 [node name="android_gui" parent="." instance=ExtResource("36_bydiw")]
 
@@ -69,6 +72,7 @@ light_color = Color(1, 0.876151, 0.615317, 1)
 light_energy = 1.485
 shadow_enabled = true
 shadow_opacity = 0.5
+script = ExtResource("3_hw16s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hre1e")

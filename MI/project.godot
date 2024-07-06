@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="MundosInternos"
-run/main_scene="res://PUEBLO.tscn"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+audioManager="*res://audioManager.gd"
+calidadManager="*res://calidadManager.gd"
 
 [display]
 
@@ -22,6 +27,7 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
+window/stretch/mode="viewport"
 
 [dotnet]
 
@@ -66,7 +72,12 @@ quit={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
+
+[navigation]
+
+2d/default_cell_size=0.25
+2d/default_edge_connection_margin=0.25
+2d/default_link_connection_radius=1.0
 
 [rendering]
 
