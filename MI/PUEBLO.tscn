@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cwxvf7yoe4714" path="res://3d_assets/1. biblioteca/exterior/building_low.obj" id="7_4ghru"]
 [ext_resource type="PackedScene" uid="uid://bfb56x7qt35s5" path="res://3d_assets/1. biblioteca/exterior/iglesia.tscn" id="8_l2v7t"]
 [ext_resource type="PackedScene" uid="uid://dligt4pw87igf" path="res://3d_assets/1. biblioteca/exterior/building.tscn" id="9_1ond3"]
-[ext_resource type="PackedScene" uid="uid://brnsnbi3oyfxu" path="res://3d_assets/1. biblioteca/exterior/casa.glb" id="9_rqbg4"]
+[ext_resource type="PackedScene" uid="uid://cw5bfcwhq3m4c" path="res://3d_assets/1. biblioteca/exterior/building_3.tscn" id="9_l2eqs"]
 [ext_resource type="PackedScene" uid="uid://c8xqu3x3cfo57" path="res://3d_assets/1. biblioteca/exterior/building_2.tscn" id="9_w5tme"]
 [ext_resource type="ArrayOccluder3D" uid="uid://paui1e4yqu8l" path="res://occluders/PUEBLO.occ" id="10_3bhp3"]
 [ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="13_xuntp"]
@@ -49,13 +49,13 @@ subsurf_scatter_skin_mode = true
 subsurf_scatter_texture = ExtResource("3_1gva7")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_stnx4"]
-size = Vector3(1.4573, 31.2031, 73.8066)
+size = Vector3(3.91615, 17.145, 29.5783)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_co8ai"]
-size = Vector3(33.9289, 28.4078, 2.15674)
+size = Vector3(57.1196, 12.1292, 6.94067)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lngre"]
-size = Vector3(34.1487, 28.8902, 2.52686)
+size = Vector3(40.5718, 21.3249, 2.52686)
 
 [node name="pueblo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
@@ -78,60 +78,74 @@ script = ExtResource("3_hw16s")
 environment = SubResource("Environment_hre1e")
 
 [node name="suelo" type="CSGBox3D" parent="."]
-transform = Transform3D(-3.41991e-06, 0, -3.30097, 0, 1.05786, 0, 78.2384, 0, -1.4429e-07, -33.5193, -1.0693, 8.85994)
+transform = Transform3D(-3.41991e-06, 0, -3.30097, 0, 1.05786, 0, 78.2384, 0, -1.4429e-07, 1.51134, -1.0693, 8.85994)
 material_override = SubResource("StandardMaterial3D_iruam")
 use_collision = true
-size = Vector3(2.54004, 0.001, 33.7935)
+size = Vector3(2.54004, 0.001, 55.018)
 
 [node name="edificios" type="Node3D" parent="."]
 transform = Transform3D(-0.329203, 0, 0.313113, 0, 0.454329, 0, -0.313113, 0, -0.329203, -67.2578, -0.108222, 17.1696)
 
-[node name="casa" parent="edificios" instance=ExtResource("9_rqbg4")]
-transform = Transform3D(1.88962, -0.00286445, -2.41743, -0.00654573, 3.0683, -0.00875231, 2.41742, 0.0105472, 1.8896, -198.161, -1.5277, 47.1603)
-
 [node name="BuildingLow" type="MeshInstance3D" parent="edificios"]
-transform = Transform3D(0.976364, 0, 0.216133, 0, 0.999999, 0, -0.216133, 0, 0.976364, -251.567, -2.09445, -38.4951)
+transform = Transform3D(0.746244, 0, -0.665674, 0, 0.999999, 0, 0.665674, 0, 0.746244, -129.343, -2.09445, -142.129)
 mesh = ExtResource("7_4ghru")
 skeleton = NodePath("../..")
 
 [node name="BuildingLow2" type="MeshInstance3D" parent="edificios"]
-transform = Transform3D(1.19888, 0, -0.101854, 0, 1.2032, 0, 0.101854, 0, 1.19888, -166.13, -2.09445, -141.652)
+transform = Transform3D(0.398347, 0, -1.13534, 0, 1.2032, 0, 1.13534, 0, 0.398347, -170.319, -2.09445, -155.751)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="BuildingLow3" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(-0.446807, 0, -0.89463, 0, 0.999998, 0, 0.89463, 0, -0.446807, 220.48, -2.09445, 71.865)
 mesh = ExtResource("7_4ghru")
 skeleton = NodePath("../..")
 
 [node name="BuildingLow4" type="MeshInstance3D" parent="edificios"]
-transform = Transform3D(-0.0671449, 0, -0.997743, 0, 0.999998, 0, 0.997743, 0, -0.0671449, 177.558, -2.09445, 42.2493)
+transform = Transform3D(0.00452027, 0, -0.99999, 0, 0.999998, 0, 0.99999, 0, 0.00452027, 176.99, -2.09445, 36.4185)
 mesh = ExtResource("7_4ghru")
 skeleton = NodePath("../..")
 
 [node name="iglesia" parent="edificios" instance=ExtResource("8_l2v7t")]
-transform = Transform3D(-2.18218, 0, 2.00993, 0, 2.96676, 0, -2.00993, 0, -2.18218, -57.5505, 2.31239, 81.9518)
+transform = Transform3D(-2.22763, 0, 2.05179, 0, 3.02855, 0, -2.05179, 0, -2.22763, -51.7887, -2.15944, 76.4716)
 
 [node name="biblio" parent="edificios" instance=ExtResource("13_xuntp")]
-transform = Transform3D(-0.477505, 0, 0.502043, 0, 0.692861, 0, -0.502043, 0, -0.477505, 10.8759, 0.0775433, 5.1862)
+transform = Transform3D(-0.477505, 0, 0.502043, 0, 0.692861, 0, -0.502043, 0, -0.477505, 15.6349, -0.820579, -3.29363)
 
 [node name="building" parent="edificios" instance=ExtResource("9_1ond3")]
-transform = Transform3D(-0.84121, 0, -0.708415, 0, 1.09977, 0, 0.708415, 0, -0.84121, -121.539, 0.919357, -25.2769)
+transform = Transform3D(-0.336013, 0, -1.05122, 0, 1.10362, 0, 1.05122, 0, -0.336013, -44.6462, -0.307416, 198.586)
 
 [node name="building2" parent="edificios" instance=ExtResource("9_w5tme")]
-transform = Transform3D(0.683567, 0, -0.729888, 0, 1, 0, 0.729888, 0, 0.683567, 44.4077, -1.09661, 94.476)
+transform = Transform3D(0.743717, 0, -0.668495, 0, 1, 0, 0.668495, 0, 0.743717, 50.5712, -1.09661, 103.124)
+
+[node name="building3" parent="edificios" instance=ExtResource("9_l2eqs")]
+transform = Transform3D(-0.281409, 0, 0.292989, 0, 0.406242, 0, -0.292989, 0, -0.281409, -208.025, -1.26849, 73.0729)
+
+[node name="BuildingLow5" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(0.675758, 0, -0.737125, 0, 1.08207, 0, 0.737125, 0, 0.675758, -97.8442, 0.213146, -171.051)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="BuildingLow6" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(0.00452027, 0, -0.99999, 0, 0.999998, 0, 0.99999, 0, 0.00452027, 176.259, -2.09445, -7.78082)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
 
 [node name="BORDE_TEMP" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -51.0642, -0.108222, 12.031)
-visible = false
-collision_layer = 2
+transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BORDE_TEMP"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.454, 12.9351, -11.4437)
+transform = Transform3D(0.495322, 0, 0.86871, 0, 1, 0, -0.86871, 0, 0.495322, 40.2355, 7.26778, -118.32)
 shape = SubResource("BoxShape3D_stnx4")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="BORDE_TEMP"]
-transform = Transform3D(0.920842, 0, 0.389945, 0, 1, 0, -0.389945, 0, 0.920842, 27.2305, 13.7803, -42.3221)
+transform = Transform3D(0.412089, 0, 0.911148, 0, 1, 0, -0.911148, 0, 0.412089, 91.0562, 3.9654, 137.093)
 shape = SubResource("BoxShape3D_co8ai")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="BORDE_TEMP"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.397, 11.3824, 21.9516)
+transform = Transform3D(0.844898, 0, -0.534927, 0, 1, 0, 0.534927, 0, 0.844898, -120.042, 8.65385, 180.886)
 shape = SubResource("BoxShape3D_lngre")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+visible = false
 occluder = ExtResource("10_3bhp3")
