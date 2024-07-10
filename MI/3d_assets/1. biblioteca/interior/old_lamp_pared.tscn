@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0fd4gnfvsksc"]
+
+[ext_resource type="PackedScene" uid="uid://cecwiq8otd7nh" path="res://3d_assets/1. biblioteca/interior/old_lamp.glb" id="1_x18el"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15ucg"]
+size = Vector3(1, 2.16113, 8.0304)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tfnj7"]
+radius = 1.34887
+height = 4.68426
+
+[node name="old_lamp" instance=ExtResource("1_x18el")]
+
+[node name="base_techo" parent="." index="2"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.994109, -0.108381, 0, 0.108381, 0.994109, 0, -2.95383, 3.5152)
+shape = SubResource("BoxShape3D_15ucg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+shape = SubResource("CapsuleShape3D_tfnj7")

@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 5.0
 @onready var pivot = $CamOrigin
 @export var sens = 0.5
 @onready var cam = $CamOrigin/SpringArm3D/Camera3D
+@onready var joystick_area = $android_gui/JoystickArea  # Replace with the actual path to your joystick area
 
 var update = false
 var gt_prev = Transform3D()
@@ -39,9 +40,11 @@ func calidad(tipo):
 
 func _input(event):
 	if event is InputEventScreenDrag:
-		rotate_y(deg_to_rad(-event.relative.x * sens))
-		pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
-		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+		if not joystick_area.get_rect().has_point(event.position):
+			# Handle camera rotation if the drag is outside the joystick area
+			rotate_y(deg_to_rad(-event.relative.x * sens))
+			pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
+			pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 
 @warning_ignore("unused_parameter")
 func _process(delta):
@@ -58,15 +61,14 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Handle jump.
+	# salto.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
+	# salir con esc
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actionsRayCast3D with custom gameplay actions.
+	# Character movement controlled by joystick actions
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -77,10 +79,26 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
 	
+	# Camera movement controlled by left, right, up, and down actions
+	var camera_dir = Vector2.ZERO
+	if Input.is_action_pressed("char_left"):
+		camera_dir.x -= 1
+	if Input.is_action_pressed("char_right"):
+		camera_dir.x += 1
+	if Input.is_action_pressed("char_up"):
+		camera_dir.y -= 1
+	if Input.is_action_pressed("char_down"):
+		camera_dir.y += 1
+	
+	if camera_dir != Vector2.ZERO:
+		rotate_y(deg_to_rad(camera_dir.x * sens))
+		pivot.rotate_x(deg_to_rad(camera_dir.y * sens))
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+	
 	# Guardar el estado actual del transform para la interpolación
 	gt_prev = gt_current
 	gt_current = global_transform
 
-func  update_transform():
+func update_transform():
 	gt_prev = gt_current
 	gt_current = global_transform

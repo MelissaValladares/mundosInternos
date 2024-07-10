@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn7h0etyepsvi"]
+
+[ext_resource type="PackedScene" uid="uid://cecwiq8otd7nh" path="res://3d_assets/1. biblioteca/interior/old_lamp.glb" id="1_a852s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jwfae"]
+radius = 13.5927
+height = 38.5886
+
+[node name="old_lamp" instance=ExtResource("1_a852s")]
+
+[node name="lamp" parent="." index="0"]
+transform = Transform3D(0.09454, 0, 0.0568056, 0.000390627, -0.110291, -0.000650111, 0.0568043, 0.000758442, -0.0945378, -0.663497, -0.881237, -0.129323)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lamp" index="0"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="lamp/StaticBody3D" index="0"]
+transform = Transform3D(1, 1.39698e-09, -2.38419e-07, -4.42378e-09, 1, 8.3819e-09, 5.96046e-08, 6.51926e-09, 1, 7.27631, 13.4578, 0.618198)
+shape = SubResource("CapsuleShape3D_jwfae")
+
+[node name="base_pared" parent="." index="1"]
+visible = false
+
+[node name="base_techo" parent="." index="2"]
+transform = Transform3D(0.021129, 0, 0.0126957, 8.73025e-05, -0.0246493, -0.000145295, 0.0126954, 0.000169506, -0.0211285, 0.000389159, -0.186013, 0.251646)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, -0.00418883, 0.999991, 0, -0.999991, -0.00418883, 0, -2.13175, 0.266635)
+visible = false
+light_color = Color(1, 1, 0.705882, 1)
+light_energy = 16.0
+spot_range = 39.5376
+spot_angle = 85.7812

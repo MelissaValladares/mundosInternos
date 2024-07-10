@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://d205ig50loixb"]
+
+[ext_resource type="PackedScene" uid="uid://35y7kmo38wbn" path="res://3d_assets/conservatorio/conservatorio.tscn" id="1_xhgc4"]
+[ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="2_q24dh"]
+[ext_resource type="Script" path="res://DirectionalLight3D.gd" id="3_6wsfr"]
+[ext_resource type="PackedScene" uid="uid://bttr3s1sxfutw" path="res://3d_assets/conservatorio/piano_cola.tscn" id="4_s06lw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r8osb"]
+sky_top_color = Color(0.137255, 0.592157, 0.988235, 1)
+sky_horizon_color = Color(1, 0.886275, 0.666667, 1)
+sky_curve = 0.100856
+sky_energy_multiplier = 0.5
+ground_bottom_color = Color(0.239216, 0.231373, 0.235294, 1)
+ground_horizon_color = Color(0.239216, 0.231373, 0.235294, 1)
+
+[sub_resource type="Sky" id="Sky_g8huu"]
+sky_material = SubResource("ProceduralSkyMaterial_r8osb")
+
+[sub_resource type="Environment" id="Environment_yt5mn"]
+background_mode = 2
+sky = SubResource("Sky_g8huu")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.65
+tonemap_mode = 2
+ssao_intensity = 5.78
+ssao_detail = 0.99
+ssao_horizon = 0.12
+glow_intensity = 1.58
+fog_enabled = true
+fog_light_color = Color(0.247059, 0.270588, 0.25098, 1)
+fog_light_energy = 0.5
+fog_sky_affect = 0.5
+volumetric_fog_density = 0.0
+volumetric_fog_emission = Color(0.4, 0.478431, 0.443137, 1)
+volumetric_fog_length = 419.7
+
+[node name="escenario_conservatorio" type="Node3D"]
+
+[node name="conservatorio" parent="." instance=ExtResource("1_xhgc4")]
+transform = Transform3D(0.45445, 0, 0, 0, 0.43781, 0, 0, 0, 0.45445, 12.13, -25.7448, -47.9916)
+
+[node name="main" parent="." instance=ExtResource("2_q24dh")]
+transform = Transform3D(-0.988928, 0, 0.148396, 0, 1, 0, -0.148396, 0, -0.988928, 22.0602, -11.9545, -24.9778)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
+light_color = Color(1, 0.876151, 0.615317, 1)
+light_energy = 1.485
+shadow_enabled = true
+shadow_opacity = 0.5
+script = ExtResource("3_6wsfr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yt5mn")
+
+[node name="pianoCola" parent="." instance=ExtResource("4_s06lw")]
+transform = Transform3D(0.520911, 0, 0, 0, 0.520911, 0, 0, 0, 0.520911, 23.8572, -11.4206, -16.289)

@@ -41,8 +41,6 @@ background_mode = 2
 sky = SubResource("Sky_yq20s")
 fog_enabled = true
 fog_light_color = Color(0.0562742, 0.0654545, 0.0798877, 1)
-fog_light_energy = 4.37
-fog_sky_affect = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd3ay"]
 albedo_color = Color(0.2, 0.168627, 0.133333, 1)
@@ -150,7 +148,7 @@ multimesh = SubResource("MultiMesh_h0vg1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8542, 0, -4.47267)
 
 [node name="CarroAlgodones" parent="Puestos" instance=ExtResource("8_v1bmw")]
-transform = Transform3D(-1.47325, 0, 0.282023, 0, 1.5, 0, -0.282023, 0, -1.47325, -31.4069, 0, -11.3662)
+transform = Transform3D(-1.47325, 0, 0.282023, 0, 1.5, 0, -0.282023, 0, -1.47325, -31.8315, 0, -10.5027)
 
 [node name="CarroAlgodones2" parent="Puestos" instance=ExtResource("8_v1bmw")]
 transform = Transform3D(1.47758, 0, -0.258359, 0, 1.5, 0, 0.258359, 0, 1.47758, -3.12819, -1.90735e-06, 3.13109)
@@ -159,7 +157,7 @@ transform = Transform3D(1.47758, 0, -0.258359, 0, 1.5, 0, 0.258359, 0, 1.47758, 
 transform = Transform3D(-0.750145, 0, 0.661272, 0, 1, 0, -0.661272, 0, -0.750145, -51.3221, 1.94496, 22.2705)
 
 [node name="aros" parent="Puestos" instance=ExtResource("3_0bbif")]
-transform = Transform3D(0.405014, 0, -0.91431, 0, 1, 0, 0.91431, 0, 0.405014, -36.6702, 1.75459, -1.0726)
+transform = Transform3D(0.405014, 0, -0.91431, 0, 1, 0, 0.91431, 0, 0.405014, -37.0948, 1.75459, -0.209061)
 
 [node name="tiro_blanco" parent="Puestos" instance=ExtResource("5_efbeh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.3084, -0.57172, 35.3978)
@@ -192,7 +190,7 @@ transform = Transform3D(0.390562, 0, -0.167637, 0, 0.425019, 0, 0.167637, 0, 0.3
 [node name="vegetacion" type="Node3D" parent="Relleno"]
 
 [node name="arbusto" parent="Relleno/vegetacion" instance=ExtResource("9_1yi1c")]
-transform = Transform3D(0.540023, 0, -0.261487, 0, 0.6, 0, 0.261487, 0, 0.540023, -29.2407, 0, -10.6423)
+transform = Transform3D(0.540023, 0, -0.261487, 0, 0.6, 0, 0.261487, 0, 0.540023, -29.6653, 0, -9.77876)
 
 [node name="arbusto2" parent="Relleno/vegetacion" instance=ExtResource("9_1yi1c")]
 transform = Transform3D(-0.424264, 0, -0.424264, 0, 0.6, 0, 0.424264, 0, -0.424264, -52.8646, 0, -25.8532)
@@ -221,31 +219,34 @@ transform = Transform3D(3.49667, 0, -0.152546, 0, 3.5, 0, 0.152546, 0, 3.49667, 
 [node name="iluminacion" type="Node3D" parent="Relleno"]
 
 [node name="lampara" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -26.6946, -0.79128, 22.0879)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -19.4593, -0.79128, 15.7722)
 
 [node name="lampara2" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -40.3319, -0.79128, -26.0708)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.47312, -0.791276, -24.4295)
 
 [node name="lampara3" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.29465, 0, -0.0564047, 0, 0.3, 0, 0.0564047, 0, 0.29465, -3.24018, -0.79128, 5.58649)
+transform = Transform3D(0.29465, 0, -0.0564047, 0, 0.3, 0, 0.0564047, 0, 0.29465, 7.89165, -0.79128, -7.09443)
 
 [node name="lampara4" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.29465, 0, -0.0564047, 0, 0.3, 0, 0.0564047, 0, 0.29465, -32.549, -0.79128, -15.9812)
+transform = Transform3D(0.29465, 0, -0.0564047, 0, 0.3, 0, 0.0564047, 0, 0.29465, -42.2304, -0.79128, -16.9199)
 
 [node name="lampara5" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -56.9241, -0.79128, 24.4169)
+transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -48.9676, -0.79128, -4.84267)
 
 [node name="lampara6" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -7.32489, -0.791282, 23.6864)
+transform = Transform3D(0.2083, 0, 0.215896, 0, 0.3, 0, -0.215896, 0, 0.2083, -2.71339, -0.791282, 16.4594)
 
 [node name="lampara7" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, 34.5099, -0.79128, -24.1738)
+transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, 35.3252, -0.791276, -15.5826)
 
 [node name="lampara8" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
 transform = Transform3D(0.217886, 0, 0.206218, 0, 0.3, 0, -0.206218, 0, 0.217886, 27.8123, -0.79128, 49.7822)
 
 [node name="lampara9" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
-transform = Transform3D(0.29465, 0, -0.0564047, 0, 0.3, 0, 0.0564047, 0, 0.29465, -11.3431, -0.791278, -11.8649)
+transform = Transform3D(0.29465, 0, -0.0564047, 0, 0.3, 0, 0.0564047, 0, 0.29465, -14.7471, -0.791278, -22.2462)
+
+[node name="lampara10" parent="Relleno/iluminacion" instance=ExtResource("14_l5k3v")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -35.1451, -0.79128, 10.6739)
 
 [node name="taras" type="Node3D" parent="Relleno"]
 transform = Transform3D(0.30827, 0, -0.951299, 0, 1, 0, 0.951299, 0, 0.30827, -18.3022, 0.0256429, -9.03816)

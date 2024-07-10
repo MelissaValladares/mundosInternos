@@ -18,7 +18,15 @@ offset_top = 566.0
 offset_right = 305.0
 offset_bottom = 866.0
 scale = Vector2(1.64249, 1.6986)
-action_left = "left"
-action_right = "right"
-action_up = "up"
-action_down = "down"
+
+[node name="JoystickArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_top = 651.0
+offset_right = 139.0
+offset_bottom = 691.0
+grow_vertical = 0
+scale = Vector2(7.92399, 8.37594)
