@@ -14,10 +14,10 @@ func _ready():
 	$PopUpConfiguracion/GridContainer/VBoxContainer/MusicaCheck.button_pressed = audioManager.musica
 	$PopUpConfiguracion/GridContainer/VBoxContainer/VBoxContainer/OptionButton.select(calidadManager.idCalidad)
 	
-	audioManager.playMusica("res://sounds/MenuPrincipal.wav", -12)
+	audioManager.playMusica("res://sounds/MenuPrincipal.wav", -8)
 
 func _on_iniciar_pressed():
-	get_tree().change_scene_to_file("res://PUEBLO.tscn")
+	get_tree().change_scene_to_file("res://pantallaCarga.tscn")
 
 func _on_salir_pressed():
 	PopUpSalida.visible = true
@@ -48,7 +48,7 @@ func _on_musica_check_toggled(toggled_on):
 	audioManager.musicaStatus(toggled_on)
 	if toggled_on:
 		if not audioManager.musicPlayer.playing:
-			audioManager.playMusica("res://sounds/MenuPrincipal.wav", -12)
+			audioManager.playMusica("res://sounds/MenuPrincipal.wav", -8)
 	else:
 		if audioManager.musicPlayer.playing:
 			audioManager.stopMusica()

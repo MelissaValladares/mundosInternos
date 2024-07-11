@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://d26lo08gpbjev"]
+
+[ext_resource type="Script" path="res://pantallaCarga.gd" id="1_kgyc1"]
+[ext_resource type="PackedScene" uid="uid://fs010npmq75u" path="res://background.tscn" id="1_qw2yn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1oi1"]
+bg_color = Color(0.764706, 0.764706, 0.764706, 0.541176)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uauxf"]
+bg_color = Color(0.917647, 0.964706, 1, 0.580392)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb1qi"]
+bg_color = Color(0.760784, 0.894118, 0.996078, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kgyc1")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.489
+anchor_top = 0.185
+anchor_right = 0.489
+anchor_bottom = 0.185
+offset_left = -937.88
+offset_top = -143.8
+offset_right = 982.12
+offset_bottom = 642.2
+alignment = 1
+
+[node name="Label" type="Label" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1oi1")
+text = "CARGANDO
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 9
+
+[node name="ProgressBar" type="ProgressBar" parent="HFlowContainer/Label"]
+unique_name_in_owner = true
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -882.5
+offset_top = 439.0
+offset_right = 904.5
+offset_bottom = 533.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 61
+theme_override_styles/background = SubResource("StyleBoxFlat_uauxf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fb1qi")
+rounded = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_qw2yn")]
