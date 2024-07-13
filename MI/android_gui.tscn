@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://oq31tin4j047"]
+[gd_scene load_steps=3 format=3 uid="uid://oq31tin4j047"]
 
+[ext_resource type="PackedScene" uid="uid://cn3kc3icp86ai" path="res://2d_assets/jump_button.tscn" id="1_6yv11"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_14s3j"]
-[ext_resource type="PackedScene" uid="uid://ccg565ae8atej" path="res://info.tscn" id="2_iqxwa"]
-[ext_resource type="PackedScene" uid="uid://capsmgq38iwfi" path="res://jump_button.tscn" id="3_o1570"]
 
 [node name="android_gui" type="Node2D"]
+
+[node name="jump_button" parent="." instance=ExtResource("1_6yv11")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("1_14s3j")]
 offset_left = 5.0
@@ -24,23 +30,3 @@ offset_right = 139.0
 offset_bottom = 691.0
 grow_vertical = 0
 scale = Vector2(7.92399, 8.37594)
-
-[node name="info" parent="." instance=ExtResource("2_iqxwa")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.300238, 0.286618)
-
-[node name="jump_button" parent="." instance=ExtResource("3_o1570")]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 1689.0
-offset_top = 400.0
-offset_right = 1689.0
-offset_bottom = 400.0
-grow_horizontal = 0
-scale = Vector2(0.390438, 0.390438)

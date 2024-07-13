@@ -1,16 +1,16 @@
 extends Control
 
-@onready var progreso = []
-@onready var statusEscena = 0
+@onready var progreso = 0
+#var escena a cargar
 
 func _ready():
-	ResourceLoader.load_threaded_request("res://PUEBLO.tscn")
+	call_deferred("carga")
 
 func _process(delta):
-	statusEscena = ResourceLoader.load_threaded_get_status("res://PUEBLO.tscn", progreso)
-	%ProgressBar.value = progreso[0] * 100
-	
-	if statusEscena == ResourceLoader.THREAD_LOAD_LOADED:
-		await get_tree().create_timer(1.0).timeout
-		var escene = ResourceLoader.load_threaded_get("res://PUEBLO.tscn")
-		get_tree().change_scene_to_packed(escene)
+	%ProgressBar.value = progreso * 100
+
+func carga():
+	while progreso < 1.0:
+		progreso += 0.1
+		await get_tree().create_timer(0.1).timeout
+	get_tree().change_scene_to_file("res://PUEBLO.tscn")

@@ -37,21 +37,18 @@ sky_energy_multiplier = 0.5
 ground_bottom_color = Color(0.239216, 0.231373, 0.235294, 1)
 ground_horizon_color = Color(0.239216, 0.231373, 0.235294, 1)
 
-[sub_resource type="Sky" id="Sky_j2mor"]
+[sub_resource type="Sky" id="Sky_g8huu"]
 sky_material = SubResource("ProceduralSkyMaterial_d64jc")
 
 [sub_resource type="Environment" id="Environment_dcvhh"]
 background_mode = 2
-sky = SubResource("Sky_j2mor")
+sky = SubResource("Sky_g8huu")
 ambient_light_source = 3
 ambient_light_sky_contribution = 0.65
 tonemap_mode = 2
-ssr_enabled = true
-ssao_enabled = true
 ssao_intensity = 5.78
 ssao_detail = 0.99
 ssao_horizon = 0.12
-ssil_enabled = true
 glow_intensity = 1.58
 fog_enabled = true
 fog_light_color = Color(0.247059, 0.270588, 0.25098, 1)
