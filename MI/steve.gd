@@ -1,18 +1,25 @@
 extends CharacterBody3D
 
+enum {QUIETO, CAMINAR, INTERACTUAR, SALTAR}
+var curAnim = QUIETO
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 5.0
 @onready var pivot = $CamOrigin
 @export var sens = 0.5
 @onready var cam = $CamOrigin/SpringArm3D/Camera3D
-@onready var joystick_area = $android_gui/JoystickArea  # Replace with the actual path to your joystick area
+@onready var joystick_area = $android_gui/JoystickArea  # Reemplaza con la ruta real de tu joystick area
+@onready var anim_tree = $AnimationTree
+@export var blend_speed = 15
 
 var update = false
 var gt_prev = Transform3D()
 var gt_current = Transform3D()
 var interpolationActiva = false
+var cam_val = 0
+var int_val = 0
+var sal_val = 0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
@@ -22,7 +29,30 @@ func _ready():
 	
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	calidad(calidadManager.idCalidad)
+
+func handle_animation(delta):
+	match curAnim:
+		QUIETO:
+			cam_val = lerpf(cam_val, 0, blend_speed * delta)
+			int_val = lerpf(int_val, 0, blend_speed * delta)
+			sal_val = lerpf(sal_val, 0, blend_speed * delta)
+		CAMINAR:
+			cam_val = lerpf(cam_val, 1, blend_speed * delta)
+			int_val = lerpf(int_val, 0, blend_speed * delta)
+			sal_val = lerpf(sal_val, 0, blend_speed * delta)
+		INTERACTUAR:
+			cam_val = lerpf(cam_val, 0, blend_speed * delta)
+			int_val = lerpf(int_val, 1, blend_speed * delta)
+			sal_val = lerpf(sal_val, 0, blend_speed * delta)
+		SALTAR:
+			cam_val = lerpf(cam_val, 0, blend_speed * delta)
+			int_val = lerpf(int_val, 0, blend_speed * delta)
+			sal_val = lerpf(sal_val, 1, blend_speed * delta)
+	anim_tree["parameters/Caminar/blend_amount"] = cam_val
+	anim_tree["parameters/Interactuar/blend_amount"] = int_val
+	anim_tree["parameters/Saltar/blend_amount"] = sal_val
 	
+
 func calidad(tipo):
 	match tipo:
 		0:  # Baja calidad
@@ -41,13 +71,12 @@ func calidad(tipo):
 func _input(event):
 	if event is InputEventScreenDrag:
 		if not joystick_area.get_rect().has_point(event.position):
-			# Handle camera rotation if the drag is outside the joystick area
+			# Manejar rotación de cámara si el drag está fuera del área del joystick
 			rotate_y(deg_to_rad(-event.relative.x * sens))
 			pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
 			pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 
-@warning_ignore("unused_parameter")
-func _process(delta):
+func _process(_delta):
 	if update:
 		update_transform()
 		update = false
@@ -57,29 +86,34 @@ func _process(delta):
 
 func _physics_process(delta):
 	update = true
-	# Add the gravity.
+	# Añadir la gravedad
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# salto.
+	# Salto
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	# salir con esc
+		curAnim = SALTAR
+	# Salir con Esc
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	
-	# Character movement controlled by joystick actions
+	# Movimiento del personaje controlado por acciones del joystick
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		curAnim = CAMINAR
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		curAnim = QUIETO
+	
+	handle_animation(delta)
 	move_and_slide()
 	
-	# Camera movement controlled by left, right, up, and down actions
+	# Movimiento de la cámara controlado por acciones left, right, up y down
 	var camera_dir = Vector2.ZERO
 	if Input.is_action_pressed("char_left"):
 		camera_dir.x -= 1

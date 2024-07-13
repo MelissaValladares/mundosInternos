@@ -13,35 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="13_xuntp"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="30_1cd4o"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ev4p"]
-sky_top_color = Color(0.137255, 0.592157, 0.988235, 1)
-sky_horizon_color = Color(1, 0.886275, 0.666667, 1)
-sky_curve = 0.100856
-sky_energy_multiplier = 0.5
-ground_bottom_color = Color(0.239216, 0.231373, 0.235294, 1)
-ground_horizon_color = Color(0.239216, 0.231373, 0.235294, 1)
-
-[sub_resource type="Sky" id="Sky_11bf7"]
-sky_material = SubResource("ProceduralSkyMaterial_1ev4p")
-
-[sub_resource type="Environment" id="Environment_hre1e"]
-background_mode = 2
-sky = SubResource("Sky_11bf7")
-ambient_light_source = 3
-ambient_light_sky_contribution = 0.65
-tonemap_mode = 2
-ssao_intensity = 5.78
-ssao_detail = 0.99
-ssao_horizon = 0.12
-glow_intensity = 1.58
-fog_enabled = true
-fog_light_color = Color(0.247059, 0.270588, 0.25098, 1)
-fog_light_energy = 0.5
-fog_sky_affect = 0.5
-volumetric_fog_density = 0.0
-volumetric_fog_emission = Color(0.4, 0.478431, 0.443137, 1)
-volumetric_fog_length = 419.7
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iruam"]
 albedo_color = Color(0.247059, 0.270588, 0.25098, 1)
 subsurf_scatter_strength = 1.0
@@ -57,12 +28,46 @@ size = Vector3(57.1196, 12.1292, 6.94067)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lngre"]
 size = Vector3(40.5718, 21.3249, 2.52686)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl8w2"]
+sky_top_color = Color(0.137255, 0.592157, 0.988235, 1)
+sky_horizon_color = Color(1, 0.886275, 0.666667, 1)
+sky_curve = 0.100856
+sky_energy_multiplier = 0.5
+ground_bottom_color = Color(0.239216, 0.231373, 0.235294, 1)
+ground_horizon_color = Color(0.239216, 0.231373, 0.235294, 1)
+
+[sub_resource type="Sky" id="Sky_g8huu"]
+sky_material = SubResource("ProceduralSkyMaterial_jl8w2")
+
+[sub_resource type="Environment" id="Environment_n52oi"]
+background_mode = 2
+sky = SubResource("Sky_g8huu")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.65
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_intensity = 5.78
+ssao_detail = 0.99
+ssao_horizon = 0.12
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_intensity = 1.58
+fog_enabled = true
+fog_light_color = Color(0.247059, 0.270588, 0.25098, 1)
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_emission = Color(0.4, 0.478431, 0.443137, 1)
+volumetric_fog_length = 419.7
+
 [node name="pueblo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
 script = ExtResource("1_07ugy")
 
 [node name="main" parent="." instance=ExtResource("30_1cd4o")]
-transform = Transform3D(0.547885, 0, -0.836554, 0, 1, 0, 0.836554, 0, 0.547885, -61.242, 1.56534, 19.1845)
+transform = Transform3D(0.547885, 0, -0.836554, 0, 1, 0, 0.836554, 0, 0.547885, -69.242, -0.969841, 15.1845)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
@@ -71,9 +76,6 @@ light_energy = 1.485
 shadow_enabled = true
 shadow_opacity = 0.5
 script = ExtResource("3_hw16s")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_hre1e")
 
 [node name="suelo" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.41991e-06, 0, -3.30097, 0, 1.05786, 0, 78.2384, 0, -1.4429e-07, 21.9905, -1.0693, -1.55018)
@@ -150,3 +152,6 @@ shape = SubResource("BoxShape3D_lngre")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 visible = false
 occluder = ExtResource("10_3bhp3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n52oi")
