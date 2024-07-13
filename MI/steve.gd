@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 5.0
 @export var sens = 0.5
 @onready var cam = $CamOrigin/SpringArm3D/Camera3D
 @onready var joystick_area = $android_gui/JoystickArea
-@onready var personaje = $personaje/AnimationPlayer/AnimationTree.get("parameters/playback")
+#@onready var personaje = $personaje/AnimationPlayer/AnimationTree.get("parameters/playback")
 
 var update = false
 var gt_prev = Transform3D()
@@ -64,7 +64,7 @@ func _physics_process(delta):
 
 	# salto.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		personaje.travel("Saltar")
+		#personaje.travel("Saltar")
 		velocity.y = JUMP_VELOCITY
 	# salir con esc
 	if Input.is_action_just_pressed("quit"):
@@ -76,11 +76,11 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		personaje.travel("Caminar")
+		#personaje.travel("Caminar")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		personaje.travel("Quieto")
+		#personaje.travel("Quieto")
 	move_and_slide()
 	
 	# Camera movement controlled by left, right, up, and down actions

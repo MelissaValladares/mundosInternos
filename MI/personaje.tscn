@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cugigx56r747d"]
 
-[ext_resource type="PackedScene" uid="uid://rwonqpbmtxak" path="res://3d_assets/Main/main.glb" id="1_q32cv"]
+[ext_resource type="PackedScene" uid="uid://dti42umllvctk" path="res://3d_assets/Main/main.glb" id="1_q32cv"]
 
 [node name="main" instance=ExtResource("1_q32cv")]
 
