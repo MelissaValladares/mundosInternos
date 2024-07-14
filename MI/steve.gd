@@ -90,11 +90,12 @@ func _physics_process(delta):
 	# Añadir la gravedad
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+		curAnim = SALTAR
+		
 	# Salto
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		curAnim = SALTAR
 		velocity.y = JUMP_VELOCITY
+		curAnim = SALTAR
 	# salir con esc
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
@@ -105,11 +106,13 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		curAnim = CAMINAR
+		if is_on_floor():
+			curAnim = CAMINAR
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		curAnim = QUIETO
+		if is_on_floor():
+			curAnim = QUIETO
 		
 	handle_animation(delta)
 	move_and_slide()
