@@ -1,8 +1,8 @@
 extends Control
 
-@export var PopUpSalida: PanelContainer
-@export var PopUpConfiguracion: PanelContainer
-@export var botonConfig: Button
+@onready var PopUpSalida = $PopUpSalida
+@onready var PopUpConfiguracion = $PopUpConfiguracion
+@onready var botonConfig = $Configuracion/botonConfig
 
 
 # CARGA ESCENA
@@ -17,6 +17,7 @@ func _ready():
 	audioManager.playMusica("res://sounds/MenuPrincipal.wav", -8)
 
 func _on_iniciar_pressed():
+	global.cargarEscena = "res://PUEBLO.tscn"
 	get_tree().change_scene_to_file("res://pantallaCarga.tscn")
 
 func _on_salir_pressed():

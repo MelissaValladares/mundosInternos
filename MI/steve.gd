@@ -140,11 +140,3 @@ func _physics_process(delta):
 func update_transform():
 	gt_prev = gt_current
 	gt_current = global_transform
-	
-	
-#func stateMachine():
-#	match personaje.get_current_node():
-#		"Caminar":
-#			personaje.travel("Jump")
-#		"Quieto":
-#			personaje.travel("Jump")

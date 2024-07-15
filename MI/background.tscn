@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dt5gccote6gxh" path="res://2d_assets/FondoMenu.png" id="1_qnd1i"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
-follow_viewport_enabled = true
-scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(967.001, 524.001)
-scale = Vector2(1.00833, 1.0574)
+position = Vector2(965, 539)
+scale = Vector2(1.00156, 1.04259)
 texture = ExtResource("1_qnd1i")
+region_enabled = true
+region_rect = Rect2(0, 48, 1920, 1032)
+region_filter_clip_enabled = true

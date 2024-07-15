@@ -213,6 +213,7 @@ PopupMenu/styles/separator = SubResource("StyleBoxFlat_kksmy")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1ooao"]
 content_margin_right = 479.0
+color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_llitl"]
 bg_color = Color(0.760324, 0.894611, 0.994228, 1)
@@ -255,7 +256,7 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6laao"]
 draw_center = false
 
-[node name="Menu" type="Control" node_paths=PackedStringArray("PopUpSalida", "PopUpConfiguracion", "botonConfig")]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -265,9 +266,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ciu1g")
-PopUpSalida = NodePath("PopUpSalida")
-PopUpConfiguracion = NodePath("PopUpConfiguracion")
-botonConfig = NodePath("Configuracion/botonConfig")
 
 [node name="BotonesCentro" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -399,12 +397,15 @@ text = "NO"
 
 [node name="PopUpConfiguracion" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 134.0
-offset_right = 2463.0
-offset_bottom = 2072.0
+anchor_left = 0.271354
+anchor_top = 0.124074
+anchor_right = 0.738365
+anchor_bottom = 0.919663
+offset_right = 1045.34
+offset_bottom = 1078.76
 scale = Vector2(0.46172, 0.443362)
 theme_override_styles/panel = SubResource("StyleBoxFlat_bbcc2")
+metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="PopUpConfiguracion"]
 layout_mode = 2
@@ -508,6 +509,8 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 116
 theme_override_styles/normal = SubResource("StyleBoxLine_1ooao")
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Okey" type="Button" parent="PopUpConfiguracion/GridContainer/HBoxContainer"]
 layout_mode = 2
@@ -523,6 +526,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_6laao")
 text = "Aceptar"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_nnfq6")]
+scroll_ignore_camera_zoom = true
 
 [connection signal="pressed" from="BotonesCentro/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="BotonesCentro/Salir" to="." method="_on_salir_pressed"]
