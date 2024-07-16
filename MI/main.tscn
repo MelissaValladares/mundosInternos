@@ -96,9 +96,8 @@ bind/13/name = &"Pie.DER"
 bind/13/bone = -1
 bind/13/pose = Transform3D(0.998878, -0.016223, 0.0444907, -0.0143155, -0.998978, -0.0428613, 0.0451402, 0.042176, -0.998082, 0.546842, 0.907658, -0.0265178)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hab6m"]
-radius = 0.537476
-height = 4.02584
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1yie"]
+size = Vector3(1.0957, 3.80716, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kiudn"]
 
@@ -786,7 +785,7 @@ nodes/Saltar/position = Vector2(880, 40)
 nodes/output/position = Vector2(1260, 60)
 node_connections = [&"Caminar", 0, &"Anim_Quieto", &"Caminar", 1, &"Anim_Caminar", &"Interactuar", 0, &"Caminar", &"Interactuar", 1, &"Anim_Interactuar", &"Saltar", 0, &"Interactuar", &"Saltar", 1, &"Anim_Saltar", &"output", 0, &"Saltar"]
 
-[node name="main" type="CharacterBody3D"]
+[node name="main" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_obsyy")
 
 [node name="Armature" type="Node3D" parent="."]
@@ -813,27 +812,27 @@ bones/2/rest = Transform3D(1, 0, -2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, -5.82
 bones/2/enabled = true
 bones/2/position = Vector3(-5.82077e-11, 0.84422, -3.63798e-10)
 bones/2/rotation = Quaternion(0, -1.19209e-07, 0, 1)
-bones/2/scale = Vector3(0.999973, 0.999973, 0.999973)
+bones/2/scale = Vector3(0.999725, 0.999725, 0.999725)
 bones/3/name = "Cabeza"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, 2.34693e-07, 0, 1, 0, -2.34693e-07, 0, 1, 1.74623e-10, 0.701935, -1.10595e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(1.74623e-10, 0.701935, -1.10595e-09)
-bones/3/rotation = Quaternion(0, -0.120299, 0, 0.992738)
+bones/3/rotation = Quaternion(0, 0.216482, 0, 0.976287)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Clavicula.IZQ"
 bones/4/parent = 2
 bones/4/rest = Transform3D(1, -3.18707e-10, 2.37749e-07, -1.84716e-07, -0.630618, 0.776093, 1.49681e-07, -0.776093, -0.630618, 0.0234037, 0.64054, -0.145359)
 bones/4/enabled = true
-bones/4/position = Vector3(0.0413344, 0.619257, -0.278545)
+bones/4/position = Vector3(0.0413316, 0.619272, -0.278218)
 bones/4/rotation = Quaternion(0.902945, -5.1231e-08, 1.07269e-07, -0.429757)
-bones/4/scale = Vector3(0.999952, 0.999952, 0.999952)
+bones/4/scale = Vector3(0.9995, 0.9995, 0.9995)
 bones/5/name = "Brazo.IZQ"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.999905, 0.00145541, 0.0136814, 0.00348269, 0.935231, -0.354022, -0.0133105, 0.354036, 0.935137, 1.16981e-08, 0.582996, -2.54717e-07)
 bones/5/enabled = true
 bones/5/position = Vector3(1.16981e-08, 0.582996, -2.54717e-07)
-bones/5/rotation = Quaternion(-0.160229, -0.00869372, -0.00809629, 0.987008)
+bones/5/rotation = Quaternion(-0.160225, -0.00895963, -0.00785949, 0.987009)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "Mano.IZQ"
 bones/6/parent = 5
@@ -846,15 +845,15 @@ bones/7/name = "Clavicula.DER"
 bones/7/parent = 2
 bones/7/rest = Transform3D(0.999997, -0.00138729, -0.00173961, -0.00222402, -0.646913, -0.762561, -6.74862e-05, 0.762563, -0.646914, 0.0175385, 0.64054, 0.176588)
 bones/7/enabled = true
-bones/7/position = Vector3(0.037278, 0.640453, 0.191299)
+bones/7/position = Vector3(0.0372808, 0.640438, 0.190972)
 bones/7/rotation = Quaternion(0.907445, -0.00099491, -0.000497853, 0.42017)
-bones/7/scale = Vector3(0.999952, 0.999952, 0.999952)
+bones/7/scale = Vector3(0.9995, 0.9995, 0.9995)
 bones/8/name = "Brazo.DER"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.999925, -0.00207515, 0.0120517, -0.00301732, 0.913163, 0.407582, -0.0118509, -0.407588, 0.913089, -5.58794e-09, 0.586112, 1.32422e-07)
 bones/8/enabled = true
 bones/8/position = Vector3(-5.58794e-09, 0.586112, 1.32422e-07)
-bones/8/rotation = Quaternion(0.110224, -0.00894301, 0.00674529, 0.993844)
+bones/8/rotation = Quaternion(0.11022, -0.00920188, 0.00650082, 0.993843)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "Mano.DER"
 bones/9/parent = 8
@@ -897,8 +896,8 @@ mesh = SubResource("ArrayMesh_i8x6w")
 skin = SubResource("Skin_1brg2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.445149, 0, 0, 0, 0.445149, 0, 0, 0, 0.445149, 0, 0.733485, 0)
-shape = SubResource("CapsuleShape3D_hab6m")
+transform = Transform3D(0.445149, 0, 0, 0, 0.445149, 0, 0, 0, 0.445149, 0.0350414, 0.731328, 0)
+shape = SubResource("BoxShape3D_v1yie")
 
 [node name="CamOrigin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34514, 0)
@@ -931,3 +930,11 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Caminar/blend_amount = 0.0
 parameters/Interactuar/blend_amount = 0.0
 parameters/Saltar/blend_amount = 0.0
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0718136, -0.399)
+target_position = Vector3(0, -0.4, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0969532, 0)
+target_position = Vector3(0, -0.4, 0)

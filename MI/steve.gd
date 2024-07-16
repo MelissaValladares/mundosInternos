@@ -20,6 +20,9 @@ var cam_val = 0
 var int_val = 0
 var sal_val = 0
 
+var frameSuelo = false # VARIABLES PARA CUANDO BAJA ESCALERAS
+var snapStairs = false
+
 signal action_pressed()
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -102,6 +105,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		curAnim = SALTAR
+		
 	# salir con esc
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
@@ -119,10 +123,11 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		if is_on_floor():
 			curAnim = QUIETO
-		
+	
 	handle_animation(delta)
 	move_and_slide()
-	
+	bajarEscaleras()
+		
 	# Movimiento de la cámara controlado por acciones left, right, up y down
 	var camera_dir = Vector2.ZERO
 	if Input.is_action_pressed("char_left"):
@@ -146,3 +151,18 @@ func _physics_process(delta):
 func update_transform():
 	gt_prev = gt_current
 	gt_current = global_transform
+
+func bajarEscaleras():
+	var did_snap = false
+	if not is_on_floor() and velocity.y <= 0 and (frameSuelo or snapStairs):
+		var body_test_result = PhysicsTestMotionResult3D.new()
+		var params = PhysicsTestMotionParameters3D.new()
+		var max_step_down = -0.2
+		
+		params.from = self.global_transform
+		params.motion = Vector3(0, max_step_down, 0)
+		if PhysicsServer3D.body_test_motion(self.get_rid(), params, body_test_result):
+			var translate_y = body_test_result.get_travel().y
+			self.position.y += translate_y
+			apply_floor_snap()
+	frameSuelo = is_on_floor()

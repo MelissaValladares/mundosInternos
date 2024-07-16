@@ -49,13 +49,14 @@ subsurf_scatter_strength = 1.0
 subsurf_scatter_skin_mode = true
 subsurf_scatter_texture = ExtResource("3_1gva7")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lpk4e"]
-size = Vector3(1, 1, 8)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mc8c"]
+size = Vector3(21.8325, 7.56204, 2.29443)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t3xxk"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2361o"]
+size = Vector3(3.34753, 8.45453, 14.2556)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vr1k7"]
-size = Vector3(11.6924, 13.422, 22.429)
+[sub_resource type="BoxShape3D" id="BoxShape3D_od8i8"]
+size = Vector3(1.34717, 7.68738, 13.8242)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_stnx4"]
 size = Vector3(3.91615, 17.145, 29.5783)
@@ -71,7 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
 script = ExtResource("1_07ugy")
 
 [node name="main" parent="." instance=ExtResource("30_1cd4o")]
-transform = Transform3D(0.547885, 0, -0.836554, 0, 1, 0, 0.836554, 0, 0.547885, -61.242, 1.56534, 19.1845)
+transform = Transform3D(0.0733944, 0, 0.997303, 0, 1, 0, -0.997303, 0, 0.0733944, -61.9999, 1.56534, 12.1382)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
@@ -120,11 +121,11 @@ transform = Transform3D(-2.22763, 0, 2.05179, 0, 3.02855, 0, -2.05179, 0, -2.227
 transform = Transform3D(-0.477505, 0, 0.502043, 0, 0.692861, 0, -0.502043, 0, -0.477505, 15.6349, -0.820579, -3.29363)
 
 [node name="areaBiblio" type="Area3D" parent="edificios/biblio"]
-transform = Transform3D(-1.05265e-06, 0, 3.17675, 0, 3.17675, 0, -3.17675, 0, -1.05265e-06, -0.025063, 1.52813, -38.7631)
+transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 5.24521e-06, 0, 15.496)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/biblio/areaBiblio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177322, 0, 0)
-shape = SubResource("BoxShape3D_lpk4e")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.324246, 3.68084, -0.197998)
+shape = SubResource("BoxShape3D_1mc8c")
 
 [node name="building" parent="edificios" instance=ExtResource("9_1ond3")]
 transform = Transform3D(-0.336013, 0, -1.05122, 0, 1.10362, 0, 1.05122, 0, -0.336013, -44.6462, -0.307416, 198.586)
@@ -149,18 +150,18 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.803753, 0, 0.594963, 0, 1, 0, -0.594963, 0, -0.803753, -399.487, -31.2786, 206.355)
 
 [node name="areaConser" type="Area3D" parent="edificios/conservatorio"]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -70.434, 31.999, 75.8893)
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -80.721, 31.0923, 81.2877)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/conservatorio/areaConser"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -5.86082, 5.18122, 1.85086)
-shape = SubResource("BoxShape3D_t3xxk")
+transform = Transform3D(1, 0, 7.45058e-08, 0, 1, 0, -7.45058e-08, 0, 1, -4.08303, 3.72727, 0.555206)
+shape = SubResource("BoxShape3D_2361o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="edificios/conservatorio"]
-transform = Transform3D(0.668245, 0, 0.18305, 0, 0.692861, 0, -0.18305, 0, 0.668245, -71.1958, 30.9387, 81.4025)
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -84.0684, 30.7947, 76.2435)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/conservatorio/StaticBody3D"]
-transform = Transform3D(0.971862, 0, -0.235548, 0, 1, 0, 0.235548, 0, 0.971862, -5.34628, 6.211, 1.37903)
-shape = SubResource("BoxShape3D_vr1k7")
+transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -0.173538, 3.34369, 6.4122)
+shape = SubResource("BoxShape3D_od8i8")
 
 [node name="BORDE_TEMP" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)

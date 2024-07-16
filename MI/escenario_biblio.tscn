@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://2ol6pmawhr5u"]
+[gd_scene load_steps=33 format=3 uid="uid://2ol6pmawhr5u"]
 
 [ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="1_aadmc"]
-[ext_resource type="PackedScene" uid="uid://oq31tin4j047" path="res://android_gui.tscn" id="2_sp6fb"]
+[ext_resource type="Script" path="res://escenario_biblio.gd" id="1_jiplb"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="3_3kggw"]
 [ext_resource type="PackedScene" uid="uid://clupfqee7tlbt" path="res://3d_assets/1. biblioteca/interior/world.tscn" id="4_8q7ia"]
 [ext_resource type="PackedScene" uid="uid://hm2ii1u3e1ra" path="res://3d_assets/1. biblioteca/interior/escritorio.tscn" id="5_yr7ib"]
@@ -28,6 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://6hl15sc2e0ob" path="res://3d_assets/1. biblioteca/interior/lockers.tscn" id="25_qrkf0"]
 [ext_resource type="PackedScene" uid="uid://c76mpa4qviv82" path="res://3d_assets/1. biblioteca/pipe.tscn" id="26_5qnt8"]
 [ext_resource type="PackedScene" uid="uid://buqhb5tnbgl0b" path="res://3d_assets/1. biblioteca/interior/mueble_GRANDE.tscn" id="27_a8msl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nj67"]
+size = Vector3(21.7247, 8.52234, 1.99939)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d64jc"]
 sky_top_color = Color(0.137255, 0.592157, 0.988235, 1)
@@ -58,14 +61,20 @@ volumetric_fog_emission = Color(0.4, 0.478431, 0.443137, 1)
 volumetric_fog_length = 419.7
 
 [node name="escenario_biblio" type="Node3D"]
+script = ExtResource("1_jiplb")
 
 [node name="biblio" parent="." instance=ExtResource("1_aadmc")]
 transform = Transform3D(0.258984, 0, 0, 0, 0.258984, 0, 0, 0, 0.258984, -0.722767, -1.19209e-07, 1.8151)
 
-[node name="android_gui" parent="." instance=ExtResource("2_sp6fb")]
+[node name="areaBiblio" type="Area3D" parent="biblio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.58055, 17.9781)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="biblio/areaBiblio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0989385, 3.76117, 0.233582)
+shape = SubResource("BoxShape3D_1nj67")
 
 [node name="main" parent="." instance=ExtResource("3_3kggw")]
-transform = Transform3D(0.688899, 0, -0.724857, 0, 1, 0, 0.724857, 0, 0.688899, -0.559608, -0.0854706, 7.25347)
+transform = Transform3D(-0.878458, 0, -0.477818, 0, 1, 0, 0.477818, 0, -0.878458, -0.559608, -0.0854706, 10.2535)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
@@ -830,3 +839,7 @@ transform = Transform3D(-0.403193, 0, 0.0376586, 0, 0.404948, 0, -0.0376586, 0, 
 
 [node name="pipe2" parent="banos" instance=ExtResource("26_5qnt8")]
 transform = Transform3D(0.395344, 0, -0.0876675, 0, 0.404948, 0, 0.0876675, 0, 0.395344, -8.68763, -0.160304, -24.7662)
+
+[connection signal="body_entered" from="biblio/areaBiblio" to="." method="_on_area_biblio_body_entered"]
+[connection signal="body_exited" from="biblio/areaBiblio" to="." method="_on_area_biblio_body_exited"]
+[connection signal="action_pressed" from="main" to="." method="_on_main_action_pressed"]
