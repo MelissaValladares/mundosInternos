@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvfhsgee4k736"]
+[gd_scene load_steps=24 format=3 uid="uid://bvfhsgee4k736"]
 
 [ext_resource type="Script" path="res://pueblo.gd" id="1_07ugy"]
 [ext_resource type="Texture2D" uid="uid://cyq73xcqghllw" path="res://2d_assets/Screenshot_20240630_000517.png" id="3_1gva7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c8xqu3x3cfo57" path="res://3d_assets/1. biblioteca/exterior/building_2.tscn" id="9_w5tme"]
 [ext_resource type="ArrayOccluder3D" uid="uid://paui1e4yqu8l" path="res://occluders/PUEBLO.occ" id="10_3bhp3"]
 [ext_resource type="PackedScene" uid="uid://35y7kmo38wbn" path="res://3d_assets/conservatorio/conservatorio.tscn" id="12_l70be"]
+[ext_resource type="PackedScene" uid="uid://dfj6tgor1gpk4" path="res://indicador.tscn" id="13_6q80h"]
 [ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="13_xuntp"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="30_1cd4o"]
 
@@ -47,6 +48,14 @@ albedo_color = Color(0.247059, 0.270588, 0.25098, 1)
 subsurf_scatter_strength = 1.0
 subsurf_scatter_skin_mode = true
 subsurf_scatter_texture = ExtResource("3_1gva7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lpk4e"]
+size = Vector3(1, 1, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3xxk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr1k7"]
+size = Vector3(11.6924, 13.422, 22.429)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_stnx4"]
 size = Vector3(3.91615, 17.145, 29.5783)
@@ -110,6 +119,13 @@ transform = Transform3D(-2.22763, 0, 2.05179, 0, 3.02855, 0, -2.05179, 0, -2.227
 [node name="biblio" parent="edificios" instance=ExtResource("13_xuntp")]
 transform = Transform3D(-0.477505, 0, 0.502043, 0, 0.692861, 0, -0.502043, 0, -0.477505, 15.6349, -0.820579, -3.29363)
 
+[node name="areaBiblio" type="Area3D" parent="edificios/biblio"]
+transform = Transform3D(-1.05265e-06, 0, 3.17675, 0, 3.17675, 0, -3.17675, 0, -1.05265e-06, -0.025063, 1.52813, -38.7631)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/biblio/areaBiblio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177322, 0, 0)
+shape = SubResource("BoxShape3D_lpk4e")
+
 [node name="building" parent="edificios" instance=ExtResource("9_1ond3")]
 transform = Transform3D(-0.336013, 0, -1.05122, 0, 1.10362, 0, 1.05122, 0, -0.336013, -44.6462, -0.307416, 198.586)
 
@@ -132,6 +148,20 @@ skeleton = NodePath("../..")
 [node name="conservatorio" parent="edificios" instance=ExtResource("12_l70be")]
 transform = Transform3D(-0.803753, 0, 0.594963, 0, 1, 0, -0.594963, 0, -0.803753, -399.487, -31.2786, 206.355)
 
+[node name="areaConser" type="Area3D" parent="edificios/conservatorio"]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -70.434, 31.999, 75.8893)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/conservatorio/areaConser"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -5.86082, 5.18122, 1.85086)
+shape = SubResource("BoxShape3D_t3xxk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="edificios/conservatorio"]
+transform = Transform3D(0.668245, 0, 0.18305, 0, 0.692861, 0, -0.18305, 0, 0.668245, -71.1958, 30.9387, 81.4025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/conservatorio/StaticBody3D"]
+transform = Transform3D(0.971862, 0, -0.235548, 0, 1, 0, 0.235548, 0, 0.971862, -5.34628, 6.211, 1.37903)
+shape = SubResource("BoxShape3D_vr1k7")
+
 [node name="BORDE_TEMP" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)
 
@@ -150,3 +180,12 @@ shape = SubResource("BoxShape3D_lngre")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 visible = false
 occluder = ExtResource("10_3bhp3")
+
+[node name="indicador" parent="." instance=ExtResource("13_6q80h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2492, 10.6148, 14.7419)
+
+[connection signal="action_pressed" from="main" to="." method="_on_main_action_pressed"]
+[connection signal="body_entered" from="edificios/biblio/areaBiblio" to="." method="_on_area_biblio_body_entered"]
+[connection signal="body_exited" from="edificios/biblio/areaBiblio" to="." method="_on_area_biblio_body_exited"]
+[connection signal="body_entered" from="edificios/conservatorio/areaConser" to="." method="_on_area_conser_body_entered"]
+[connection signal="body_exited" from="edificios/conservatorio/areaConser" to="." method="_on_area_conser_body_exited"]

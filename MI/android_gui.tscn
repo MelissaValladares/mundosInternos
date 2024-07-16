@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://oq31tin4j047"]
+[gd_scene load_steps=5 format=3 uid="uid://oq31tin4j047"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_14s3j"]
 [ext_resource type="PackedScene" uid="uid://ccg565ae8atej" path="res://barra_gui.tscn" id="2_iqxwa"]
 [ext_resource type="PackedScene" uid="uid://capsmgq38iwfi" path="res://jump_button.tscn" id="3_o1570"]
+[ext_resource type="PackedScene" uid="uid://d4lgmukmgdwcl" path="res://action_button.tscn" id="3_yj1vu"]
 
 [node name="android_gui" type="Node2D"]
 
@@ -30,12 +31,19 @@ anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1689.0
-offset_top = 400.0
-offset_right = 1689.0
-offset_bottom = 400.0
+offset_left = 1628.0
+offset_top = 395.0
+offset_right = 1628.0
+offset_bottom = 395.0
 grow_horizontal = 0
 scale = Vector2(0.390438, 0.390438)
+
+[node name="action_button" parent="." instance=ExtResource("3_yj1vu")]
+offset_left = 1386.0
+offset_top = 672.0
+offset_right = 1386.0
+offset_bottom = 672.0
+scale = Vector2(0.65, 0.65)
 
 [node name="ControlSuperior" parent="." instance=ExtResource("2_iqxwa")]
 anchors_preset = 0

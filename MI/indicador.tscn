@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfj6tgor1gpk4"]
+
+[ext_resource type="Texture2D" uid="uid://c3ri5l2yepcmo" path="res://2d_assets/logo.png" id="1_41tro"]
+
+[node name="indicador" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("1_41tro")

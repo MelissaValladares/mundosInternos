@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4lgmukmgdwcl"]
+
+[ext_resource type="Texture2D" uid="uid://bsrwq2afh7yqb" path="res://2d_assets/action/action.png" id="1_1y0o4"]
+[ext_resource type="Texture2D" uid="uid://dadxikqavwrxs" path="res://2d_assets/action/action-pressed.png" id="2_hdkqx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4rtqf"]
+radius = 231.52
+
+[node name="action_button" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="actionButton" type="TouchScreenButton" parent="."]
+texture_normal = ExtResource("1_1y0o4")
+texture_pressed = ExtResource("2_hdkqx")
+shape = SubResource("CircleShape2D_4rtqf")
+action = "ui_home"
