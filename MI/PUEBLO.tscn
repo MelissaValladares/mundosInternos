@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvfhsgee4k736"]
+[gd_scene load_steps=18 format=3 uid="uid://bvfhsgee4k736"]
 
 [ext_resource type="Script" path="res://pueblo.gd" id="1_07ugy"]
 [ext_resource type="Texture2D" uid="uid://cyq73xcqghllw" path="res://2d_assets/Screenshot_20240630_000517.png" id="3_1gva7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c8xqu3x3cfo57" path="res://3d_assets/1. biblioteca/exterior/building_2.tscn" id="9_w5tme"]
 [ext_resource type="ArrayOccluder3D" uid="uid://paui1e4yqu8l" path="res://occluders/PUEBLO.occ" id="10_3bhp3"]
 [ext_resource type="PackedScene" uid="uid://35y7kmo38wbn" path="res://3d_assets/conservatorio/conservatorio.tscn" id="12_l70be"]
+[ext_resource type="PackedScene" uid="uid://c85rwhmvtwpa2" path="res://parque.tscn" id="13_vtxr0"]
 [ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="13_xuntp"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="30_1cd4o"]
 
@@ -47,15 +48,6 @@ albedo_color = Color(0.247059, 0.270588, 0.25098, 1)
 subsurf_scatter_strength = 1.0
 subsurf_scatter_skin_mode = true
 subsurf_scatter_texture = ExtResource("3_1gva7")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_stnx4"]
-size = Vector3(3.91615, 17.145, 29.5783)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_co8ai"]
-size = Vector3(57.1196, 12.1292, 6.94067)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lngre"]
-size = Vector3(40.5718, 21.3249, 2.52686)
 
 [node name="pueblo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
@@ -132,21 +124,39 @@ skeleton = NodePath("../..")
 [node name="conservatorio" parent="edificios" instance=ExtResource("12_l70be")]
 transform = Transform3D(-0.803753, 0, 0.594963, 0, 1, 0, -0.594963, 0, -0.803753, -399.487, -31.2786, 206.355)
 
-[node name="BORDE_TEMP" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)
+[node name="BuildingLow7" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(0.399678, 0, -0.916657, 0, 0.999999, 0, 0.916657, 0, 0.399678, -360.747, -2.09445, 6.5411)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BORDE_TEMP"]
-transform = Transform3D(0.495322, 0, 0.86871, 0, 1, 0, -0.86871, 0, 0.495322, 40.2355, 7.26778, -118.32)
-shape = SubResource("BoxShape3D_stnx4")
+[node name="BuildingLow9" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(0.305778, 0, -0.952104, 0, 1.08207, 0, 0.952104, 0, 0.305778, -320.042, 0.213146, -6.56683)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="BORDE_TEMP"]
-transform = Transform3D(0.412089, 0, 0.911148, 0, 1, 0, -0.911148, 0, 0.412089, 91.0562, 3.9654, 137.093)
-shape = SubResource("BoxShape3D_co8ai")
+[node name="BuildingLow8" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(-0.472844, 0, -0.881148, 0, 0.999999, 0, 0.881148, 0, -0.472844, 106.374, -2.09445, 374.7)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="BORDE_TEMP"]
-transform = Transform3D(0.844898, 0, -0.534927, 0, 1, 0, 0.534927, 0, 0.844898, -120.042, 8.65385, 180.886)
-shape = SubResource("BoxShape3D_lngre")
+[node name="BuildingLow10" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(-1.01081, 0, -0.652645, 0, 1.2032, 0, 0.652645, 0, -1.01081, 110.042, -2.09445, 331.676)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="BuildingLow11" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(-0.472844, 0, -0.881148, 0, 0.999999, 0, 0.881148, 0, -0.472844, 106.374, -2.09445, 374.7)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
+
+[node name="BuildingLow12" type="MeshInstance3D" parent="edificios"]
+transform = Transform3D(-1.01081, 0, -0.652645, 0, 1.2032, 0, 0.652645, 0, -1.01081, 110.043, -2.09445, 331.676)
+mesh = ExtResource("7_4ghru")
+skeleton = NodePath("../..")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 visible = false
 occluder = ExtResource("10_3bhp3")
+
+[node name="parque" parent="." instance=ExtResource("13_vtxr0")]
+transform = Transform3D(-0.592535, 0, -0.329422, 0, 0.67795, 0, 0.329422, 0, -0.592535, 125.709, 0.355215, -104.848)

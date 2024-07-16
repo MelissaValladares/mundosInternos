@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhhbp1iab2gpx"]
+
+[ext_resource type="PackedScene" uid="uid://cug5kapyyb8tp" path="res://3d_assets/conservatorio/Maceta (2).glb" id="1_qwri5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aja07"]
+height = 7.76609
+radius = 1.49773
+
+[node name="Maceta (2)" instance=ExtResource("1_qwri5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("CylinderShape3D_aja07")
