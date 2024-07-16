@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjsjgybhbnw3e"]
+
+[ext_resource type="PackedScene" uid="uid://cuofvc6jydujb" path="res://3d_assets/conservatorio/mesa.glb" id="1_vsw34"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fww1o"]
+size = Vector3(2.03323, 2.5658, 2.02452)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajk1y"]
+size = Vector3(1.46875, 20.5869, 0.121094)
+
+[node name="mesa" instance=ExtResource("1_vsw34")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00637245, -0.211732, 0.00606535)
+shape = SubResource("BoxShape3D_fww1o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cube/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205078, -11.5994, -0.843349)
+shape = SubResource("BoxShape3D_ajk1y")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cube/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0205078, -11.5994, 0.857364)
+shape = SubResource("BoxShape3D_ajk1y")

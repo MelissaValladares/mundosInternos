@@ -1,57 +1,207 @@
-[gd_scene load_steps=8 format=3 uid="uid://d205ig50loixb"]
+[gd_scene load_steps=21 format=3 uid="uid://d205ig50loixb"]
 
-[ext_resource type="PackedScene" uid="uid://35y7kmo38wbn" path="res://3d_assets/conservatorio/conservatorio.tscn" id="1_xhgc4"]
-[ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="2_q24dh"]
-[ext_resource type="Script" path="res://DirectionalLight3D.gd" id="3_6wsfr"]
+[ext_resource type="PackedScene" uid="uid://puy37nh7n5p7" path="res://3d_assets/conservatorio/conservatorio_int.tscn" id="1_yy08i"]
+[ext_resource type="PackedScene" uid="uid://bn3pum525x1ce" path="res://3d_assets/conservatorio/jardinera.tscn" id="2_v2hm3"]
+[ext_resource type="PackedScene" uid="uid://bn7h0etyepsvi" path="res://3d_assets/1. biblioteca/interior/old_lamp_techo.tscn" id="3_o6rba"]
+[ext_resource type="PackedScene" uid="uid://cd3n11n1bhwnq" path="res://3d_assets/1. biblioteca/exterior/tree.tscn" id="4_b13rr"]
 [ext_resource type="PackedScene" uid="uid://bttr3s1sxfutw" path="res://3d_assets/conservatorio/piano_cola.tscn" id="4_s06lw"]
+[ext_resource type="PackedScene" uid="uid://dhhbp1iab2gpx" path="res://3d_assets/conservatorio/maceta_(2).tscn" id="5_wyoya"]
+[ext_resource type="PackedScene" uid="uid://c1pmn1ald5wk0" path="res://3d_assets/1. biblioteca/interior/maceta.tscn" id="6_mwey8"]
+[ext_resource type="PackedScene" uid="uid://bguchuxwrgjt6" path="res://3d_assets/conservatorio/arpa.tscn" id="7_1f50t"]
+[ext_resource type="PackedScene" uid="uid://b4idu25vnhv5s" path="res://3d_assets/conservatorio/cello.tscn" id="8_l7jgh"]
+[ext_resource type="PackedScene" uid="uid://dovv4pyaomik2" path="res://3d_assets/conservatorio/atril.tscn" id="9_svu25"]
+[ext_resource type="PackedScene" uid="uid://c1ps8qwgxmtau" path="res://3d_assets/conservatorio/tarima.tscn" id="11_03gy1"]
+[ext_resource type="PackedScene" uid="uid://cpeyeorsaa1e4" path="res://3d_assets/conservatorio/guitarra.tscn" id="11_wl4x3"]
+[ext_resource type="PackedScene" uid="uid://bqhtyn0jgb5c8" path="res://3d_assets/1. biblioteca/interior/librero_rojo_largo.tscn" id="12_mf1wv"]
+[ext_resource type="PackedScene" uid="uid://bjsjgybhbnw3e" path="res://3d_assets/conservatorio/mesa.tscn" id="14_0pe8y"]
+[ext_resource type="PackedScene" uid="uid://o42qxm4fio24" path="res://3d_assets/conservatorio/pizarron.tscn" id="15_3mh5k"]
+[ext_resource type="PackedScene" uid="uid://c7ymydedpm1x1" path="res://3d_assets/conservatorio/puerta.tscn" id="16_8gor4"]
+[ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="17_1cp4h"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r8osb"]
-sky_top_color = Color(0.137255, 0.592157, 0.988235, 1)
-sky_horizon_color = Color(1, 0.886275, 0.666667, 1)
-sky_curve = 0.100856
-sky_energy_multiplier = 0.5
-ground_bottom_color = Color(0.239216, 0.231373, 0.235294, 1)
-ground_horizon_color = Color(0.239216, 0.231373, 0.235294, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1vq1o"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_g8huu"]
-sky_material = SubResource("ProceduralSkyMaterial_r8osb")
+[sub_resource type="Sky" id="Sky_uuwt5"]
+sky_material = SubResource("ProceduralSkyMaterial_1vq1o")
 
-[sub_resource type="Environment" id="Environment_yt5mn"]
+[sub_resource type="Environment" id="Environment_vuf4k"]
 background_mode = 2
-sky = SubResource("Sky_g8huu")
-ambient_light_source = 3
-ambient_light_sky_contribution = 0.65
+sky = SubResource("Sky_uuwt5")
 tonemap_mode = 2
-ssao_intensity = 5.78
-ssao_detail = 0.99
-ssao_horizon = 0.12
-glow_intensity = 1.58
-fog_enabled = true
-fog_light_color = Color(0.247059, 0.270588, 0.25098, 1)
-fog_light_energy = 0.5
-fog_sky_affect = 0.5
-volumetric_fog_density = 0.0
-volumetric_fog_emission = Color(0.4, 0.478431, 0.443137, 1)
-volumetric_fog_length = 419.7
+glow_enabled = true
 
 [node name="escenario_conservatorio" type="Node3D"]
 
-[node name="conservatorio" parent="." instance=ExtResource("1_xhgc4")]
-transform = Transform3D(0.45445, 0, 0, 0, 0.43781, 0, 0, 0, 0.45445, 12.13, -25.7448, -47.9916)
-
-[node name="main" parent="." instance=ExtResource("2_q24dh")]
-transform = Transform3D(-0.988928, 0, 0.148396, 0, 1, 0, -0.148396, 0, -0.988928, 22.0602, -11.9545, -24.9778)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vuf4k")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
-light_color = Color(1, 0.876151, 0.615317, 1)
-light_energy = 1.485
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-shadow_opacity = 0.5
-script = ExtResource("3_6wsfr")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yt5mn")
+[node name="conservatorio_int" parent="." instance=ExtResource("1_yy08i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.685665, 0)
 
-[node name="pianoCola" parent="." instance=ExtResource("4_s06lw")]
-transform = Transform3D(0.520911, 0, 0, 0, 0.520911, 0, 0, 0, 0.520911, 23.8572, -11.4206, -16.289)
+[node name="Jardinera" parent="." instance=ExtResource("2_v2hm3")]
+transform = Transform3D(0.163663, 0, 0, 0, 0.163663, 0, 0, 0, 0.163663, 0.0542269, 0, 16.3539)
+
+[node name="iluminacion" type="Node3D" parent="."]
+
+[node name="old_lamp" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, -12.0875, 11.3805, -2.05933)
+
+[node name="old_lamp2" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 12.3682, 11.3805, 33.9739)
+
+[node name="old_lamp3" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 13.6048, 11.3805, 21.5084)
+
+[node name="old_lamp4" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 13.6048, 11.3805, 11.9187)
+
+[node name="old_lamp5" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, -13.1489, 11.3805, 21.5084)
+
+[node name="old_lamp6" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, -13.1489, 11.3805, 11.9187)
+
+[node name="old_lamp7" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 0.366958, 11.3805, 2.81764)
+
+[node name="old_lamp8" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 0.366958, 11.3805, 30.9493)
+
+[node name="old_lamp9" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 13.6048, 4.9639, 21.5084)
+
+[node name="old_lamp10" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 13.6048, 4.9639, 11.9187)
+
+[node name="old_lamp11" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, -13.1489, 4.9639, 21.5084)
+
+[node name="old_lamp12" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, -13.1489, 4.9639, 11.9187)
+
+[node name="old_lamp13" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 0.366958, 4.9639, 2.81764)
+
+[node name="old_lamp14" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 0.366958, 4.9639, 30.9493)
+
+[node name="old_lamp15" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 23.5823, 10.9889, 21.5084)
+
+[node name="old_lamp16" parent="iluminacion" instance=ExtResource("3_o6rba")]
+transform = Transform3D(0.200732, 0, 0, 0, 0.200732, 0, 0, 0, 0.200732, 23.5823, 10.9889, 11.9187)
+
+[node name="naturaleza" type="Node3D" parent="."]
+
+[node name="tree" parent="naturaleza" instance=ExtResource("4_b13rr")]
+transform = Transform3D(0.0126864, 0, -0.226488, 0, 0.226843, 0, 0.226488, 0, 0.0126864, 7.82276, -6.76138, 16.0768)
+
+[node name="tree2" parent="naturaleza" instance=ExtResource("4_b13rr")]
+transform = Transform3D(0.0126864, 0, -0.226488, 0, 0.226843, 0, 0.226488, 0, 0.0126864, -6.714, -6.76138, 16.0768)
+
+[node name="Maceta (2)" parent="naturaleza" instance=ExtResource("5_wyoya")]
+transform = Transform3D(0.223322, 0, -0.221042, 0, 0.314217, 0, 0.221042, 0, 0.223322, 12.5037, 0.648544, 1.10433)
+
+[node name="maceta" parent="naturaleza" instance=ExtResource("6_mwey8")]
+transform = Transform3D(0.162508, 0, 0, 0, 0.162508, 0, 0, 0, 0.162508, 13.5506, -0.571572, 2.37438)
+
+[node name="Maceta (2)2" parent="naturaleza" instance=ExtResource("5_wyoya")]
+transform = Transform3D(0.223322, 0, -0.221042, 0, 0.314217, 0, 0.221042, 0, 0.223322, 12.5037, 6.78918, 1.10433)
+
+[node name="maceta2" parent="naturaleza" instance=ExtResource("6_mwey8")]
+transform = Transform3D(0.162508, 0, 0, 0, 0.162508, 0, 0, 0, 0.162508, 13.5506, 5.56906, 2.37438)
+
+[node name="instrumentos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9722, 8.18952, 7.74665)
+
+[node name="arpa" parent="instrumentos" instance=ExtResource("7_1f50t")]
+transform = Transform3D(0.212194, 0, -0.580789, 0, 0.618338, 0, 0.580789, 0, 0.212194, 1.78799, -2.45194, 19.1982)
+
+[node name="cello" parent="instrumentos" instance=ExtResource("8_l7jgh")]
+transform = Transform3D(0.0137684, 0.00370959, -0.336429, -0.0876009, 0.325137, 0, 0.324845, 0.0875223, 0.0142594, -1.87761, -0.636726, 9.68031)
+
+[node name="atril" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.0134924, 0, -0.318332, 0, 0.318618, 0, 0.318332, 0, 0.0134924, -0.528019, -2.53327, 7.91907)
+
+[node name="pianoCola" parent="instrumentos" instance=ExtResource("4_s06lw")]
+transform = Transform3D(0.469245, 0, -0.246505, 0, 0.530053, 0, 0.246505, 0, 0.469245, -4.3787, -0.0523901, 3.88529)
+
+[node name="cello2" parent="instrumentos" instance=ExtResource("8_l7jgh")]
+transform = Transform3D(0.0137684, 0.00370959, -0.336429, -0.0876009, 0.325137, 0, 0.324845, 0.0875223, 0.0142594, -5.73522, -0.636726, 9.84381)
+
+[node name="atril2" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.0134924, 0, -0.318332, 0, 0.318618, 0, 0.318332, 0, 0.0134924, -4.38563, -2.53327, 8.08258)
+
+[node name="guitarra" parent="instrumentos" instance=ExtResource("11_wl4x3")]
+transform = Transform3D(0.0212733, -0.0171917, 0.136018, -0.0276164, 0.134287, 0.0212921, -0.13429, -0.0303392, 0.0171683, -7.28723, 0.358634, -0.359006)
+
+[node name="atril3" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.318491, 0, 0.00899645, 0, 0.318618, 0, -0.00899645, 0, 0.318491, -9.16601, -2.53327, 8.08258)
+
+[node name="atril4" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.303258, 0, -0.0977334, 0, 0.318618, 0, 0.0977334, 0, 0.303258, -9.16601, -2.53327, 9.10332)
+
+[node name="atril5" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.318491, 0, 0.00899645, 0, 0.318618, 0, -0.00899645, 0, 0.318491, -9.16601, -2.53327, 10.1391)
+
+[node name="atril6" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.303258, 0, -0.0977334, 0, 0.318618, 0, 0.0977334, 0, 0.303258, -9.16601, -2.53327, 11.1598)
+
+[node name="cello3" parent="instrumentos" instance=ExtResource("8_l7jgh")]
+transform = Transform3D(0.0137684, 0.00370959, -0.336429, -0.0876009, 0.325137, 0, 0.324845, 0.0875223, 0.0142594, -1.87761, -0.636726, 13.2916)
+
+[node name="atril7" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.0134924, 0, -0.318332, 0, 0.318618, 0, 0.318332, 0, 0.0134924, -0.528019, -2.53327, 11.5303)
+
+[node name="cello4" parent="instrumentos" instance=ExtResource("8_l7jgh")]
+transform = Transform3D(0.0137684, 0.00370959, -0.336429, -0.0876009, 0.325137, 0, 0.324845, 0.0875223, 0.0142594, -5.73522, -0.636726, 13.4551)
+
+[node name="atril8" parent="instrumentos" instance=ExtResource("9_svu25")]
+transform = Transform3D(0.0134924, 0, -0.318332, 0, 0.318618, 0, 0.318332, 0, 0.0134924, -4.38563, -2.53327, 11.6938)
+
+[node name="guitarra2" parent="instrumentos" instance=ExtResource("11_wl4x3")]
+transform = Transform3D(-0.135893, -0.0279649, 0.000114614, -0.0276164, 0.134287, 0.0212921, -0.00440263, 0.0208322, -0.137097, -9.14892, -1.69175, -0.359006)
+
+[node name="guitarra3" parent="instrumentos" instance=ExtResource("11_wl4x3")]
+transform = Transform3D(-0.135786, -0.0261608, -0.0112508, -0.0192031, 0.124591, -0.0579415, 0.0210288, -0.0551506, -0.125559, -9.14892, -1.69175, 0.51451)
+
+[node name="guitarra4" parent="instrumentos" instance=ExtResource("11_wl4x3")]
+transform = Transform3D(-0.135893, -0.0279649, 0.000114614, -0.0276164, 0.134287, 0.0212921, -0.00440263, 0.0208322, -0.137097, -9.14892, -1.69175, 1.67504)
+
+[node name="guitarra5" parent="instrumentos" instance=ExtResource("11_wl4x3")]
+transform = Transform3D(-0.135786, -0.0261608, -0.0112508, -0.0192031, 0.124591, -0.0579415, 0.0210288, -0.0551506, -0.125559, -9.14892, -1.69175, 2.54855)
+
+[node name="mobiliario" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5784, 6.82257, 16.0216)
+
+[node name="tarima" parent="mobiliario" instance=ExtResource("11_03gy1")]
+transform = Transform3D(1.02368, 0, 0, 0, 1.02368, 0, 0, 0, 1.02368, -2.57859, -0.217894, -4.94127)
+
+[node name="libreroRojo" parent="mobiliario" instance=ExtResource("12_mf1wv")]
+transform = Transform3D(0.579436, 0, 0, 0, 0.579436, 0, 0, 0, 0.579436, 7.39858, -2.4117, 0)
+
+[node name="mesa" parent="mobiliario" instance=ExtResource("14_0pe8y")]
+transform = Transform3D(0.0221707, 0, -0.316738, 0, 0.317512, 0, 0.316738, 0, 0.0221707, -1.596, -0.440025, 2.3933)
+
+[node name="mesa2" parent="mobiliario" instance=ExtResource("14_0pe8y")]
+transform = Transform3D(0.0221707, 0, -0.316738, 0, 0.317512, 0, 0.316738, 0, 0.0221707, 2.75158, -0.440025, 2.19554)
+
+[node name="mesa3" parent="mobiliario" instance=ExtResource("14_0pe8y")]
+transform = Transform3D(0.0221707, 0, -0.316738, 0, 0.317512, 0, 0.316738, 0, 0.0221707, -1.596, -0.440025, 6.00115)
+
+[node name="mesa4" parent="mobiliario" instance=ExtResource("14_0pe8y")]
+transform = Transform3D(0.0221707, 0, -0.316738, 0, 0.317512, 0, 0.316738, 0, 0.0221707, 2.75158, -0.440025, 5.80338)
+
+[node name="pizarron" parent="mobiliario" instance=ExtResource("15_3mh5k")]
+transform = Transform3D(0.375809, 0, 0, 0, 0.375809, 0, 0, 0, 0.375809, -4.80519, 1.10597, 3.52155)
+
+[node name="puerta" parent="." instance=ExtResource("16_8gor4")]
+transform = Transform3D(0.583942, 0, 0, 0, 0.583942, 0, 0, 0, 0.583942, -16.6937, -1.12889, 18.4887)
+
+[node name="main" parent="." instance=ExtResource("17_1cp4h")]
+transform = Transform3D(1.37079, 0, 0, 0, 1.37079, 0, 0, 0, 1.37079, 18.0526, 5.80383, 21.7444)

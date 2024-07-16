@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpeyeorsaa1e4"]
+
+[ext_resource type="PackedScene" uid="uid://bd5ph03es6rc5" path="res://3d_assets/conservatorio/guitarra.glb" id="1_weg06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vo0cy"]
+size = Vector3(5.96387, 239.412, 64.6021)
+
+[node name="guitarra" instance=ExtResource("1_weg06")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cuerpo" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cuerpo/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2349, -79.8647, -7.83757)
+shape = SubResource("BoxShape3D_vo0cy")

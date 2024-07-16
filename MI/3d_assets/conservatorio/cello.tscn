@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4idu25vnhv5s"]
+
+[ext_resource type="PackedScene" uid="uid://8ff2n4yja2n0" path="res://3d_assets/conservatorio/cello.glb" id="1_ivscj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36x5p"]
+margin = 0.414
+size = Vector3(0.94873, 6.88104, 1.80408)
+
+[node name="cello" instance=ExtResource("1_ivscj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60834, -0.412872, -0.0222778)
+shape = SubResource("BoxShape3D_36x5p")

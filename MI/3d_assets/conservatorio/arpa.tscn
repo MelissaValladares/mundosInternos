@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bguchuxwrgjt6"]
+
+[ext_resource type="PackedScene" uid="uid://5atwinkq32o8" path="res://3d_assets/conservatorio/arpa.glb" id="1_bwj11"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyjg1"]
+size = Vector3(1.50964, 44.4784, 8.70276)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_inffn"]
+size = Vector3(1, 10.0215, 26.8523)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5f0xq"]
+height = 5.1904
+radius = 2.53709
+
+[node name="arpa" instance=ExtResource("1_bwj11")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cuerpo" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cuerpo/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -4.47035e-08, 0, 4.47035e-08, 1, -0.577297, 2.17629, 73.0605)
+shape = SubResource("BoxShape3D_yyjg1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="cuerpo/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.603418, 0.797425, 0, -0.797425, 0.603418, -0.417279, 7.50238, 62.9265)
+shape = SubResource("BoxShape3D_inffn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="cuerpo/StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.960582, -0.278002, 0, 0.278002, 0.960581, -0.5547, 31.3548, 76.6025)
+shape = SubResource("CylinderShape3D_5f0xq")
