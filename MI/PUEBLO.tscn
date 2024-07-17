@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bvfhsgee4k736"]
+[gd_scene load_steps=24 format=3 uid="uid://bvfhsgee4k736"]
 
 [ext_resource type="Script" path="res://pueblo.gd" id="1_07ugy"]
 [ext_resource type="Texture2D" uid="uid://cyq73xcqghllw" path="res://2d_assets/Screenshot_20240630_000517.png" id="3_1gva7"]
@@ -50,7 +50,6 @@ subsurf_scatter_strength = 1.0
 subsurf_scatter_skin_mode = true
 subsurf_scatter_texture = ExtResource("3_1gva7")
 
-<<<<<<< HEAD
 [sub_resource type="BoxShape3D" id="BoxShape3D_1mc8c"]
 size = Vector3(21.8325, 7.56204, 2.29443)
 
@@ -69,8 +68,6 @@ size = Vector3(57.1196, 12.1292, 6.94067)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lngre"]
 size = Vector3(40.5718, 21.3249, 2.52686)
 
-=======
->>>>>>> kermit_jul_16
 [node name="pueblo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
 script = ExtResource("1_07ugy")
@@ -153,7 +150,6 @@ skeleton = NodePath("../..")
 [node name="conservatorio" parent="edificios" instance=ExtResource("12_l70be")]
 transform = Transform3D(-0.803753, 0, 0.594963, 0, 1, 0, -0.594963, 0, -0.803753, -399.487, -31.2786, 206.355)
 
-<<<<<<< HEAD
 [node name="areaConser" type="Area3D" parent="edificios/conservatorio"]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -80.721, 31.0923, 81.2877)
 
@@ -170,12 +166,10 @@ shape = SubResource("BoxShape3D_od8i8")
 
 [node name="BORDE_TEMP" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)
-=======
 [node name="BuildingLow7" type="MeshInstance3D" parent="edificios"]
 transform = Transform3D(0.399678, 0, -0.916657, 0, 0.999999, 0, 0.916657, 0, 0.399678, -360.747, -2.09445, 6.5411)
 mesh = ExtResource("7_4ghru")
 skeleton = NodePath("../..")
->>>>>>> kermit_jul_16
 
 [node name="BuildingLow9" type="MeshInstance3D" parent="edificios"]
 transform = Transform3D(0.305778, 0, -0.952104, 0, 1.08207, 0, 0.952104, 0, 0.305778, -320.042, 0.213146, -6.56683)
@@ -206,7 +200,6 @@ skeleton = NodePath("../..")
 visible = false
 occluder = ExtResource("10_3bhp3")
 
-<<<<<<< HEAD
 [node name="indicador" parent="." instance=ExtResource("13_6q80h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2492, 10.6148, 14.7419)
 
@@ -215,7 +208,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2492, 10.6148, 14.7419)
 [connection signal="body_exited" from="edificios/biblio/areaBiblio" to="." method="_on_area_biblio_body_exited"]
 [connection signal="body_entered" from="edificios/conservatorio/areaConser" to="." method="_on_area_conser_body_entered"]
 [connection signal="body_exited" from="edificios/conservatorio/areaConser" to="." method="_on_area_conser_body_exited"]
-=======
 [node name="parque" parent="." instance=ExtResource("13_vtxr0")]
 transform = Transform3D(-0.592535, 0, -0.329422, 0, 0.67795, 0, 0.329422, 0, -0.592535, 125.709, 0.355215, -104.848)
->>>>>>> kermit_jul_16
