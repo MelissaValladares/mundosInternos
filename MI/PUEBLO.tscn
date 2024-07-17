@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bvfhsgee4k736"]
+[gd_scene load_steps=22 format=3 uid="uid://bvfhsgee4k736"]
 
 [ext_resource type="Script" path="res://pueblo.gd" id="1_07ugy"]
 [ext_resource type="Texture2D" uid="uid://cyq73xcqghllw" path="res://2d_assets/Screenshot_20240630_000517.png" id="3_1gva7"]
@@ -54,26 +54,17 @@ subsurf_scatter_texture = ExtResource("3_1gva7")
 size = Vector3(21.8325, 7.56204, 2.29443)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2361o"]
-size = Vector3(3.34753, 8.45453, 14.2556)
+size = Vector3(3.34753, 8.45453, 14.2632)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_od8i8"]
-size = Vector3(1.34717, 7.68738, 13.8242)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_stnx4"]
-size = Vector3(3.91615, 17.145, 29.5783)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_co8ai"]
-size = Vector3(57.1196, 12.1292, 6.94067)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lngre"]
-size = Vector3(40.5718, 21.3249, 2.52686)
+size = Vector3(1.34717, 7.68738, 15.3034)
 
 [node name="pueblo" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.1203, 2.43029, -11.143)
 script = ExtResource("1_07ugy")
 
 [node name="main" parent="." instance=ExtResource("30_1cd4o")]
-transform = Transform3D(0.0733944, 0, 0.997303, 0, 1, 0, -0.997303, 0, 0.0733944, -61.9999, 1.56534, 12.1382)
+transform = Transform3D(0.0733944, 0, 0.997303, 0, 1, 0, -0.997303, 0, 0.0733944, -62.9716, 1.56534, 12.1382)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.473514, -0.585687, 0.657842, -0.702418, 0.199513, 0.68323, -0.531407, -0.785599, -0.316924, -57.4945, 39.9269, -1.08875)
@@ -151,21 +142,19 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.803753, 0, 0.594963, 0, 1, 0, -0.594963, 0, -0.803753, -399.487, -31.2786, 206.355)
 
 [node name="areaConser" type="Area3D" parent="edificios/conservatorio"]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -80.721, 31.0923, 81.2877)
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -81.3406, 31.0923, 81.5611)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/conservatorio/areaConser"]
 transform = Transform3D(1, 0, 7.45058e-08, 0, 1, 0, -7.45058e-08, 0, 1, -4.08303, 3.72727, 0.555206)
 shape = SubResource("BoxShape3D_2361o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="edificios/conservatorio"]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -84.0684, 30.7947, 76.2435)
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -84.2034, 31.1825, 76.2199)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/conservatorio/StaticBody3D"]
 transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -0.173538, 3.34369, 6.4122)
 shape = SubResource("BoxShape3D_od8i8")
 
-[node name="BORDE_TEMP" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)
 [node name="BuildingLow7" type="MeshInstance3D" parent="edificios"]
 transform = Transform3D(0.399678, 0, -0.916657, 0, 0.999999, 0, 0.916657, 0, 0.399678, -360.747, -2.09445, 6.5411)
 mesh = ExtResource("7_4ghru")
@@ -196,9 +185,29 @@ transform = Transform3D(-1.01081, 0, -0.652645, 0, 1.2032, 0, 0.652645, 0, -1.01
 mesh = ExtResource("7_4ghru")
 skeleton = NodePath("../..")
 
+[node name="BORDE_TEMP" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.454304, 0, 0.0046546, 0, 0.454329, 0, -0.0046546, 0, -0.454304, -27.8787, -0.108222, 12.031)
+
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 visible = false
 occluder = ExtResource("10_3bhp3")
+
+[node name="parque" parent="." instance=ExtResource("13_vtxr0")]
+transform = Transform3D(-0.592535, 0, -0.329422, 0, 0.67795, 0, 0.329422, 0, -0.592535, 125.709, 0.355215, -104.848)
+
+[node name="areaParque" type="Area3D" parent="parque"]
+transform = Transform3D(0.106697, 0, 0.994291, 0, 0.999997, 0, -0.994291, 0, 0.106697, 70.1241, -0.319324, -33.5742)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parque/areaParque"]
+transform = Transform3D(1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1, -4.08305, 3.72727, 0.512604)
+shape = SubResource("BoxShape3D_2361o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="parque"]
+transform = Transform3D(0.106697, 0, 0.994291, 0, 0.999997, 0, -0.994291, 0, 0.106697, 64.6471, -0.319318, -29.4139)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parque/StaticBody3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.173576, 3.34369, 5.41129)
+shape = SubResource("BoxShape3D_od8i8")
 
 [node name="indicador" parent="." instance=ExtResource("13_6q80h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2492, 10.6148, 14.7419)
@@ -208,5 +217,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.2492, 10.6148, 14.7419)
 [connection signal="body_exited" from="edificios/biblio/areaBiblio" to="." method="_on_area_biblio_body_exited"]
 [connection signal="body_entered" from="edificios/conservatorio/areaConser" to="." method="_on_area_conser_body_entered"]
 [connection signal="body_exited" from="edificios/conservatorio/areaConser" to="." method="_on_area_conser_body_exited"]
-[node name="parque" parent="." instance=ExtResource("13_vtxr0")]
-transform = Transform3D(-0.592535, 0, -0.329422, 0, 0.67795, 0, 0.329422, 0, -0.592535, 125.709, 0.355215, -104.848)
+[connection signal="body_entered" from="parque/areaParque" to="." method="_on_area_parque_body_entered"]
+[connection signal="body_exited" from="parque/areaParque" to="." method="_on_area_parque_body_exited"]

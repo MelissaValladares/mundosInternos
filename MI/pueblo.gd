@@ -64,3 +64,19 @@ func _on_area_conser_body_exited(body):
 	if body.is_in_group("player"):
 		enRango = false
 		botonAction.visible = false
+
+
+func _on_area_parque_body_entered(body):
+	if body.is_in_group("player"):
+		global.cargarEscena = "res://feria.tscn"
+		enRango = true
+		# Si se requiere otra variable para ver tipo de acción va aquí
+		var texture = load("res://2d_assets/puerta/puerta.png")
+		$main/android_gui/action_button/actionButton.texture_normal = texture
+		botonAction.visible = true
+
+
+func _on_area_parque_body_exited(body):
+	if body.is_in_group("player"):
+		enRango = false
+		botonAction.visible = false
