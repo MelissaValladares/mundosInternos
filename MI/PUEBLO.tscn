@@ -113,7 +113,7 @@ transform = Transform3D(-2.22763, 0, 2.05179, 0, 3.02855, 0, -2.05179, 0, -2.227
 transform = Transform3D(-0.477505, 0, 0.502043, 0, 0.692861, 0, -0.502043, 0, -0.477505, 15.6349, -0.820579, -3.29363)
 
 [node name="areaBiblio" type="Area3D" parent="edificios/biblio"]
-transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 5.68434e-14, 0, 1, 5.24521e-06, 0, 15.496)
+transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 5.24521e-06, 0, 15.496)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="edificios/biblio/areaBiblio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.324246, 3.68084, -0.197998)

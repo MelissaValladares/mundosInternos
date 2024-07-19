@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dgb0uiba5mv4k" path="res://3d_assets/2. feria/tienda2 (amarillo).glb" id="1_vw34x"]
 [ext_resource type="PackedScene" uid="uid://de568cexqnj0l" path="res://3d_assets/2. feria/silla_pueblito.glb" id="2_oxa1g"]
 [ext_resource type="PackedScene" uid="uid://c8le0u5txabc8" path="res://3d_assets/2. feria/mesa_pueblito.glb" id="3_5jrqh"]
-[ext_resource type="PackedScene" uid="uid://cd8nmwvlxvcun" path="res://3d_assets/2. feria/moneditas.glb" id="4_8dri5"]
+[ext_resource type="PackedScene" uid="uid://cd8nmwvlxvcun" path="res://3d_assets/2. feria/ticket.glb" id="4_8dri5"]
 [ext_resource type="PackedScene" uid="uid://igoch7d6vjdl" path="res://3d_assets/2. feria/taza.glb" id="5_4qsgo"]
 [ext_resource type="PackedScene" uid="uid://72m1yoswabc2" path="res://3d_assets/2. feria/cute_astronaut.glb" id="7_6ek8c"]
 [ext_resource type="PackedScene" uid="uid://b8pwhw733i31q" path="res://3d_assets/2. feria/tank.glb" id="8_68om8"]

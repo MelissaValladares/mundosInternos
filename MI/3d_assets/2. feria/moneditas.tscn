@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://wyfnwpoyxtvf"]
 
-[ext_resource type="PackedScene" uid="uid://cd8nmwvlxvcun" path="res://3d_assets/2. feria/moneditas.glb" id="1_gasp1"]
+[ext_resource type="PackedScene" uid="uid://cd8nmwvlxvcun" path="res://3d_assets/2. feria/ticket.glb" id="1_gasp1"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mmlyk"]
 height = 2.0935
