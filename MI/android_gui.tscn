@@ -1,49 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://oq31tin4j047"]
+[gd_scene load_steps=6 format=3 uid="uid://oq31tin4j047"]
 
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_14s3j"]
 [ext_resource type="PackedScene" uid="uid://ccg565ae8atej" path="res://barra_gui.tscn" id="2_iqxwa"]
 [ext_resource type="PackedScene" uid="uid://capsmgq38iwfi" path="res://jump_button.tscn" id="3_o1570"]
 [ext_resource type="PackedScene" uid="uid://d4lgmukmgdwcl" path="res://action_button.tscn" id="3_yj1vu"]
+[ext_resource type="PackedScene" uid="uid://bxitwtotroi6e" path="res://inventario.tscn" id="5_hor24"]
 
 [node name="android_gui" type="Node2D"]
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("1_14s3j")]
 offset_left = 5.0
-offset_top = 566.0
+offset_top = 678.0
 offset_right = 305.0
-offset_bottom = 866.0
-scale = Vector2(1.64249, 1.6986)
+offset_bottom = 978.0
+scale = Vector2(1.27059, 1.314)
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
 [node name="JoystickArea" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 99.0
-offset_top = 651.0
-offset_right = 139.0
-offset_bottom = 691.0
+offset_left = 61.0
+offset_top = 729.0
+offset_right = 101.0
+offset_bottom = 769.0
 grow_vertical = 0
-scale = Vector2(7.92399, 8.37594)
+scale = Vector2(6.97062, 7.27679)
 
 [node name="jump_button" parent="." instance=ExtResource("3_o1570")]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1668.0
-offset_top = 400.0
-offset_right = 1722.0
-offset_bottom = 400.0
+offset_left = 1746.0
+offset_top = 423.0
+offset_right = 1800.0
+offset_bottom = 423.0
 grow_horizontal = 0
-scale = Vector2(0.390438, 0.390438)
+scale = Vector2(0.235051, 0.235051)
 
 [node name="action_button" parent="." instance=ExtResource("3_yj1vu")]
-offset_left = 1386.0
-offset_top = 672.0
-offset_right = 1386.0
-offset_bottom = 672.0
-scale = Vector2(0.65, 0.65)
+offset_left = 1520.0
+offset_top = 420.0
+offset_right = 1520.0
+offset_bottom = 420.0
+scale = Vector2(0.315002, 0.315002)
 
 [node name="ControlSuperior" parent="." instance=ExtResource("2_iqxwa")]
 anchors_preset = 0
@@ -54,3 +57,23 @@ offset_right = 53.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_horizontal_guides_ = [19.0]
+
+[node name="ui_inventario" type="CanvasLayer" parent="."]
+
+[node name="interface_prin" type="Control" parent="ui_inventario"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="inventario" parent="ui_inventario/interface_prin" instance=ExtResource("5_hor24")]
+layout_mode = 0
+offset_top = -50.0
+offset_bottom = -10.0

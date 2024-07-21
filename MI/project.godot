@@ -17,10 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-audioManager="*res://audioManager.gd"
-calidadManager="*res://calidadManager.gd"
-global="*res://global.gd"
-GameManager="*res://script/GameManager.gd"
+audioManager="*res://scripts/audioManager.gd"
+calidadManager="*res://scripts/calidadManager.gd"
+global="*res://scripts/global.gd"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://d205ig50loixb"]
 
-[ext_resource type="Script" path="res://escenario_conservatorio.gd" id="1_550w2"]
+[ext_resource type="Script" path="res://scripts/escenario_conservatorio.gd" id="1_550w2"]
 [ext_resource type="PackedScene" uid="uid://puy37nh7n5p7" path="res://3d_assets/conservatorio/conservatorio_int.tscn" id="1_yy08i"]
 [ext_resource type="PackedScene" uid="uid://bn3pum525x1ce" path="res://3d_assets/conservatorio/jardinera.tscn" id="2_v2hm3"]
 [ext_resource type="PackedScene" uid="uid://bn7h0etyepsvi" path="res://3d_assets/1. biblioteca/interior/old_lamp_techo.tscn" id="3_o6rba"]
