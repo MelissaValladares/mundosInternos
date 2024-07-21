@@ -20,7 +20,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$main/android_gui/ControlSuperior/PanelScore/GridContainer/Score.text = "x %d/10" % GameManager.score
+	$main/android_gui/ControlSuperior/PanelScore/GridContainer/Score.text = "%d/10" % GameManager.score
 	
 
 
@@ -29,6 +29,5 @@ func _on_area_biblio_body_entered(body):
 	if body.name == "main":
 		get_node("Puestos/juguetes/shop/AnimationPlayer").play("TIN")
 		$Puestos/juguetes/shop.show()
-		$main.get_tree().paused = true
 		
 

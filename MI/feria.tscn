@@ -587,6 +587,9 @@ script = ExtResource("27_a1a5g")
 [node name="Area3D" parent="." instance=ExtResource("28_2ctyp")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -9.31459, 1.64555, 4.84471)
 
+[node name="Area3D2" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.05, 0, 0.0866025, 0, 0.1, 0, -0.0866025, 0, 0.05, -2, 1, 2)
+
 [connection signal="pressed" from="Puestos/juguetes/shop/Button" to="Puestos/juguetes/shop" method="_on_button_pressed"]
 [connection signal="body_entered" from="Puestos/juguetes/areaBiblio" to="." method="_on_area_biblio_body_entered"]
 [connection signal="body_exited" from="Puestos/juguetes/areaBiblio" to="." method="_on_area_biblio_body_exited"]
