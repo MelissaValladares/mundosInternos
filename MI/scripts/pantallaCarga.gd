@@ -1,7 +1,7 @@
 extends Control
 
 @onready var progreso = 0
-var escena = global.cargarEscena
+var escena = GameManager.cargarEscena
 
 func _ready():
 	call_deferred("carga")
