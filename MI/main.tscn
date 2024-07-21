@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://cvuq72tcg5w2y"]
 
-[ext_resource type="Script" path="res://steve.gd" id="1_obsyy"]
+[ext_resource type="Script" path="res://scripts/steve.gd" id="1_obsyy"]
 [ext_resource type="PackedScene" uid="uid://oq31tin4j047" path="res://android_gui.tscn" id="4_hiasl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcvko"]
@@ -812,27 +812,27 @@ bones/2/rest = Transform3D(1, 0, -2.38419e-07, 0, 1, 0, 2.38419e-07, 0, 1, -5.82
 bones/2/enabled = true
 bones/2/position = Vector3(-5.82077e-11, 0.84422, -3.63798e-10)
 bones/2/rotation = Quaternion(0, -1.19209e-07, 0, 1)
-bones/2/scale = Vector3(0.993749, 0.993749, 0.993749)
+bones/2/scale = Vector3(0.996767, 0.996767, 0.996767)
 bones/3/name = "Cabeza"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 0, 2.34693e-07, 0, 1, 0, -2.34693e-07, 0, 1, 1.74623e-10, 0.701935, -1.10595e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(1.74623e-10, 0.701935, -1.10595e-09)
-bones/3/rotation = Quaternion(0, 0.0250747, 0, 0.999686)
+bones/3/rotation = Quaternion(0, 0.462204, 0, 0.886774)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "Clavicula.IZQ"
 bones/4/parent = 2
 bones/4/rest = Transform3D(1, -3.18707e-10, 2.37749e-07, -1.84716e-07, -0.630618, 0.776093, 1.49681e-07, -0.776093, -0.630618, 0.0234037, 0.64054, -0.145359)
 bones/4/enabled = true
-bones/4/position = Vector3(0.0413186, 0.619339, -0.276722)
+bones/4/position = Vector3(0.0413256, 0.619303, -0.277528)
 bones/4/rotation = Quaternion(0.902945, -5.1231e-08, 1.07269e-07, -0.429757)
-bones/4/scale = Vector3(0.990678, 0.990678, 0.990678)
+bones/4/scale = Vector3(0.995629, 0.995629, 0.995629)
 bones/5/name = "Brazo.IZQ"
 bones/5/parent = 4
 bones/5/rest = Transform3D(0.999905, 0.00145541, 0.0136814, 0.00348269, 0.935231, -0.354022, -0.0133105, 0.354036, 0.935137, 1.16981e-08, 0.582996, -2.54717e-07)
 bones/5/enabled = true
 bones/5/position = Vector3(1.16981e-08, 0.582996, -2.54717e-07)
-bones/5/rotation = Quaternion(-0.159104, -0.0577746, 0.0356419, 0.984925)
+bones/5/rotation = Quaternion(-0.159813, -0.0305802, 0.0113993, 0.986608)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "Mano.IZQ"
 bones/6/parent = 5
@@ -845,15 +845,15 @@ bones/7/name = "Clavicula.DER"
 bones/7/parent = 2
 bones/7/rest = Transform3D(0.999997, -0.00138729, -0.00173961, -0.00222402, -0.646913, -0.762561, -6.74862e-05, 0.762563, -0.646914, 0.0175385, 0.64054, 0.176588)
 bones/7/enabled = true
-bones/7/position = Vector3(0.0372937, 0.640371, 0.189476)
+bones/7/position = Vector3(0.0372867, 0.640407, 0.190282)
 bones/7/rotation = Quaternion(0.907445, -0.00099491, -0.000497853, 0.42017)
-bones/7/scale = Vector3(0.990678, 0.990678, 0.990678)
+bones/7/scale = Vector3(0.99563, 0.995629, 0.99563)
 bones/8/name = "Brazo.DER"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.999925, -0.00207515, 0.0120517, -0.00301732, 0.913163, 0.407582, -0.0118509, -0.407588, 0.913089, -5.58794e-09, 0.586112, 1.32422e-07)
 bones/8/enabled = true
 bones/8/position = Vector3(-5.58794e-09, 0.586112, 1.32422e-07)
-bones/8/rotation = Quaternion(0.109106, -0.0567209, -0.0384085, 0.991667)
+bones/8/rotation = Quaternion(0.109785, -0.0302487, -0.0133821, 0.993405)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "Mano.DER"
 bones/9/parent = 8

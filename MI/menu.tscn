@@ -1,7 +1,7 @@
 [gd_scene load_steps=44 format=3 uid="uid://sjjrpvu3guff"]
 
 [ext_resource type="StyleBox" uid="uid://dww7bpq7cxks6" path="res://font/estiloBoton.tres" id="1_5rxkv"]
-[ext_resource type="Script" path="res://MenuControl.gd" id="1_ciu1g"]
+[ext_resource type="Script" path="res://scripts/MenuControl.gd" id="1_ciu1g"]
 [ext_resource type="PackedScene" uid="uid://fs010npmq75u" path="res://background.tscn" id="1_nnfq6"]
 [ext_resource type="StyleBox" uid="uid://c8au3hv2f2nry" path="res://font/hoverBoton.tres" id="2_rcb0n"]
 [ext_resource type="StyleBox" uid="uid://d0eslds5p0407" path="res://font/pressBoton.tres" id="3_rb5o8"]

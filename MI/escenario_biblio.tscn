@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://2ol6pmawhr5u"]
 
 [ext_resource type="PackedScene" uid="uid://clmcnopt3o2qk" path="res://3d_assets/1. biblioteca/exterior/biblio.tscn" id="1_aadmc"]
-[ext_resource type="Script" path="res://escenario_biblio.gd" id="1_jiplb"]
+[ext_resource type="Script" path="res://scripts/escenario_biblio.gd" id="1_jiplb"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="3_3kggw"]
 [ext_resource type="PackedScene" uid="uid://clupfqee7tlbt" path="res://3d_assets/1. biblioteca/interior/world.tscn" id="4_8q7ia"]
 [ext_resource type="PackedScene" uid="uid://hm2ii1u3e1ra" path="res://3d_assets/1. biblioteca/interior/escritorio.tscn" id="5_yr7ib"]
