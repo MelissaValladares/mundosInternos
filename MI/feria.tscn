@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=50 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -169,9 +169,28 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22qsa"]
 bg_color = Color(0.027451, 0.462745, 0.639216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqfkf"]
+draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kedey"]
 bg_color = Color(0.400698, 0.400698, 0.400698, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8y82"]
+bg_color = Color(0.568627, 0.686275, 0.47451, 1)
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
@@ -273,6 +292,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 39
 theme_override_styles/normal = SubResource("StyleBoxFlat_hl2u5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_22qsa")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bqfkf")
 text = "Cerrar"
 
 [node name="Comprar" type="Button" parent="Puestos/juguetes/shop"]
@@ -284,6 +304,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxFlat_kedey")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s8y82")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bqfkf")
 text = "Comprar"
 
 [node name="areaBiblio" type="Area3D" parent="Puestos/juguetes"]

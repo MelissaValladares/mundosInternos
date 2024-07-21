@@ -28,4 +28,4 @@ func adquirirAudifonos():
 	nivelConcluido = true
 	$"../Puestos/juguetes/shop/Comprar".disabled=false
 	var styleButton = $"../Puestos/juguetes/shop/Comprar".get_theme_stylebox("normal")
-	styleButton.bg_color = Color(145, 175, 121)
+	styleButton.bg_color = Color(0.56, 0.68, 0.47)
