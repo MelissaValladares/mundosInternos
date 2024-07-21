@@ -22,7 +22,7 @@ func _ready():
 	cerrar.focus_mode = Control.FOCUS_NONE
 
 
-func _process(delta):
+func _process(_delta):
 	$main/android_gui/ControlSuperior/PanelScore/GridContainer/Score.text = "%d/10" % GameManager.score
 	
 

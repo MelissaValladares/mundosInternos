@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dimbw688yb5s8"]
 
-[ext_resource type="Script" path="res://script/ticket.gd" id="1_iaxcg"]
+[ext_resource type="Script" path="res://scripts/ticket.gd" id="1_iaxcg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_abg1y"]
-size = Vector3(3.90833, 2.37183, 5.20309)
+size = Vector3(2.2226, 2.37183, 5.20309)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljdji"]
 resource_name = "Material"
@@ -111,11 +111,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b6f6x")
 
 [node name="Area3D" type="Area3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_iaxcg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929244, 1.13755, 0.57158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0863778, 1.13755, 0.57158)
 shape = SubResource("BoxShape3D_abg1y")
 
 [node name="Cube" type="MeshInstance3D" parent="."]

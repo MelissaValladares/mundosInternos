@@ -178,8 +178,6 @@ transform = Transform3D(0.253181, 0, 2.04891e-08, 0, 0.253181, 0, -2.04891e-08, 
 [node name="lampara4" parent="lamparas" instance=ExtResource("9_5b6hg")]
 transform = Transform3D(0.253181, 0, 7.45058e-09, 0, 0.253181, 0, -7.45058e-09, 0, 0.253181, -62.8426, -1.92114, 16.3691)
 
-[node name="areaBiblio" type="Area3D" parent="edificios/biblio"]
-transform = Transform3D(1, 0, -8.52651e-14, 0, 1, 0, 8.52651e-14, 0, 1, 5.24521e-06, 0, 15.496)
 [node name="lampara5" parent="lamparas" instance=ExtResource("9_5b6hg")]
 transform = Transform3D(0.253181, 0, 9.31323e-09, 0, 0.253181, 0, -9.31323e-09, 0, 0.253181, -23.5849, -2.2574, 6.42766)
 

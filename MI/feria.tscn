@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=49 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://beci6i1dqghox" path="res://3d_assets/2. feria/tara_madera.tscn" id="20_is1iy"]
 [ext_resource type="PackedScene" uid="uid://cd3n11n1bhwnq" path="res://3d_assets/1. biblioteca/exterior/tree.tscn" id="20_y2j4m"]
 [ext_resource type="PackedScene" uid="uid://ccm5lunq5bali" path="res://3d_assets/1. biblioteca/exterior/arbol.tscn" id="21_aff42"]
-[ext_resource type="Script" path="res://script/GameManager.gd" id="27_a1a5g"]
 [ext_resource type="PackedScene" uid="uid://dimbw688yb5s8" path="res://3d_assets/2. feria/ticket.tscn" id="28_2ctyp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_edx0r"]
@@ -601,10 +600,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83504, 0, -15.6702)
 transform = Transform3D(2.08029, 0, 0.676489, 0, 2.18752, 0, -0.676489, 0, 2.08029, -41.1617, -0.831129, -50.8736)
 
 [node name="GameManager" type="Node3D" parent="."]
-script = ExtResource("27_a1a5g")
 
 [node name="Area3D" parent="." instance=ExtResource("28_2ctyp")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -9.31459, 1.64555, 4.84471)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.40649, 1.64555, 4.84471)
 
 [connection signal="pressed" from="Puestos/juguetes/shop/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Puestos/juguetes/shop/Comprar" to="." method="_on_comprar_pressed"]

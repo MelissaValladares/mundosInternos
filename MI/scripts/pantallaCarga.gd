@@ -6,7 +6,7 @@ var escena = global.cargarEscena
 func _ready():
 	call_deferred("carga")
 
-func _process(delta):
+func _process(_delta):
 	%ProgressBar.value = progreso * 100
 
 func carga():
