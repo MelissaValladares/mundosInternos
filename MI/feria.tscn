@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=48 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://onwumytsq47i" path="res://3d_assets/2. feria/tienda_2.tscn" id="3_0bbif"]
 [ext_resource type="PackedScene" uid="uid://b0ukqm3hwk7ic" path="res://3d_assets/2. feria/tienda_3.tscn" id="5_efbeh"]
 [ext_resource type="PackedScene" uid="uid://cuo7tn1on1fy3" path="res://3d_assets/2. feria/tienda_3_(morado).tscn" id="6_xofo4"]
-[ext_resource type="Script" path="res://shop.gd" id="7_jxyr7"]
 [ext_resource type="PackedScene" uid="uid://drmfld38xv6j1" path="res://3d_assets/2. feria/carro_algodones.tscn" id="8_v1bmw"]
 [ext_resource type="PackedScene" uid="uid://5btnubdut6xm" path="res://3d_assets/2. feria/arbusto.tscn" id="9_1yi1c"]
 [ext_resource type="PackedScene" uid="uid://po34yotruboj" path="res://3d_assets/2. feria/carrusel.tscn" id="11_7nx4t"]
@@ -246,7 +245,6 @@ transform = Transform3D(-0.750145, 0, 0.661272, 0, 1, 0, -0.661272, 0, -0.750145
 process_mode = 3
 offset = Vector2(-300, 0)
 transform = Transform2D(1, 0, 0, 1, -300, 0)
-script = ExtResource("7_jxyr7")
 
 [node name="Panel" type="Panel" parent="Puestos/juguetes/shop"]
 offset_left = 298.0
@@ -290,7 +288,6 @@ text = "Comprar"
 
 [node name="areaBiblio" type="Area3D" parent="Puestos/juguetes"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -26.3729, -7.74294, 17.2708)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puestos/juguetes/areaBiblio"]
 transform = Transform3D(0.815189, 0, 0.579196, 0, 1, 0, -0.579196, 0, 0.815189, 9.06951, 3.68084, 26.2625)
@@ -587,7 +584,8 @@ script = ExtResource("27_a1a5g")
 [node name="Area3D" parent="." instance=ExtResource("28_2ctyp")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -9.31459, 1.64555, 4.84471)
 
-[connection signal="pressed" from="Puestos/juguetes/shop/Button" to="Puestos/juguetes/shop" method="_on_button_pressed"]
+[connection signal="pressed" from="Puestos/juguetes/shop/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Puestos/juguetes/shop/Comprar" to="." method="_on_comprar_pressed"]
 [connection signal="body_entered" from="Puestos/juguetes/areaBiblio" to="." method="_on_area_biblio_body_entered"]
 [connection signal="body_exited" from="Puestos/juguetes/areaBiblio" to="." method="_on_area_biblio_body_exited"]
 
