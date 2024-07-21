@@ -26,7 +26,7 @@ func _on_pause_pressed():
 func _on_salir_menu_pressed():
 	audioManager.stopMusica()
 	get_tree().paused = false
-	global.cargarEscena = "res://menu.tscn"
+	GameManager.cargarEscena = "res://menu.tscn"
 	get_tree().change_scene_to_file("res://pantallaCarga.tscn")
 
 
