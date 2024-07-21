@@ -7,6 +7,7 @@ extends Node3D
 var enRango = false
 
 func _ready():
+	audioManager.playMusica("res://sounds/Pueblo.wav", 0)
 	setCalidad(calidadManager.idCalidad)
 	botonAction.visible = false # AL INICIO DE PUEBLO:TSCN ESTÄ OCULTO EL BOTON
 	# SI SE QUIERE HACER GLOBAL PARA TODOS LOS ESCENARIOS: SE DEFINE EN STEVE.GD
@@ -39,7 +40,7 @@ func _on_main_action_pressed(): # Señal que viene de gui_android, botón action
 
 func _on_area_biblio_body_entered(body):
 	if body.is_in_group("player"):
-		global.cargarEscena = "res://escenario_biblio.tscn"
+		GameManager.cargarEscena = "res://escenario_biblio.tscn"
 		enRango = true
 		# Si se requiere otra variable para ver tipo de acción va aquí
 		var texture = load("res://2d_assets/puerta/puerta.png")
@@ -53,7 +54,7 @@ func _on_area_biblio_body_exited(body):
 
 func _on_area_conser_body_entered(body):
 	if body.is_in_group("player"):
-		global.cargarEscena = "res://escenario_conservatorio.tscn"
+		GameManager.cargarEscena = "res://escenario_conservatorio.tscn"
 		enRango = true
 		# Si se requiere otra variable para ver tipo de acción va aquí
 		var texture = load("res://2d_assets/puerta/puerta.png")
@@ -68,7 +69,7 @@ func _on_area_conser_body_exited(body):
 
 func _on_area_parque_body_entered(body):
 	if body.is_in_group("player"):
-		global.cargarEscena = "res://feria.tscn"
+		GameManager.cargarEscena = "res://feria.tscn"
 		enRango = true
 		# Si se requiere otra variable para ver tipo de acción va aquí
 		var texture = load("res://2d_assets/puerta/puerta.png")

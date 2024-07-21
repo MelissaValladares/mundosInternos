@@ -17,7 +17,7 @@ func _ready():
 	audioManager.playMusica("res://sounds/MenuPrincipal.wav", 0)
 
 func _on_iniciar_pressed():
-	global.cargarEscena = "res://PUEBLO.tscn"
+	GameManager.cargarEscena = "res://PUEBLO.tscn"
 	get_tree().change_scene_to_file("res://pantallaCarga.tscn")
 
 func _on_salir_pressed():

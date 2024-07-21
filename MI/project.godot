@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 audioManager="*res://scripts/audioManager.gd"
 calidadManager="*res://scripts/calidadManager.gd"
-global="*res://scripts/global.gd"
 GameManager="*res://scripts/GameManager.gd"
 
 [display]

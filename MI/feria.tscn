@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=51 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://onwumytsq47i" path="res://3d_assets/2. feria/tienda_2.tscn" id="3_0bbif"]
 [ext_resource type="PackedScene" uid="uid://b0ukqm3hwk7ic" path="res://3d_assets/2. feria/tienda_3.tscn" id="5_efbeh"]
 [ext_resource type="PackedScene" uid="uid://cuo7tn1on1fy3" path="res://3d_assets/2. feria/tienda_3_(morado).tscn" id="6_xofo4"]
+[ext_resource type="Texture2D" uid="uid://cpum8hla2ablq" path="res://2d_assets/audifonos/audifonos.png" id="7_lx1qf"]
 [ext_resource type="PackedScene" uid="uid://drmfld38xv6j1" path="res://3d_assets/2. feria/carro_algodones.tscn" id="8_v1bmw"]
 [ext_resource type="PackedScene" uid="uid://5btnubdut6xm" path="res://3d_assets/2. feria/arbusto.tscn" id="9_1yi1c"]
 [ext_resource type="PackedScene" uid="uid://po34yotruboj" path="res://3d_assets/2. feria/carrusel.tscn" id="11_7nx4t"]
@@ -195,8 +196,19 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghdwf"]
+bg_color = Color(0.027451, 0.462745, 0.639216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8becv"]
-size = Vector3(21.8325, 7.56204, 2.29443)
+size = Vector3(15.0821, 4.23952, 2.29443)
 
 [node name="feria" type="Node3D"]
 script = ExtResource("1_u4vuo")
@@ -307,11 +319,36 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s8y82")
 theme_override_styles/focus = SubResource("StyleBoxFlat_bqfkf")
 text = "Comprar"
 
+[node name="Panel2" type="Panel" parent="Puestos/juguetes/shop"]
+offset_left = 755.0
+offset_top = 216.0
+offset_right = 1172.0
+offset_bottom = 643.0
+scale = Vector2(1.03703, 1.05255)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ghdwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Puestos/juguetes/shop/Panel2"]
+position = Vector2(214.073, 178.614)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_lx1qf")
+
+[node name="Label" type="Label" parent="Puestos/juguetes/shop/Panel2"]
+layout_mode = 0
+offset_left = 41.4646
+offset_top = 329.677
+offset_right = 384.465
+offset_bottom = 500.677
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Audifonos Con Cancelación de Ruido"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="areaBiblio" type="Area3D" parent="Puestos/juguetes"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -26.3729, -7.74294, 17.2708)
+transform = Transform3D(0.837604, 0, -0.546277, 0, 1, 0, 0.546277, 0, 0.837604, 2.3346, -2.17143, 2.54155)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puestos/juguetes/areaBiblio"]
-transform = Transform3D(0.815189, 0, 0.579196, 0, 1, 0, -0.579196, 0, 0.815189, 9.06951, 3.68084, 26.2625)
+transform = Transform3D(0.815189, 0, 0.579197, 0, 1, 0, -0.579197, 0, 0.815189, -0.474144, 2.01958, 3.09213)
 shape = SubResource("BoxShape3D_8becv")
 
 [node name="aros" parent="Puestos" instance=ExtResource("3_0bbif")]
@@ -599,10 +636,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83504, 0, -15.6702)
 [node name="circo" parent="." instance=ExtResource("18_e1yco")]
 transform = Transform3D(2.08029, 0, 0.676489, 0, 2.18752, 0, -0.676489, 0, 2.08029, -41.1617, -0.831129, -50.8736)
 
-[node name="GameManager" type="Node3D" parent="."]
+[node name="ticket1" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 13.2254, 0.52592, 6.21624)
 
-[node name="Area3D" parent="." instance=ExtResource("28_2ctyp")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.40649, 1.64555, 4.84471)
+[node name="ticket2" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.06803, 2.21785, 1.96201)
+
+[node name="ticket3" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 46.731, 2.33894, 45.0728)
+
+[node name="ticket4" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.8262, 0.569697, 55.3722)
+
+[node name="ticket5" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 28.8605, 0.877079, -4.29673)
+
+[node name="ticket6" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -56.2417, 0.527343, -12.296)
+
+[node name="ticket7" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.8471, 4.09087, -15.3038)
+
+[node name="ticket8" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.73391, 4.09087, -42.9635)
+
+[node name="ticket9" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42.1708, 0.305441, -37.9754)
+
+[node name="ticket10" parent="." instance=ExtResource("28_2ctyp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -33.6547, 0.573792, 23.7158)
 
 [connection signal="pressed" from="Puestos/juguetes/shop/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Puestos/juguetes/shop/Comprar" to="." method="_on_comprar_pressed"]

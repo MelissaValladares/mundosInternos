@@ -7,7 +7,7 @@ var enRango = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	audioManager.playMusica("res://sounds/Soft.wav", 0)
+	audioManager.playMusica("res://sounds/biblioteca.wav", 0)
 	botonAction.visible = false # AL INICIO DE PUEBLO:TSCN ESTÄ OCULTO EL BOTON
 	# SI SE QUIERE HACER GLOBAL PARA TODOS LOS ESCENARIOS: SE DEFINE EN STEVE.GD
 	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/textMision.text = "Ordena los libros"
@@ -27,7 +27,7 @@ func _on_main_action_pressed():
 
 func _on_area_biblio_body_entered(body):
 	if body.is_in_group("player"):
-		global.cargarEscena = "res://PUEBLO.tscn"
+		GameManager.cargarEscena = "res://PUEBLO.tscn"
 		enRango = true
 		# Si se requiere otra variable para ver tipo de acción va aquí
 		var texture = load("res://2d_assets/puerta/puerta.png")

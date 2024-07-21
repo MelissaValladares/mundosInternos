@@ -1,6 +1,6 @@
 extends Area3D
 
-const ROTATION_SPEED = 1;
+const ROTATION_SPEED = 15;
 var nivelConcluido = false
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#Métododo para rotar
-	rotate_y(deg_to_rad(ROTATION_SPEED)*delta)
+	rotate_y(deg_to_rad(ROTATION_SPEED) * delta)
 
 
 func _on_body_entered(body):
@@ -21,7 +21,7 @@ func _on_body_entered(body):
 			adquirirAudifonos()
 		
 func puntajeAlcanzado() -> bool:
-	return GameManager.score == 1
+	return GameManager.score == 10
 	
 func adquirirAudifonos():
 	print("Compra audifonos")

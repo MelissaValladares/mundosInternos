@@ -14,7 +14,3 @@ func _ready():
 	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/statusMision.text = ""
 	botonInfo.button_pressed = true
 	panelScore.visible = true
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
