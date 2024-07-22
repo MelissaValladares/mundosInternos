@@ -130,6 +130,7 @@ offset_bottom = 305.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_01dx8")
 
 [node name="GridContainer" type="GridContainer" parent="PanelInfo"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_constants/v_separation = 30
 
@@ -139,14 +140,19 @@ theme_override_font_sizes/font_size = 40
 text = "Misión:"
 
 [node name="textMision" type="Label" parent="PanelInfo/GridContainer"]
+custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 40
-text = "La misión es tal y tal y cual"
+text = "Recoge"
+autowrap_mode = 2
 
 [node name="statusMision" type="Label" parent="PanelInfo/GridContainer"]
+custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Completo 2/10"
+autowrap_mode = 2
 
 [node name="PanelScore" type="PanelContainer" parent="."]
 layout_mode = 0

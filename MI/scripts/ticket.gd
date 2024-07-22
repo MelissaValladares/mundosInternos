@@ -16,8 +16,10 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "main":
 		GameManager.add_score()
+		audioManager.playSFX("res://sounds/SFX/getTickets.wav", 0, 1)
 		queue_free()
 		if not nivelConcluido and puntajeAlcanzado():
+			audioManager.playSFX("res://sounds/SFX/gameComplete.wav", 0, 1)
 			adquirirAudifonos()
 		
 func puntajeAlcanzado() -> bool:

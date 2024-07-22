@@ -105,6 +105,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		curAnim = SALTAR
+		audioManager.playSFX("res://sounds/SFX/Salto.wav", -1, 2)
 		
 	# salir con esc
 	if Input.is_action_just_pressed("quit"):

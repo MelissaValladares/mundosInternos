@@ -2,6 +2,7 @@ extends Node
 
 var musicPlayer: AudioStreamPlayer
 var sfxPlayer: AudioStreamPlayer
+var sfxPlayer2: AudioStreamPlayer
 var SFX = true
 var musica = true
 
@@ -9,8 +10,10 @@ func _ready():
 	# Crear y configurar el nodo AudioStreamPlayer
 	musicPlayer = AudioStreamPlayer.new()
 	sfxPlayer = AudioStreamPlayer.new()
+	sfxPlayer2 = AudioStreamPlayer.new()
 	add_child(musicPlayer)
 	add_child(sfxPlayer)
+	add_child(sfxPlayer2)
 	
 	# Cargar configuraciones
 	loadConfigAudio()
@@ -30,13 +33,18 @@ func playMusica(audioPath: String, volume_db: float):
 func stopMusica():
 	musicPlayer.stop()
 
-func playSFX(audioPath: String, volume_db: float):
+func playSFX(audioPath: String, volume_db: float, chanel: int):
 	if SFX:
 		var audioStream = load(audioPath)
 		if audioStream is AudioStream:
-			sfxPlayer.stream = audioStream
-			sfxPlayer.volume_db = volume_db
-			sfxPlayer.play()
+			if chanel == 1:
+				sfxPlayer.stream = audioStream
+				sfxPlayer.volume_db = volume_db
+				sfxPlayer.play()
+			else:
+				sfxPlayer2.stream = audioStream
+				sfxPlayer2.volume_db = volume_db
+				sfxPlayer2.play()
 		else:
 			print("Error: No se pudo cargar el archivo de efecto de sonido")
 

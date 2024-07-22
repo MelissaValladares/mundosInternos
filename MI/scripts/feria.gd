@@ -12,8 +12,8 @@ func _ready():
 	audioManager.playMusica("res://sounds/Feria.wav", 0)
 	botonAction.visible = false # AL INICIO DE PUEBLO:TSCN ESTÄ OCULTO EL BOTON
 	# SI SE QUIERE HACER GLOBAL PARA TODOS LOS ESCENARIOS: SE DEFINE EN STEVE.GD
-	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/textMision.text = "Recoge las monedas"
-	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/statusMision.text = ""
+	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/textMision.text = "1. Recoge los boletos"
+	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/statusMision.text = "2. Intercambialos por unos audífonos"
 	$main/android_gui/ControlSuperior/PanelScore/GridContainer/textoScore.text = "Boletos"
 	$Puestos/juguetes/shop.hide()
 	$Puestos/juguetes/shop/Comprar.disabled = true; 
@@ -34,3 +34,4 @@ func _on_area_biblio_body_entered(body):
 
 func _on_button_pressed():
 	$Puestos/juguetes/shop/AnimationPlayer.play("TOUT")
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)

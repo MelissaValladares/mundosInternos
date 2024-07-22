@@ -18,14 +18,17 @@ func _ready():
 
 func _on_info_toggled(toggled_on):
 	PanelInfo.visible = toggled_on
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 
 func _on_pause_pressed():
 	PanelPausa.visible = true
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	get_tree().paused = not get_tree().paused
 	
 func _on_salir_menu_pressed():
 	audioManager.stopMusica()
 	get_tree().paused = false
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	GameManager.cargarEscena = "res://menu.tscn"
 	get_tree().change_scene_to_file("res://pantallaCarga.tscn")
 
@@ -33,6 +36,7 @@ func _on_salir_menu_pressed():
 func _on_regresar_juego_pressed():
 	PanelPausa.visible = false
 	get_tree().paused = not get_tree().paused
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 
 # Manejo de eventos de entrada (táctiles y clics de ratón)
 #func _input(event):

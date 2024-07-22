@@ -17,26 +17,34 @@ func _ready():
 	audioManager.playMusica("res://sounds/MenuPrincipal.wav", 0)
 
 func _on_iniciar_pressed():
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	GameManager.cargarEscena = "res://PUEBLO.tscn"
 	get_tree().change_scene_to_file("res://pantallaCarga.tscn")
 
 func _on_salir_pressed():
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	PopUpSalida.visible = true
 	botonConfig.visible = false
 
 func _on_confirmar_salida_pressed():
+	audioManager.stopMusica()
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
+	await get_tree().create_timer(0.8).timeout
 	get_tree().quit()
 
 func _on_denegar_salida_pressed():
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	PopUpSalida.visible = false
 	botonConfig.visible = true
 
 ########  SECCIÓN CONFIGURACIÓN  ########
 func _on_boton_config_pressed():
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	botonConfig.visible = false
 	PopUpConfiguracion.visible = true
 
 func _on_okey_pressed():
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	botonConfig.visible = true
 	PopUpConfiguracion.visible = false
 
@@ -55,6 +63,7 @@ func _on_musica_check_toggled(toggled_on):
 			audioManager.stopMusica()
 
 func _on_option_button_item_selected(index):
+	audioManager.playSFX("res://sounds/SFX/botones.wav", 0, 1)
 	calidadManager.setCalidad(index)
 	
 ####CONFIGURACION TOUCH MÓVIL#####
