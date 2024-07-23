@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dimbw688yb5s8"]
+[gd_scene load_steps=11 format=3 uid="uid://dimbw688yb5s8"]
 
 [ext_resource type="Script" path="res://scripts/ticket.gd" id="1_iaxcg"]
 
@@ -110,6 +110,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b6f6x")
 
+[sub_resource type="Gradient" id="Gradient_k3wi8"]
+offsets = PackedFloat32Array(0.0444444, 0.511111, 1)
+colors = PackedColorArray(0.828275, 0.845093, 3.85046e-07, 1, 0.928448, 0.935455, 0.583333, 1, 1, 1, 1, 1)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tnaah"]
+color_ramp = SubResource("Gradient_k3wi8")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_pm421"]
+emission_enabled = true
+emission = Color(0.572499, 0.597577, 0, 1)
+emission_energy_multiplier = 16.0
+rim_texture = SubResource("NoiseTexture2D_tnaah")
+backlight = Color(1, 1, 1, 1)
+
 [node name="Area3D" type="Area3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_iaxcg")
@@ -122,5 +136,6 @@ shape = SubResource("BoxShape3D_abg1y")
 transform = Transform3D(0.22923, 0, 0, 0, 1.18344, 0, 0, 0, 2.61298, 0, 1.14295, 0.556439)
 mesh = SubResource("ArrayMesh_ed18x")
 skeleton = NodePath("")
+surface_material_override/2 = SubResource("ORMMaterial3D_pm421")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

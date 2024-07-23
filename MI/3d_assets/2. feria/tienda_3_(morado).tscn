@@ -139,6 +139,7 @@ transform = Transform3D(0.189064, 0, 0, 0, 0.189064, 0, 0, 0, 0.189064, 6.78624,
 
 [node name="moneditas" parent="." index="22" instance=ExtResource("5_28s8e")]
 transform = Transform3D(0.132, 0, 0, 0, 0.132, 0, 0, 0, 0.132, -6.34612, 1.59826, -3.63658)
+visible = false
 
 [node name="lampara_flueorescente" parent="." index="23" instance=ExtResource("6_wfv51")]
 transform = Transform3D(0.0492709, -0.798481, 0, 0.798481, 0.0492709, 0, 0, 0, 0.8, -8.74114, 5.30668, -0.0443494)

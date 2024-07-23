@@ -73,24 +73,30 @@ transform = Transform3D(0.541522, 0, -0.203081, 0, 0.57835, 0, 0.203081, 0, 0.54
 
 [node name="moneditas" parent="." index="9" instance=ExtResource("4_8dri5")]
 transform = Transform3D(0.0181668, 0, 0.0700592, 0, 0.0723763, 0, -0.0700592, 0, 0.0181668, 0.20177, -0.567354, -0.908523)
+visible = false
 
 [node name="taza2" parent="." index="10" instance=ExtResource("5_4qsgo")]
 transform = Transform3D(0.171153, 0, 0, 0, 0.171153, 0, 0, 0, 0.171153, 1.39829, -0.497406, -0.83443)
 
 [node name="moneditas2" parent="." index="11" instance=ExtResource("4_8dri5")]
 transform = Transform3D(-0.0563382, 0, 0.0454349, 0, 0.0723763, 0, -0.0454349, 0, -0.0563382, -0.266951, -0.567354, -1.03007)
+visible = false
 
 [node name="moneditas3" parent="." index="12" instance=ExtResource("4_8dri5")]
 transform = Transform3D(0.0422684, 0, -0.0587513, 0, 0.0723763, 0, 0.0587513, 0, 0.0422684, -1.1612, -0.567354, -0.742794)
+visible = false
 
 [node name="moneditas4" parent="." index="13" instance=ExtResource("4_8dri5")]
 transform = Transform3D(0.0709521, 0, 0.0142871, 0, 0.0723763, 0, -0.0142871, 0, 0.0709521, -0.768132, -0.567354, -1.02559)
+visible = false
 
 [node name="moneditas5" parent="." index="14" instance=ExtResource("4_8dri5")]
 transform = Transform3D(-0.0402647, 0, 0.0601422, 0, 0.0723763, 0, -0.0601422, 0, -0.0402647, -0.165624, -0.567354, -1.23492)
+visible = false
 
 [node name="moneditas6" parent="." index="15" instance=ExtResource("4_8dri5")]
 transform = Transform3D(0.0719893, 0, -0.00747493, 0, 0.0723763, 0, 0.00747493, 0, 0.0719893, -0.645432, -0.567354, -1.37979)
+visible = false
 
 [node name="cute_astronaut" parent="." index="16" instance=ExtResource("7_6ek8c")]
 transform = Transform3D(0.237684, 0.30578, 0, -0.30578, 0.237684, 0, 0, 0, 0.387292, 6.97979, 3.49927, 0.393192)

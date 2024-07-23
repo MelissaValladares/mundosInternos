@@ -1,6 +1,6 @@
 extends Area3D
 
-const ROTATION_SPEED = 15;
+const ROTATION_SPEED = 2;
 var nivelConcluido = false
 
 # Called when the node enters the scene tree for the first time.
@@ -8,9 +8,9 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#Métododo para rotar
-	rotate_y(deg_to_rad(ROTATION_SPEED) * delta)
+	rotate_y(deg_to_rad(ROTATION_SPEED))
 
 
 func _on_body_entered(body):

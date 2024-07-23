@@ -130,6 +130,7 @@ transform = Transform3D(-0.118629, 0, 0.129679, 0, 0.175754, 0, -0.129679, 0, -0
 
 [node name="moneditas" parent="." index="19" instance=ExtResource("5_pxpf7")]
 transform = Transform3D(0.122219, 0, 0, 0, 0.122219, 0, 0, 0, 0.122219, -6.81199, 1.59572, -3.09721)
+visible = false
 
 [node name="taza" parent="." index="20" instance=ExtResource("6_35vec")]
 transform = Transform3D(0.224134, 0, 0, 0, 0.224134, 0, 0, 0, 0.224134, -6.26924, 1.58713, -1.96963)

@@ -42,7 +42,8 @@ sky_material = SubResource("ProceduralSkyMaterial_edx0r")
 background_mode = 2
 sky = SubResource("Sky_yq20s")
 fog_enabled = true
-fog_light_color = Color(0.0562742, 0.0654545, 0.0798877, 1)
+fog_light_color = Color(0.00855484, 0.0779674, 0.141128, 1)
+fog_light_energy = 1.39
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd3ay"]
 albedo_color = Color(0.2, 0.168627, 0.133333, 1)
@@ -269,7 +270,7 @@ transform = Transform3D(-1.47325, 0, 0.282023, 0, 1.5, 0, -0.282023, 0, -1.47325
 transform = Transform3D(1.47758, 0, -0.258359, 0, 1.5, 0, 0.258359, 0, 1.47758, -3.12819, -1.90735e-06, 3.13109)
 
 [node name="juguetes" parent="Puestos" instance=ExtResource("2_cnyrq")]
-transform = Transform3D(-0.750145, 0, 0.661272, 0, 1, 0, -0.661272, 0, -0.750145, -51.3221, 1.94496, 22.2705)
+transform = Transform3D(-0.750145, 0, 0.661272, 0, 1, 0, -0.661272, 0, -0.750145, -49.5663, 0.88792, 21.5659)
 
 [node name="shop" type="CanvasLayer" parent="Puestos/juguetes"]
 process_mode = 3
@@ -334,13 +335,13 @@ texture = ExtResource("7_lx1qf")
 
 [node name="Label" type="Label" parent="Puestos/juguetes/shop/Panel2"]
 layout_mode = 0
-offset_left = 41.4646
-offset_top = 329.677
-offset_right = 384.465
-offset_bottom = 500.677
+offset_left = 45.3217
+offset_top = 349.627
+offset_right = 388.322
+offset_bottom = 411.627
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 32
-text = "Audifonos Con Cancelación de Ruido"
+text = "Audifonos"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -486,13 +487,7 @@ transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862
 transform = Transform3D(0.664401, 0, 3.70669, 0, 3.76576, 0, -3.70669, 0, 0.664401, -3.27487, 0.0425218, -3.22108)
 
 [node name="taras3" type="Node3D" parent="Relleno"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0245, 0.0256429, 45.5672)
-
-[node name="tara_madera" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
-transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, 0, 0.0425218, 0)
-
-[node name="tara_madera2" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
-transform = Transform3D(3.76576, 0, 0, 0, 3.76576, 0, 0, 0, 3.76576, -0.969502, 1.07751, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0245, 0.0256429, 45.3892)
 
 [node name="tara_madera3" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
 transform = Transform3D(3.49418, 0, 1.40416, 0, 3.76576, 0, -1.40416, 0, 3.49418, -1.23049, 0.0425218, -1.41524)
@@ -505,9 +500,6 @@ transform = Transform3D(1.99862, 0, 3.19163, 0, 3.76576, 0, -3.19163, 0, 1.99862
 
 [node name="tara_madera6" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
 transform = Transform3D(0.664401, 0, 3.70669, 0, 3.76576, 0, -3.70669, 0, 0.664401, -3.27487, 0.0425218, -3.22108)
-
-[node name="tara_madera7" parent="Relleno/taras3" instance=ExtResource("20_is1iy")]
-transform = Transform3D(2.53693, 0, 2.78298, 0, 3.76576, 0, -2.78298, 0, 2.53693, -2.3706, 0.0425218, 1.35817)
 
 [node name="taras4" type="Node3D" parent="Relleno"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0552, 0.0256439, 62.1469)
@@ -643,7 +635,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 13.2254, 0.52592, 6.216
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.06803, 2.21785, 1.96201)
 
 [node name="ticket3" parent="." instance=ExtResource("28_2ctyp")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 46.731, 2.33894, 45.0728)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 44.6423, 2.45911, 42.1832)
 
 [node name="ticket4" parent="." instance=ExtResource("28_2ctyp")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.8262, 0.569697, 55.3722)
