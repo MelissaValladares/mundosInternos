@@ -99,7 +99,11 @@ func _physics_process(delta):
 	
 	# Botón Acción
 	if Input.is_action_just_pressed("ui_home"):
+		curAnim = INTERACTUAR
+		#handle_animation(delta)
+		#await  get_tree().create_timer(1).timeout
 		action_pressed.emit()
+		
 		
 	# Salto
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -128,7 +132,7 @@ func _physics_process(delta):
 	handle_animation(delta)
 	move_and_slide()
 	#bajarEscaleras()
-		
+	
 	# Movimiento de la cámara controlado por acciones left, right, up y down
 	var camera_dir = Vector2.ZERO
 	if Input.is_action_pressed("char_left"):

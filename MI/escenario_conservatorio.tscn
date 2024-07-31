@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d205ig50loixb"]
+[gd_scene load_steps=23 format=3 uid="uid://d205ig50loixb"]
 
 [ext_resource type="Script" path="res://scripts/escenario_conservatorio.gd" id="1_550w2"]
 [ext_resource type="PackedScene" uid="uid://puy37nh7n5p7" path="res://3d_assets/conservatorio/conservatorio_int.tscn" id="1_yy08i"]
@@ -31,6 +31,9 @@ background_mode = 2
 sky = SubResource("Sky_uuwt5")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw4gb"]
+size = Vector3(1, 1.65918, 2.35999)
 
 [node name="escenario_conservatorio" type="Node3D"]
 script = ExtResource("1_550w2")
@@ -207,3 +210,23 @@ transform = Transform3D(0.583942, 0, 0, 0, 0.583942, 0, 0, 0, 0.583942, -16.6937
 
 [node name="main" parent="." instance=ExtResource("17_1cp4h")]
 transform = Transform3D(1.37079, 0, 0, 0, 1.37079, 0, 0, 0, 1.37079, 18.0526, 5.80383, 21.7444)
+
+[node name="AreaJuego" type="Area3D" parent="."]
+transform = Transform3D(0.911669, 0, -0.410926, 0, 1, 0, 0.410926, 0, 0.911669, 21.4222, 8.78248, 10.5202)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaJuego"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62939e-06, -0.32959, 0.0210619)
+shape = SubResource("BoxShape3D_dw4gb")
+
+[node name="AreaComposicion" type="Area3D" parent="."]
+transform = Transform3D(0.999701, 0, 0.0244494, 0, 1, 0, -0.0244494, 0, 0.999701, 28.3767, 6.74762, 16.3691)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaComposicion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62939e-06, -0.32959, 0.0210619)
+shape = SubResource("BoxShape3D_dw4gb")
+
+[connection signal="action_pressed" from="main" to="." method="_on_main_action_pressed"]
+[connection signal="body_entered" from="AreaJuego" to="." method="_on_area_juego_body_entered"]
+[connection signal="body_exited" from="AreaJuego" to="." method="_on_area_juego_body_exited"]
+[connection signal="body_entered" from="AreaComposicion" to="." method="_on_area_composicion_body_entered"]
+[connection signal="body_exited" from="AreaComposicion" to="." method="_on_area_composicion_body_exited"]
