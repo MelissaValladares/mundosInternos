@@ -1,10 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxitwtotroi6e"]
+[gd_scene load_steps=3 format=3 uid="uid://bxitwtotroi6e"]
 
 [ext_resource type="Script" path="res://scripts/inventario.gd" id="1_7tmyt"]
+[ext_resource type="PackedScene" uid="uid://dj0cpd42ae63h" path="res://slot.tscn" id="2_humai"]
 
 [node name="inventario" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 80.0
+offset_bottom = 80.0
 script = ExtResource("1_7tmyt")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -16,4 +17,40 @@ theme_override_constants/margin_bottom = 8
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
-columns = 3
+columns = 5
+
+[node name="slot1" parent="MarginContainer/GridContainer" instance=ExtResource("2_humai")]
+layout_mode = 2
+
+[node name="TouchScreenButton" parent="MarginContainer/GridContainer/slot1/MarginContainer" index="0"]
+action = "slot_1"
+
+[node name="slot2" parent="MarginContainer/GridContainer" instance=ExtResource("2_humai")]
+layout_mode = 2
+
+[node name="TouchScreenButton" parent="MarginContainer/GridContainer/slot2/MarginContainer" index="0"]
+action = "slot_2"
+
+[node name="slot3" parent="MarginContainer/GridContainer" instance=ExtResource("2_humai")]
+layout_mode = 2
+
+[node name="TouchScreenButton" parent="MarginContainer/GridContainer/slot3/MarginContainer" index="0"]
+action = "slot_3"
+
+[node name="slot4" parent="MarginContainer/GridContainer" instance=ExtResource("2_humai")]
+layout_mode = 2
+
+[node name="TouchScreenButton" parent="MarginContainer/GridContainer/slot4/MarginContainer" index="0"]
+action = "slot_4"
+
+[node name="slot5" parent="MarginContainer/GridContainer" instance=ExtResource("2_humai")]
+layout_mode = 2
+
+[node name="TouchScreenButton" parent="MarginContainer/GridContainer/slot5/MarginContainer" index="0"]
+action = "slot_5"
+
+[editable path="MarginContainer/GridContainer/slot1"]
+[editable path="MarginContainer/GridContainer/slot2"]
+[editable path="MarginContainer/GridContainer/slot3"]
+[editable path="MarginContainer/GridContainer/slot4"]
+[editable path="MarginContainer/GridContainer/slot5"]

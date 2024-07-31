@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1lt5hjir2iud"]
+
+[ext_resource type="PackedScene" uid="uid://wiexj6bhhkaw" path="res://3d_assets/1. biblioteca/interior/librero.glb" id="1_g1028"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkhhy"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vr5lb"]
+size = Vector3(1.62793, 7.00743, 11.0037)
+
+[node name="librero" instance=ExtResource("1_g1028")]
+
+[node name="libros" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_gkhhy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.455322, 3.35317, 3.34685)
+shape = SubResource("BoxShape3D_vr5lb")

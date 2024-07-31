@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://capsmgq38iwfi"]
 
-[ext_resource type="Texture2D" uid="uid://bjq2yfnwjf8sx" path="res://2d_assets/jump/jump.png" id="1_lv3we"]
-[ext_resource type="Texture2D" uid="uid://b71upxc38u8fn" path="res://2d_assets/jump/jump_pressed.png" id="2_1r371"]
+[ext_resource type="Texture2D" uid="uid://cfo5g4vk2dk4o" path="res://2d_assets/jump/jump.svg" id="1_cgter"]
+[ext_resource type="Texture2D" uid="uid://btf5klmmvrpvr" path="res://2d_assets/jump/jump_pressed.svg" id="2_jcfpw"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="3_jy36l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_awl4m"]
-radius = 349.29
+radius = 482.35
 
 [node name="jump_button" type="Control"]
 layout_mode = 3
@@ -16,10 +16,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(45, 34)
-scale = Vector2(0.903333, 0.89)
-texture_normal = ExtResource("1_lv3we")
-texture_pressed = ExtResource("2_1r371")
+position = Vector2(67, 58)
+scale = Vector2(0.62505, 0.615824)
+texture_normal = ExtResource("1_cgter")
+texture_pressed = ExtResource("2_jcfpw")
 shape = SubResource("CircleShape2D_awl4m")
 action = "ui_accept"
 

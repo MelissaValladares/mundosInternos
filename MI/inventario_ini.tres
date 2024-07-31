@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://bmnbfnqf183h7"]
+
+[ext_resource type="Script" path="res://scripts/inventory_data.gd" id="1_wqpdk"]
+[ext_resource type="Resource" uid="uid://cp18pbj1lo5gy" path="res://2d_assets/items/libro_recolectable.tres" id="2_3tcff"]
+[ext_resource type="Script" path="res://scripts/slot_data.gd" id="3_mmj7s"]
+
+[sub_resource type="Resource" id="Resource_mi03g"]
+script = ExtResource("3_mmj7s")
+item_data = ExtResource("2_3tcff")
+cantidad = 1
+
+[resource]
+script = ExtResource("1_wqpdk")
+slot_datas = Array[ExtResource("3_mmj7s")]([SubResource("Resource_mi03g"), null, null, null, null])

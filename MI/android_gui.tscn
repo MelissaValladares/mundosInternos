@@ -58,6 +58,18 @@ grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_horizontal_guides_ = [19.0]
 
+[node name="InventarioArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 759.0
+offset_top = 981.0
+offset_right = 821.0
+offset_bottom = 994.0
+grow_vertical = 0
+scale = Vector2(6.97062, 7.27679)
+
 [node name="ui_inventario" type="CanvasLayer" parent="."]
 
 [node name="interface_prin" type="Control" parent="ui_inventario"]
@@ -67,13 +79,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 50.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="inventario" parent="ui_inventario/interface_prin" instance=ExtResource("5_hor24")]
 layout_mode = 0
-offset_top = -50.0
-offset_bottom = -10.0
+offset_left = -150.0
+offset_right = -50.0
+offset_bottom = 100.0

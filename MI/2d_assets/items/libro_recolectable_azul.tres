@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d0hudgk3onhlx"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_5s7t3"]
+[ext_resource type="Texture2D" uid="uid://b5e80sqtndhoe" path="res://2d_assets/items/libro_recolectable_azul.svg" id="2_5ayhv"]
+
+[resource]
+script = ExtResource("1_5s7t3")
+nombre = "Libro Recolectable Azul"
+acumulable = true
+textura = ExtResource("2_5ayhv")
+mesh = "res://3d_assets/1. biblioteca/interior/libro_cerrado_azul.tscn"

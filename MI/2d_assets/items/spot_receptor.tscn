@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://bin72oeyu7tad"]
+
+[ext_resource type="Script" path="res://scripts/spot_receptor.gd" id="1_kbsof"]
+[ext_resource type="Resource" uid="uid://cp18pbj1lo5gy" path="res://2d_assets/items/libro_recolectable.tres" id="2_mw1ys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_181yq"]
+size = Vector3(0.396805, 1.74876, 2.45117)
+
+[sub_resource type="Gradient" id="Gradient_jcxcm"]
+offsets = PackedFloat32Array(0.164384, 1)
+colors = PackedColorArray(0.0605766, 0.282479, 0.948173, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mw5wx"]
+gradient = SubResource("Gradient_jcxcm")
+
+[sub_resource type="Curve" id="Curve_excbv"]
+max_value = 16.0
+_data = [Vector2(0.00625, 5.16129), 0.0, 0.0, 0, 0, Vector2(0.984375, 15.871), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_l2ofy"]
+curve = SubResource("Curve_excbv")
+
+[sub_resource type="Curve" id="Curve_sh3c3"]
+_data = [Vector2(0.00625, 0.403226), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nmlls"]
+curve = SubResource("Curve_sh3c3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_381nm"]
+particle_flag_align_y = true
+emission_shape_scale = Vector3(2, 4, 6)
+emission_shape = 3
+emission_box_extents = Vector3(2, 1, 1)
+radial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_nmlls")
+color_ramp = SubResource("GradientTexture1D_mw5wx")
+emission_curve = SubResource("CurveTexture_l2ofy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o37dg"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_2twj1"]
+material = SubResource("StandardMaterial3D_o37dg")
+size = Vector3(0.05, 0.05, 0.05)
+
+[node name="spot_receptor" type="StaticBody3D" groups=["slot_interctuable"]]
+collision_layer = 2
+script = ExtResource("1_kbsof")
+item_data = ExtResource("2_mw1ys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00726938, 0.469372, 0)
+shape = SubResource("BoxShape3D_181yq")
+
+[node name="particulas" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.048546, 0.396521, 0)
+visible = false
+amount = 110
+amount_ratio = 0.3316
+lifetime = 1.25
+visibility_aabb = AABB(-1.74525, -3.56502, -4.60651, 3.4905, 7.86052, 9.39368)
+process_material = SubResource("ParticleProcessMaterial_381nm")
+draw_pass_1 = SubResource("BoxMesh_2twj1")
