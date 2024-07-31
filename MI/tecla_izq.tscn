@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://crg8ohrchtebn"]
+
+[ext_resource type="Texture2D" uid="uid://bj64oan8c2y5r" path="res://2d_assets/TecladoPiano/teclaIZQ.png" id="2_ajnbb"]
+
+[node name="TeclaIZQ" type="Node2D"]
+
+[node name="TexturaIZQ" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 402.0
+offset_bottom = 1907.0
+scale = Vector2(0.564, 0.564)
+texture = ExtResource("2_ajnbb")

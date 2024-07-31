@@ -1,0 +1,585 @@
+[gd_scene load_steps=23 format=3 uid="uid://dtjfmq47dw8hr"]
+
+[ext_resource type="Script" path="res://scripts/gamePiano.gd" id="1_7ld1m"]
+[ext_resource type="PackedScene" uid="uid://cqkee1txao4bt" path="res://tecla_der.tscn" id="1_8wfcv"]
+[ext_resource type="PackedScene" uid="uid://crg8ohrchtebn" path="res://tecla_izq.tscn" id="2_4vuah"]
+[ext_resource type="Texture2D" uid="uid://bnciexufp6as8" path="res://2d_assets/TecladoPiano/madera.png" id="2_ryn4s"]
+[ext_resource type="PackedScene" uid="uid://bx8gb2l6a4dys" path="res://tecla_negra.tscn" id="3_5wxpu"]
+[ext_resource type="PackedScene" uid="uid://dch88d3n8wygm" path="res://partitura.tscn" id="5_f0wgl"]
+[ext_resource type="PackedScene" uid="uid://ccg565ae8atej" path="res://barra_gui.tscn" id="7_vj003"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnqtu"]
+bg_color = Color(0.811765, 0.698039, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lw2ph"]
+bg_color = Color(1, 0.492321, 0.830741, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4x86i"]
+size = Vector2(393.22, 2389.83)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f12u4"]
+bg_color = Color(0.884518, 0.63057, 0.557498, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqgvu"]
+bg_color = Color(0.589815, 0.685044, 0.996215, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8pjn"]
+bg_color = Color(0.702067, 0.653337, 0.951293, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1m4tu"]
+bg_color = Color(0.362483, 0.819786, 0.283579, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6psau"]
+bg_color = Color(1, 0.554097, 0.526401, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ml3ax"]
+bg_color = Color(0.763087, 0.698527, 0.500807, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swhog"]
+bg_color = Color(0.185533, 0.759266, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spae6"]
+bg_color = Color(0.495433, 0.769319, 0.636339, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bwh0"]
+bg_color = Color(0.927244, 0.632457, 0.179512, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sacov"]
+bg_color = Color(0.789825, 0.647213, 0.78623, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jgoe"]
+bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+border_width_bottom = 3
+border_color = Color(0.623253, 0.148097, 0.183121, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t46j"]
+draw_center = false
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+
+[node name="gamePiano" type="Node2D"]
+script = ExtResource("1_7ld1m")
+metadata/_edit_horizontal_guides_ = [1079.0]
+
+[node name="Madera" type="TextureRect" parent="."]
+offset_top = 495.0
+offset_right = 1965.0
+offset_bottom = 1083.0
+texture = ExtResource("2_ryn4s")
+
+[node name="Do" parent="." instance=ExtResource("1_8wfcv")]
+position = Vector2(172, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaDo" type="Area2D" parent="Do"]
+scale = Vector2(0.565, 0.565)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Do/AreaDo"]
+polygon = PackedVector2Array(3.5461, 3.5461, 297.872, 3.5461, 297.872, 1230.5, 319.149, 1250, 395.39, 1250, 395.39, 1900.71, 3.5461, 1900.71)
+
+[node name="LabelDo" type="Label" parent="Do"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = 909.091
+offset_right = 152.0
+offset_bottom = 996.091
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_xnqtu")
+text = "Do"
+horizontal_alignment = 1
+
+[node name="Re" parent="." instance=ExtResource("2_4vuah")]
+position = Vector2(397, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaRe" type="Area2D" parent="Re"]
+scale = Vector2(0.57, 0.57)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Re/AreaRe"]
+polygon = PackedVector2Array(101.064, 3.5461, 395.39, 3.5461, 397.163, 1900.71, 3.5461, 1900.71, 3.5461, 1250, 83.3333, 1250, 102.837, 1218.09)
+
+[node name="LabelRe" type="Label" parent="Re"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = 909.091
+offset_right = 152.0
+offset_bottom = 996.091
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_lw2ph")
+text = "Re"
+horizontal_alignment = 1
+
+[node name="Do#" parent="." instance=ExtResource("3_5wxpu")]
+position = Vector2(338, 487)
+scale = Vector2(1, 0.55)
+
+[node name="AreaDo#" type="Area2D" parent="Do#"]
+scale = Vector2(0.295, 0.295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Do#/AreaDo#"]
+position = Vector2(200, 1198.31)
+shape = SubResource("RectangleShape2D_4x86i")
+
+[node name="LabelDo#" type="Label" parent="Do#"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 603.636
+offset_right = 105.0
+offset_bottom = 676.636
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_f12u4")
+text = "Do#"
+horizontal_alignment = 1
+
+[node name="Mi" parent="." instance=ExtResource("2_4vuah")]
+position = Vector2(626, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaMi" type="Area2D" parent="Mi"]
+scale = Vector2(0.565, 0.565)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mi/AreaMi"]
+polygon = PackedVector2Array(101.064, 3.5461, 395.39, 3.5461, 397.163, 1900.71, 3.5461, 1900.71, 3.5461, 1250, 83.3333, 1250, 102.837, 1218.09)
+
+[node name="LabelMi" type="Label" parent="Mi"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = 907.273
+offset_right = 161.0
+offset_bottom = 994.273
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_yqgvu")
+text = "Mi"
+horizontal_alignment = 1
+
+[node name="Re#" parent="." instance=ExtResource("3_5wxpu")]
+position = Vector2(573, 487)
+scale = Vector2(1, 0.55)
+
+[node name="AreaRe#" type="Area2D" parent="Re#"]
+scale = Vector2(0.295, 0.295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Re#/AreaRe#"]
+position = Vector2(200, 1198.31)
+shape = SubResource("RectangleShape2D_4x86i")
+
+[node name="LabelRe#" type="Label" parent="Re#"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 603.636
+offset_right = 105.0
+offset_bottom = 676.636
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_n8pjn")
+text = "Re#"
+horizontal_alignment = 1
+
+[node name="Fa" parent="." instance=ExtResource("1_8wfcv")]
+position = Vector2(850, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaFa" type="Area2D" parent="Fa"]
+scale = Vector2(0.565, 0.565)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fa/AreaFa"]
+polygon = PackedVector2Array(3.5461, 3.5461, 297.872, 3.5461, 297.872, 1230.5, 319.149, 1250, 395.39, 1250, 395.39, 1900.71, 3.5461, 1900.71)
+
+[node name="LabelFa" type="Label" parent="Fa"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = 907.273
+offset_right = 161.0
+offset_bottom = 994.273
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_1m4tu")
+text = "Fa"
+horizontal_alignment = 1
+
+[node name="Sol" parent="." instance=ExtResource("2_4vuah")]
+position = Vector2(1073, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaSol" type="Area2D" parent="Sol"]
+scale = Vector2(0.565, 0.565)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sol/AreaSol"]
+polygon = PackedVector2Array(101.064, 3.5461, 395.39, 3.5461, 397.163, 1900.71, 3.5461, 1900.71, 3.5461, 1250, 83.3333, 1250, 102.837, 1218.09)
+
+[node name="LabelSol" type="Label" parent="Sol"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = 907.273
+offset_right = 161.0
+offset_bottom = 994.273
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_6psau")
+text = "Sol"
+horizontal_alignment = 1
+
+[node name="Fa#" parent="." instance=ExtResource("3_5wxpu")]
+position = Vector2(1015, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaFa#" type="Area2D" parent="Fa#"]
+scale = Vector2(0.295, 0.295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fa#/AreaFa#"]
+position = Vector2(200, 1198.31)
+shape = SubResource("RectangleShape2D_4x86i")
+
+[node name="LabelFa#" type="Label" parent="Fa#"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 603.636
+offset_right = 105.0
+offset_bottom = 676.636
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_ml3ax")
+text = "Fa#"
+horizontal_alignment = 1
+
+[node name="La" parent="." instance=ExtResource("1_8wfcv")]
+position = Vector2(1301, 486)
+scale = Vector2(1, 0.55)
+
+[node name="AreaLa" type="Area2D" parent="La"]
+scale = Vector2(0.565, 0.565)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="La/AreaLa"]
+polygon = PackedVector2Array(3.5461, 3.5461, 297.872, 3.5461, 297.872, 1230.5, 319.149, 1250, 395.39, 1250, 395.39, 1900.71, 3.5461, 1900.71)
+
+[node name="LabelLa" type="Label" parent="La"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = 907.273
+offset_right = 161.0
+offset_bottom = 994.273
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_swhog")
+text = "La"
+horizontal_alignment = 1
+
+[node name="Sol#" parent="." instance=ExtResource("3_5wxpu")]
+position = Vector2(1247, 485)
+scale = Vector2(1, 0.55)
+
+[node name="AreaSol#" type="Area2D" parent="Sol#"]
+scale = Vector2(0.295, 0.295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sol#/AreaSol#"]
+position = Vector2(200, 1198.31)
+shape = SubResource("RectangleShape2D_4x86i")
+
+[node name="LabelSol#" type="Label" parent="Sol#"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 603.636
+offset_right = 105.0
+offset_bottom = 676.636
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spae6")
+text = "Sol#"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Si" parent="." instance=ExtResource("2_4vuah")]
+position = Vector2(1526, 488)
+scale = Vector2(1, 0.55)
+
+[node name="AreaSi" type="Area2D" parent="Si"]
+scale = Vector2(0.565, 0.565)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Si/AreaSi"]
+polygon = PackedVector2Array(101.064, 3.5461, 395.39, 3.5461, 397.163, 1900.71, 3.5461, 1900.71, 3.5461, 1250, 83.3333, 1250, 102.837, 1218.09)
+
+[node name="LabelSi" type="Label" parent="Si"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 76.0
+offset_top = 907.273
+offset_right = 161.0
+offset_bottom = 994.273
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_5bwh0")
+text = "Si"
+horizontal_alignment = 1
+
+[node name="La#" parent="." instance=ExtResource("3_5wxpu")]
+position = Vector2(1472, 487)
+scale = Vector2(1, 0.55)
+
+[node name="AreaLa#" type="Area2D" parent="La#"]
+scale = Vector2(0.295, 0.295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="La#/AreaLa#"]
+position = Vector2(200, 1198.31)
+shape = SubResource("RectangleShape2D_4x86i")
+
+[node name="LabelLa#" type="Label" parent="La#"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 603.636
+offset_right = 105.0
+offset_bottom = 676.636
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_sacov")
+text = "La#"
+horizontal_alignment = 1
+
+[node name="Partitura" parent="." instance=ExtResource("5_f0wgl")]
+
+[node name="BordeDivis" type="Panel" parent="."]
+offset_top = 491.0
+offset_right = 1920.0
+offset_bottom = 509.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jgoe")
+
+[node name="Notas" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ControlSuperior" parent="." instance=ExtResource("7_vj003")]
+
+[node name="BordeColor" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3t46j")
+
+[connection signal="input_event" from="Do/AreaDo" to="." method="_on_area_do_input_event"]
+[connection signal="input_event" from="Re/AreaRe" to="." method="_on_area_re_input_event"]
+[connection signal="input_event" from="Do#/AreaDo#" to="." method="_on_area_doS_input_event"]
+[connection signal="input_event" from="Mi/AreaMi" to="." method="_on_area_mi_input_event"]
+[connection signal="input_event" from="Re#/AreaRe#" to="." method="_on_area_reS_input_event"]
+[connection signal="input_event" from="Fa/AreaFa" to="." method="_on_area_fa_input_event"]
+[connection signal="input_event" from="Sol/AreaSol" to="." method="_on_area_sol_input_event"]
+[connection signal="input_event" from="Fa#/AreaFa#" to="." method="_on_area_faS_input_event"]
+[connection signal="input_event" from="La/AreaLa" to="." method="_on_area_la_input_event"]
+[connection signal="input_event" from="Sol#/AreaSol#" to="." method="_on_area_solS_input_event"]
+[connection signal="input_event" from="Si/AreaSi" to="." method="_on_area_si_input_event"]
+[connection signal="input_event" from="La#/AreaLa#" to="." method="_on_area_laS_input_event"]

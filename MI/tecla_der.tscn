@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqkee1txao4bt"]
+
+[ext_resource type="Texture2D" uid="uid://bamvy3mgreprf" path="res://2d_assets/TecladoPiano/teclaDER.png" id="1_d2vvf"]
+
+[node name="TeclaDER" type="Node2D"]
+
+[node name="TexturaDER" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 402.0
+offset_bottom = 1907.0
+scale = Vector2(0.564, 0.564)
+texture = ExtResource("1_d2vvf")

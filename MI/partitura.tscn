@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dch88d3n8wygm"]
+
+[ext_resource type="Texture2D" uid="uid://dnbpspaeh26xe" path="res://2d_assets/paper/paper.png" id="1_a7ue1"]
+
+[node name="Partitura" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [477.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1923.0
+offset_bottom = 497.0
+texture = ExtResource("1_a7ue1")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx8gb2l6a4dys"]
+
+[ext_resource type="Texture2D" uid="uid://cppdyed0ugm8c" path="res://2d_assets/TecladoPiano/teclaNegra.png" id="1_los6v"]
+
+[node name="TeclaNegra" type="Node2D"]
+
+[node name="TexturaNegra" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 402.0
+offset_bottom = 1907.0
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("1_los6v")
