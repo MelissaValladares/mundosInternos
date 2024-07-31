@@ -1,5 +1,6 @@
 extends Node3D
 
+@onready var occluder = $OccluderInstance3D
 @onready var botonAction = $main/android_gui/action_button
 @onready var botonInfo = $main/android_gui/ControlSuperior/info
 @onready var panelScore = $main/android_gui/ControlSuperior/PanelScore
@@ -16,6 +17,7 @@ signal item_Colocado_Resta_Inventario(item_name : String)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	audioManager.playMusica("res://sounds/biblioteca.wav", 0)
+	GameManager.setCalidad(occluder, calidadManager.idCalidad)
 	botonAction.visible = false # AL INICIO DE PUEBLO:TSCN ESTÄ OCULTO EL BOTON
 	# SI SE QUIERE HACER GLOBAL PARA TODOS LOS ESCENARIOS: SE DEFINE EN STEVE.GD
 	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/textMision.text = "Ordena los libros"

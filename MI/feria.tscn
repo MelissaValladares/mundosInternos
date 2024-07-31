@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=3 uid="uid://saogf6hqnnap"]
+[gd_scene load_steps=52 format=3 uid="uid://saogf6hqnnap"]
 
 [ext_resource type="PackedScene" uid="uid://c4n2copcg4r1b" path="res://3d_assets/1. biblioteca/exterior/grass.glb" id="1_8fxdw"]
 [ext_resource type="PackedScene" uid="uid://cvuq72tcg5w2y" path="res://main.tscn" id="1_e43ne"]
 [ext_resource type="Script" path="res://scripts/feria.gd" id="1_u4vuo"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dlk4oeirh8u0k" path="res://occluders/feria.occ" id="2_b2kgy"]
 [ext_resource type="PackedScene" uid="uid://rbv1otcd68e1" path="res://3d_assets/2. feria/tienda_2_(amarillo).tscn" id="2_cnyrq"]
 [ext_resource type="PackedScene" uid="uid://onwumytsq47i" path="res://3d_assets/2. feria/tienda_2.tscn" id="3_0bbif"]
 [ext_resource type="PackedScene" uid="uid://b0ukqm3hwk7ic" path="res://3d_assets/2. feria/tienda_3.tscn" id="5_efbeh"]
@@ -213,6 +214,9 @@ size = Vector3(15.0821, 4.23952, 2.29443)
 
 [node name="feria" type="Node3D"]
 script = ExtResource("1_u4vuo")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("2_b2kgy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lnl4w")

@@ -8,7 +8,7 @@ var enRango = false
 
 func _ready():
 	audioManager.playMusica("res://sounds/Pueblo.wav", 0)
-	setCalidad(calidadManager.idCalidad)
+	GameManager.setCalidad(occluder, calidadManager.idCalidad)
 	botonAction.visible = false # AL INICIO DE PUEBLO:TSCN ESTÄ OCULTO EL BOTON
 	# SI SE QUIERE HACER GLOBAL PARA TODOS LOS ESCENARIOS: SE DEFINE EN STEVE.GD
 	$main/android_gui/ControlSuperior/PanelInfo/GridContainer/textMision.text = "Ve a la biblioteca"
@@ -16,21 +16,6 @@ func _ready():
 	botonInfo.button_pressed = true
 	panelScore.visible = false
   
-func setCalidad(i):
-	match i:
-		0:  # Baja calidad
-			occluder.visible = false  # Ejemplo: ocultar el occluderInstance
-		1:  # Media calidad  
-			occluder.visible = false  # Ejemplo: mostrar el occluderInstance
-		2:  # Alta calidad
-			occluder.visible = true  # Ejemplo: mostrar el occluderInstance
-		_:
-			print("Tipo calidad no reconocido", i)
-	print("occluder actualizado a:", occluder)
-
-#func _process(delta):
-#	pass
-
 
 func _on_main_action_pressed(): # Señal que viene de gui_android, botón action
 	if enRango: # Se puede compara otra variable para saber tipo de accion (SI ES QUE SE USA)

@@ -23,6 +23,17 @@ func _ready():
 func add_score():
 	score += 1;
 
+func setCalidad(occluder, i):
+	match i:
+		0:  # Baja calidad
+			occluder.bake_simplification_distance = 0.1
+		1:  # Media calidad  
+			occluder.bake_simplification_distance = 0.5
+		2:  # Alta calidad
+			occluder.bake_simplification_distance = 1.5
+		_:
+			print("Tipo calidad no reconocido", i)
+	print("occluder actualizado a:", occluder)
 
 func saveGame():
 	var file = FileAccess.open("user://game.save", FileAccess.WRITE)
