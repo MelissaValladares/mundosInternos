@@ -6,7 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcvko"]
 resource_name = "Color"
 cull_mode = 2
-albedo_color = Color(0.54282, 0.569567, 0.637711, 1)
+albedo_color = Color(0.913725, 0.74902, 0.552941, 1)
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdl5y"]
@@ -789,9 +789,10 @@ node_connections = [&"Caminar", 0, &"Anim_Quieto", &"Caminar", 1, &"Anim_Caminar
 script = ExtResource("1_obsyy")
 
 [node name="Armature" type="Node3D" parent="."]
-transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.0136092, 0.835351, 0.00522008)
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.0136092, 2.02051, 0.00522008)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 0, -4.01334, 0)
 bones/0/name = "Cadera"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16415e-10, -1.32353, 7.42148e-10)
@@ -892,8 +893,17 @@ bones/13/rotation = Quaternion(0.0210279, -0.00190295, -0.0292698, 0.999349)
 bones/13/scale = Vector3(1, 1, 1)
 
 [node name="Cube_002" type="MeshInstance3D" parent="Armature/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_i8x6w")
 skin = SubResource("Skin_1brg2")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+transform = Transform3D(0.934603, 0.323136, -0.100108, 0.328157, -0.937451, 0.0376887, -0.0821654, -0.06849, -0.98817, 0.046118, -0.133262, 1.19372)
+bone_name = "Mano.DER"
+bone_idx = 9
+
+[node name="objeto_mano" type="Node3D" parent="Armature/Skeleton3D/BoneAttachment3D"]
+transform = Transform3D(0.985877, -0.00411275, -0.0764557, 0.002038, 0.988478, -0.0268965, 0.076539, 0.0266586, 0.985519, 0.178862, 1.11551, -0.0624751)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.445149, 0, 0, 0, 0.445149, 0, 0, 0, 0.445149, 0.0350414, 0.731328, 0)
@@ -915,6 +925,11 @@ far = 150.0
 material_override = SubResource("ShaderMaterial_kiudn")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ooeuk")
+
+[node name="RayCast3D" type="RayCast3D" parent="CamOrigin/SpringArm3D/Camera3D"]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 1.86265e-09, 0, -2.38419e-07)
+target_position = Vector3(0, 0, -4.105)
+collision_mask = 2
 
 [node name="android_gui" parent="." instance=ExtResource("4_hiasl")]
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://bfk3s30ay45en"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_swr32"]
+
+[resource]
+script = ExtResource("1_swr32")
+nombre = ""
+acumuable = true
+mesh = ""
+recolectable = ""

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2uyekn2hmd04"]
+
+[ext_resource type="PackedScene" uid="uid://bntjg7vf03xwm" path="res://3d_assets/1. biblioteca/interior/libro_cerrado.glb" id="1_reyl8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7eg7i"]
+albedo_color = Color(0.123211, 0.451536, 0, 1)
+
+[node name="libro_cerrado" instance=ExtResource("1_reyl8")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="papel" parent="." index="0"]
+transform = Transform3D(-0.341849, 0, -2.67222e-07, 0, 0.341849, 0, 1.11388e-07, 0, -0.820097, -0.048052, -0.00158617, 0.000561456)
+
+[node name="cubierta" parent="." index="1"]
+transform = Transform3D(-0.341849, 0, -2.67222e-07, 0, 0.341849, 0, 1.11388e-07, 0, -0.820097, 0.0605475, -0.00168771, 0.00108845)
+material_override = SubResource("StandardMaterial3D_7eg7i")

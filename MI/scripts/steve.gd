@@ -9,9 +9,10 @@ const JUMP_VELOCITY = 5.0
 @export var sens = 0.5
 @onready var cam = $CamOrigin/SpringArm3D/Camera3D
 @onready var joystick_area = $android_gui/JoystickArea
+@onready var inventario_area = $android_gui/InventarioArea
 @onready var anim_tree = $AnimationTree
 @export var blend_speed = 15
-
+@onready var objeto_mano = $Armature/Skeleton3D/BoneAttachment3D/objeto_mano
 var update = false
 var gt_prev = Transform3D()
 var gt_current = Transform3D()
@@ -19,6 +20,7 @@ var interpolationActiva = false
 var cam_val = 0
 var int_val = 0
 var sal_val = 0
+
 
 #var frameSuelo = false # VARIABLES PARA CUANDO BAJA ESCALERAS
 #var snapStairs = false
@@ -35,6 +37,12 @@ func _ready():
 	
 	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	calidad(calidadManager.idCalidad)
+	
+	var inventario = get_node("android_gui/ui_inventario/interface_prin/inventario")
+	inventario.connect("mesh_emitted", Callable(self, "cargar_mesh"))
+	inventario.connect("mesh_changed", Callable(self, "cambiar_mesh"))
+	inventario.connect("mesh_removed", Callable(self, "remueve_mesh"))
+	
 
 func handle_animation(delta):
 	match curAnim:
@@ -75,7 +83,7 @@ func calidad(tipo):
 
 func _input(event):
 	if event is InputEventScreenDrag:
-		if not joystick_area.get_rect().has_point(event.position):
+		if not (joystick_area.get_rect().has_point(event.position) or inventario_area.get_rect().has_point(event.position)):
 			# Manejar rotación de cámara si el drag está fuera del área del joystick
 			rotate_y(deg_to_rad(-event.relative.x * sens))
 			pivot.rotate_x(deg_to_rad(-event.relative.y * sens))
@@ -110,6 +118,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		curAnim = SALTAR
 		audioManager.playSFX("res://sounds/SFX/Salto.wav", -1, 2)
+		print("saltando")
 		
 	# salir con esc
 	if Input.is_action_just_pressed("quit"):
@@ -171,3 +180,32 @@ func update_transform():
 #			self.position.y += translate_y
 #			apply_floor_snap()
 #	did_snap = is_on_floor()
+
+
+func _on_item_recolectable_data_emitted(data):
+	$android_gui/ui_inventario/interface_prin/inventario.busca_y_set(data)
+	
+func _on_item_Colocado_Resta_Inventario(item_name):
+	$android_gui/ui_inventario/interface_prin/inventario.busca_y_reduce(item_name)
+
+func cargar_mesh(item_data : ItemData):
+	var scene_resource = load(item_data.mesh)
+	if scene_resource:
+		var instance = scene_resource.instantiate()
+		instance.name = item_data.nombre
+		instance.visible = false
+		objeto_mano.add_child(instance)
+
+
+func cambiar_mesh(item_name : String):
+	for objeto in objeto_mano.get_children():
+		if objeto.name == item_name:
+			objeto.visible = true
+			print("mostrando solo", item_name, "/" , objeto.name)
+		else:
+			objeto.visible = false
+
+func remueve_mesh(item_name : String):
+	for objeto in objeto_mano.get_children():
+		if objeto.name == item_name:
+			objeto.queue_free()

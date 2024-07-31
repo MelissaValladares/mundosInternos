@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca62lrupowyk2"]
+
+[ext_resource type="Script" path="res://scripts/item_recolectable.gd" id="1_qeeaw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7t8l5"]
+size = Vector3(0.715012, 0.232906, 0.685544)
+
+[node name="item_recolectable" type="Area3D"]
+script = ExtResource("1_qeeaw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00356293, 0.0216236, 0.0195596)
+shape = SubResource("BoxShape3D_7t8l5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

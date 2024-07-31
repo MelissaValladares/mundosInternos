@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckbik3p7qnle0"]
+
+[ext_resource type="PackedScene" uid="uid://dbqwyoeijhfqr" path="res://3d_assets/1. biblioteca/interior/cuadro.glb" id="1_uhx10"]
+[ext_resource type="Texture2D" uid="uid://dmncp6bg2yyin" path="res://2d_assets/cuadro.jpeg" id="2_oocab"]
+
+[node name="cuadro" instance=ExtResource("1_uhx10")]
+
+[node name="Grid" parent="." index="0"]
+transform = Transform3D(9.26829e-15, 1.67014e-07, 4.0168, 4.85077, -1.67014e-07, 0, 2.12034e-07, 3.82085, -1.7558e-07, 0, 0.155507, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
+texture = ExtResource("2_oocab")
